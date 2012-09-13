@@ -87,18 +87,17 @@
 
 #pragma mark - Initializers
 
-- (id)initWithDelegate:(id<CredentialAlertDelegate>)delegate 
-               forHost:(NSString *)hostName {
+- (id)initWithDelegate:(id<CredentialAlertDelegate>)delegate forHost:(NSString *)hostName {
     self = [super initWithTitle:NSLocalizedString(@"CredentialAlertTitle", @"") 
-                        message:hostName 
-                       delegate:self 
-              cancelButtonTitle:NSLocalizedString(@"CancelButtonTitle", @"") 
-              otherButtonTitles:NSLocalizedString(@"LoginButtonTitle", @""), 
-                                nil];
+            message:hostName
+            delegate:self
+            cancelButtonTitle:NSLocalizedString(@"CancelButtonTitle", @"")
+            otherButtonTitles:NSLocalizedString(@"LoginButtonTitle", @""),
+            nil];
     
-    if (self) {
+    if(self) {
         _credentialDelegate = delegate;
-        
+
         _usernameField = [[UITextField alloc] initWithFrame:CGRectZero];
         _usernameField.borderStyle = UITextBorderStyleBezel;
         _usernameField.backgroundColor = [UIColor whiteColor];
