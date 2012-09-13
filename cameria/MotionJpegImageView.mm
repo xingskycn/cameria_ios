@@ -36,12 +36,8 @@
 
 @end
 
-@interface CredentialAlertView : UIAlertView
-                                <UITextFieldDelegate, 
-                                 UIAlertViewDelegate>
-{
-    
-@private
+@interface CredentialAlertView : UIAlertView<UITextFieldDelegate, UIAlertViewDelegate> {
+    @private
     UITextField *_usernameField;
     UITextField *_passwordField;
     id<CredentialAlertDelegate> _credentialDelegate;
@@ -52,8 +48,7 @@
 @property (nonatomic, readwrite, copy) NSString *password;
 @property (nonatomic, readwrite, assign) id<CredentialAlertDelegate> credentialDelegate;
 
-- (id)initWithDelegate:(id<CredentialAlertDelegate>)delegate 
-               forHost:(NSString *)hostName;
+- (id)initWithDelegate:(id<CredentialAlertDelegate>)delegate forHost:(NSString *)hostName;
 
 @end
 
