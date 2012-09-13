@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C274F3771602959F00FEF992 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C274F3751602959F00FEF992 /* MainWindow_iPad.xib */; };
 		C2E7073D160290BA00EAC308 /* MotionJpegImageView.mm in Sources */ = {isa = PBXBuildFile; fileRef = C2E7073A160290BA00EAC308 /* MotionJpegImageView.mm */; };
 		C2E7073E160290BA00EAC308 /* MotionJpegImageViewAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = C2E7073C160290BA00EAC308 /* MotionJpegImageViewAppDelegate.mm */; };
 		C2E70745160290F400EAC308 /* MotionJpegImageViewAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E70744160290F400EAC308 /* MotionJpegImageViewAppDelegate_iPhone.m */; };
 		C2E7074A1602913A00EAC308 /* cameria.xcodeproj-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2E707461602913A00EAC308 /* cameria.xcodeproj-Info.plist */; };
 		C2E7074B1602913A00EAC308 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2E707481602913A00EAC308 /* Localizable.strings */; };
 		C2E7074C1602913A00EAC308 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E707491602913A00EAC308 /* main.m */; };
-		C2E707521602914500EAC308 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E7074E1602914500EAC308 /* MainWindow_iPad.xib */; };
 		C2E707531602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E707511602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.m */; };
 		C2E707561602915B00EAC308 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E707541602915B00EAC308 /* MainWindow_iPhone.xib */; };
 		C636B828143B7538008CB95D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B827143B7538008CB95D /* UIKit.framework */; };
@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C274F3761602959F00FEF992 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = cameria/iPad/en.lproj/MainWindow_iPad.xib; sourceTree = SOURCE_ROOT; };
 		C2E70739160290BA00EAC308 /* MotionJpegImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageView.h; path = cameria/MotionJpegImageView.h; sourceTree = SOURCE_ROOT; };
 		C2E7073A160290BA00EAC308 /* MotionJpegImageView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MotionJpegImageView.mm; path = cameria/MotionJpegImageView.mm; sourceTree = SOURCE_ROOT; };
 		C2E7073B160290BA00EAC308 /* MotionJpegImageViewAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageViewAppDelegate.h; path = cameria/MotionJpegImageViewAppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -32,7 +33,6 @@
 		C2E707471602913A00EAC308 /* cameria.xcodeproj-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "cameria.xcodeproj-Prefix.pch"; path = "cameria/cameria.xcodeproj-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		C2E707481602913A00EAC308 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = cameria/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		C2E707491602913A00EAC308 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cameria/main.m; sourceTree = SOURCE_ROOT; };
-		C2E7074F1602914500EAC308 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = MainWindow_iPad.xib; sourceTree = "<group>"; };
 		C2E707501602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageViewAppDelegate_iPad.h; path = cameria/iPad/MotionJpegImageViewAppDelegate_iPad.h; sourceTree = SOURCE_ROOT; };
 		C2E707511602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionJpegImageViewAppDelegate_iPad.m; path = cameria/iPad/MotionJpegImageViewAppDelegate_iPad.m; sourceTree = SOURCE_ROOT; };
 		C2E707551602915B00EAC308 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = cameria/iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = SOURCE_ROOT; };
@@ -122,9 +122,9 @@
 		C636B840143B7538008CB95D /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				C274F3751602959F00FEF992 /* MainWindow_iPad.xib */,
 				C2E707501602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.h */,
 				C2E707511602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.m */,
-				C2E7074E1602914500EAC308 /* MainWindow_iPad.xib */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -181,8 +181,8 @@
 			files = (
 				C2E7074A1602913A00EAC308 /* cameria.xcodeproj-Info.plist in Resources */,
 				C2E7074B1602913A00EAC308 /* Localizable.strings in Resources */,
-				C2E707521602914500EAC308 /* MainWindow_iPad.xib in Resources */,
 				C2E707561602915B00EAC308 /* MainWindow_iPhone.xib in Resources */,
+				C274F3771602959F00FEF992 /* MainWindow_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,13 +204,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C2E7074E1602914500EAC308 /* MainWindow_iPad.xib */ = {
+		C274F3751602959F00FEF992 /* MainWindow_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C2E7074F1602914500EAC308 /* en */,
+				C274F3761602959F00FEF992 /* en */,
 			);
 			name = MainWindow_iPad.xib;
-			path = ../cameria/iPad/en.lproj;
 			sourceTree = "<group>";
 		};
 		C2E707541602915B00EAC308 /* MainWindow_iPhone.xib */ = {

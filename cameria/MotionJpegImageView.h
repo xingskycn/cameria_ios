@@ -26,8 +26,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MotionJpegImageView : UIImageView {
-    
-@private
+    @private
     NSURL *_url;
     NSURLConnection *_connection;
     NSMutableData *_receivedData;
@@ -35,7 +34,6 @@
     NSString *_password;
     BOOL _allowSelfSignedCertificates;
     BOOL _allowClearTextCredentials;
-    
 }
 
 @property (nonatomic, readwrite, copy) NSURL *url;
