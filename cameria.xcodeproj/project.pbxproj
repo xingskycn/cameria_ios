@@ -21,13 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C636B823143B7538008CB95D /* MotionJpegImageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionJpegImageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C636B823143B7538008CB95D /* cameria.xcodeproj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameria.xcodeproj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C636B827143B7538008CB95D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C636B829143B7538008CB95D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C636B82B143B7538008CB95D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C636B82F143B7538008CB95D /* MotionJpegImageView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MotionJpegImageView-Info.plist"; sourceTree = "<group>"; };
+		C636B82F143B7538008CB95D /* cameria.xcodeproj-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cameria.xcodeproj-Info.plist"; sourceTree = "<group>"; };
 		C636B833143B7538008CB95D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C636B835143B7538008CB95D /* MotionJpegImageView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MotionJpegImageView-Prefix.pch"; sourceTree = "<group>"; };
+		C636B835143B7538008CB95D /* cameria.xcodeproj-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cameria.xcodeproj-Prefix.pch"; sourceTree = "<group>"; };
 		C636B836143B7538008CB95D /* MotionJpegImageViewAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotionJpegImageViewAppDelegate.h; sourceTree = "<group>"; };
 		C636B837143B7538008CB95D /* MotionJpegImageViewAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MotionJpegImageViewAppDelegate.mm; sourceTree = "<group>"; };
 		C636B83A143B7538008CB95D /* MotionJpegImageViewAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageViewAppDelegate_iPhone.h; path = iPhone/MotionJpegImageViewAppDelegate_iPhone.h; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		C636B824143B7538008CB95D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C636B823143B7538008CB95D /* MotionJpegImageView.app */,
+				C636B823143B7538008CB95D /* cameria.xcodeproj.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,9 +99,9 @@
 		C636B82E143B7538008CB95D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C636B82F143B7538008CB95D /* MotionJpegImageView-Info.plist */,
+				C636B82F143B7538008CB95D /* cameria.xcodeproj-Info.plist */,
 				C636B833143B7538008CB95D /* main.m */,
-				C636B835143B7538008CB95D /* MotionJpegImageView-Prefix.pch */,
+				C636B835143B7538008CB95D /* cameria.xcodeproj-Prefix.pch */,
 				C636B84C143B760E008CB95D /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -130,9 +130,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C636B822143B7538008CB95D /* MotionJpegImageView */ = {
+		C636B822143B7538008CB95D /* cameria.xcodeproj */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C636B849143B7538008CB95D /* Build configuration list for PBXNativeTarget "MotionJpegImageView" */;
+			buildConfigurationList = C636B849143B7538008CB95D /* Build configuration list for PBXNativeTarget "cameria.xcodeproj" */;
 			buildPhases = (
 				C636B81F143B7538008CB95D /* Sources */,
 				C636B820143B7538008CB95D /* Frameworks */,
@@ -142,9 +142,9 @@
 			);
 			dependencies = (
 			);
-			name = MotionJpegImageView;
+			name = cameria.xcodeproj;
 			productName = MotionJpegImageView;
-			productReference = C636B823143B7538008CB95D /* MotionJpegImageView.app */;
+			productReference = C636B823143B7538008CB95D /* cameria.xcodeproj.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -155,7 +155,7 @@
 			attributes = {
 				ORGANIZATIONNAME = "ThinkFlood Inc";
 			};
-			buildConfigurationList = C636B81D143B7538008CB95D /* Build configuration list for PBXProject "MotionJpegImageView" */;
+			buildConfigurationList = C636B81D143B7538008CB95D /* Build configuration list for PBXProject "cameria" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -167,7 +167,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C636B822143B7538008CB95D /* MotionJpegImageView */,
+				C636B822143B7538008CB95D /* cameria.xcodeproj */,
 			);
 		};
 /* End PBXProject section */
@@ -269,9 +269,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MotionJpegImageView/MotionJpegImageView-Prefix.pch";
-				INFOPLIST_FILE = "MotionJpegImageView/MotionJpegImageView-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "MotionJpegImageView/cameria.xcodeproj-Prefix.pch";
+				INFOPLIST_FILE = "MotionJpegImageView/cameria.xcodeproj-Info.plist";
+				PRODUCT_NAME = cameria.xcodeproj;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -280,9 +280,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MotionJpegImageView/MotionJpegImageView-Prefix.pch";
-				INFOPLIST_FILE = "MotionJpegImageView/MotionJpegImageView-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "MotionJpegImageView/cameria.xcodeproj-Prefix.pch";
+				INFOPLIST_FILE = "MotionJpegImageView/cameria.xcodeproj-Info.plist";
+				PRODUCT_NAME = cameria.xcodeproj;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -290,7 +290,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C636B81D143B7538008CB95D /* Build configuration list for PBXProject "MotionJpegImageView" */ = {
+		C636B81D143B7538008CB95D /* Build configuration list for PBXProject "cameria" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C636B847143B7538008CB95D /* Debug */,
@@ -299,7 +299,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C636B849143B7538008CB95D /* Build configuration list for PBXNativeTarget "MotionJpegImageView" */ = {
+		C636B849143B7538008CB95D /* Build configuration list for PBXNativeTarget "cameria.xcodeproj" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C636B84A143B7538008CB95D /* Debug */,

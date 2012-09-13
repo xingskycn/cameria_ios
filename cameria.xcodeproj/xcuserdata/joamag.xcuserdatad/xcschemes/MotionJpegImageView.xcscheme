@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C636B822143B7538008CB95D"
                BuildableName = "MotionJpegImageView.app"
-               BlueprintName = "MotionJpegImageView"
-               ReferencedContainer = "container:MotionJpegImageView.xcodeproj">
+               BlueprintName = "cameria.xcodeproj"
+               ReferencedContainer = "container:cameria.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C636B822143B7538008CB95D"
             BuildableName = "MotionJpegImageView.app"
-            BlueprintName = "MotionJpegImageView"
-            ReferencedContainer = "container:MotionJpegImageView.xcodeproj">
+            BlueprintName = "cameria.xcodeproj"
+            ReferencedContainer = "container:cameria.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -47,14 +47,15 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      enableOpenGLFrameCaptureMode = "0"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C636B822143B7538008CB95D"
             BuildableName = "MotionJpegImageView.app"
-            BlueprintName = "MotionJpegImageView"
-            ReferencedContainer = "container:MotionJpegImageView.xcodeproj">
+            BlueprintName = "cameria.xcodeproj"
+            ReferencedContainer = "container:cameria.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +72,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C636B822143B7538008CB95D"
             BuildableName = "MotionJpegImageView.app"
-            BlueprintName = "MotionJpegImageView"
-            ReferencedContainer = "container:MotionJpegImageView.xcodeproj">
+            BlueprintName = "cameria.xcodeproj"
+            ReferencedContainer = "container:cameria.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
