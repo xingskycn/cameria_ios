@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C636B822143B7538008CB95D"
                BuildableName = "MotionJpegImageView.app"
-               BlueprintName = "cameria.xcodeproj"
+               BlueprintName = "cameria"
                ReferencedContainer = "container:cameria.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C636B822143B7538008CB95D"
             BuildableName = "MotionJpegImageView.app"
-            BlueprintName = "cameria.xcodeproj"
+            BlueprintName = "cameria"
             ReferencedContainer = "container:cameria.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -54,7 +54,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C636B822143B7538008CB95D"
             BuildableName = "MotionJpegImageView.app"
-            BlueprintName = "cameria.xcodeproj"
+            BlueprintName = "cameria"
             ReferencedContainer = "container:cameria.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -72,7 +72,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C636B822143B7538008CB95D"
             BuildableName = "MotionJpegImageView.app"
-            BlueprintName = "cameria.xcodeproj"
+            BlueprintName = "cameria"
             ReferencedContainer = "container:cameria.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

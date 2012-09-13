@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C636B823143B7538008CB95D /* cameria.xcodeproj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameria.xcodeproj.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C636B823143B7538008CB95D /* cameria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C636B827143B7538008CB95D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C636B829143B7538008CB95D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C636B82B143B7538008CB95D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,7 +67,7 @@
 		C636B824143B7538008CB95D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C636B823143B7538008CB95D /* cameria.xcodeproj.app */,
+				C636B823143B7538008CB95D /* cameria.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,9 +130,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C636B822143B7538008CB95D /* cameria.xcodeproj */ = {
+		C636B822143B7538008CB95D /* cameria */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C636B849143B7538008CB95D /* Build configuration list for PBXNativeTarget "cameria.xcodeproj" */;
+			buildConfigurationList = C636B849143B7538008CB95D /* Build configuration list for PBXNativeTarget "cameria" */;
 			buildPhases = (
 				C636B81F143B7538008CB95D /* Sources */,
 				C636B820143B7538008CB95D /* Frameworks */,
@@ -142,9 +142,9 @@
 			);
 			dependencies = (
 			);
-			name = cameria.xcodeproj;
+			name = cameria;
 			productName = MotionJpegImageView;
-			productReference = C636B823143B7538008CB95D /* cameria.xcodeproj.app */;
+			productReference = C636B823143B7538008CB95D /* cameria.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -167,7 +167,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C636B822143B7538008CB95D /* cameria.xcodeproj */,
+				C636B822143B7538008CB95D /* cameria */,
 			);
 		};
 /* End PBXProject section */
@@ -271,7 +271,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MotionJpegImageView/cameria.xcodeproj-Prefix.pch";
 				INFOPLIST_FILE = "MotionJpegImageView/cameria.xcodeproj-Info.plist";
-				PRODUCT_NAME = cameria.xcodeproj;
+				PRODUCT_NAME = cameria;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -282,7 +282,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MotionJpegImageView/cameria.xcodeproj-Prefix.pch";
 				INFOPLIST_FILE = "MotionJpegImageView/cameria.xcodeproj-Info.plist";
-				PRODUCT_NAME = cameria.xcodeproj;
+				PRODUCT_NAME = cameria;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -299,7 +299,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C636B849143B7538008CB95D /* Build configuration list for PBXNativeTarget "cameria.xcodeproj" */ = {
+		C636B849143B7538008CB95D /* Build configuration list for PBXNativeTarget "cameria" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C636B84A143B7538008CB95D /* Debug */,
