@@ -43,6 +43,11 @@
 @property (nonatomic, readwrite, assign) BOOL allowSelfSignedCertificates;
 @property (nonatomic, readwrite, assign) BOOL allowClearTextCredentials;
 
+/**
+ * Plays the image motion from the start in case
+ * it's the first call or resumes the playback of
+ * the motion in case the current state is paused.
+ */
 - (void)play;
 - (void)pause;
 - (void)clear;
