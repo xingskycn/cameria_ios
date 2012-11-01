@@ -235,9 +235,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
     
 }
 
--             (BOOL)textField:(UITextField *)textField 
-shouldChangeCharactersInRange:(NSRange)range
-            replacementString:(NSString *)string {
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     return YES;
 }
 
@@ -391,17 +389,15 @@ static NSData *_endMarkerData = nil;
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     [_receivedData appendData:data];
     
-    NSRange endRange = [_receivedData rangeOfData:_endMarkerData 
-                                          options:0 
+    NSRange endRange = [_receivedData rangeOfData:_endMarkerData
+                                          options:0
                                             range:NSMakeRange(0, _receivedData.length)];
     
     long long endLocation = endRange.location + endRange.length;
     if (_receivedData.length >= endLocation) {
         NSData *imageData = [_receivedData subdataWithRange:NSMakeRange(0, endLocation)];
         UIImage *receivedImage = [UIImage imageWithData:imageData];
-        if (receivedImage) {
-            self.image = receivedImage;
-        }
+        if (receivedImage) { self.image = receivedImage; }
     }
 }
 
@@ -409,8 +405,7 @@ static NSData *_endMarkerData = nil;
     [self cleanupConnection];
 }
 
--                    (BOOL)connection:(NSURLConnection *)connection 
-canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
     BOOL allow = NO;
     if ([protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
         allow = _allowSelfSignedCertificates;
@@ -422,8 +417,7 @@ canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
     return allow;
 }
 
--                (void)connection:(NSURLConnection *)connection 
-didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
     if ([challenge previousFailureCount] == 0 &&
         _username && _username.length > 0 &&
         _password && _password.length > 0) {
@@ -431,16 +425,14 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
             [NSURLCredential credentialWithUser:_username
                                        password:_password
                                     persistence:NSURLCredentialPersistenceForSession];
-        [[challenge sender] useCredential:credentials
-               forAuthenticationChallenge:challenge];
+        [[challenge sender] useCredential:credentials forAuthenticationChallenge:challenge];
     }
     else {
         [[challenge sender] cancelAuthenticationChallenge:challenge];
         [self cleanupConnection];
         
-        CredentialAlertView *loginAlert = 
-            [[CredentialAlertView alloc] initWithDelegate:self
-                                                  forHost:_url.host];
+        CredentialAlertView *loginAlert = [[CredentialAlertView alloc] initWithDelegate:self
+                                                                                forHost:_url.host];
         loginAlert.username = self.username;
         [loginAlert show];
     }
@@ -458,14 +450,20 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
 #pragma mark - CredentialAlertView Delegate Methods
 
 - (void)credentialAlertCancelled:(CredentialAlertView *)alert {
+    // releases the alert window not going to
+    // be used for anything more (avoids leaks)
     [alert release];
 }
 
 - (void)credentialAlertSaved:(CredentialAlertView *)alert {
+    // stores both the usedname and password values retrived
+    // from the alert window and then releases the alert window
     self.username = alert.username;
     self.password = alert.password;
     [alert release];
     
+    // tries to sttart playing the motion, now
+    // using the newly set credentials
     [self play];
 }
 
