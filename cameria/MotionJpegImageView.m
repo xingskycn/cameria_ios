@@ -382,10 +382,10 @@ static NSData *_endMarkerData = nil;
 #pragma mark - NSURLConnection Delegate Methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    if (_receivedData) {
-        [_receivedData release];
-    }
-    
+    // releases the currently allocated data (no more data
+    // pending for the current response) and creates a new
+    // mutable data for the new response
+    if (_receivedData) { [_receivedData release]; }
     _receivedData = [[NSMutableData alloc] init];
 }
 
