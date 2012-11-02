@@ -337,9 +337,12 @@ static NSData *_endMarkerData = nil;
 #pragma mark - Public Methods
 
 - (void)play {
-    if (_connection) {
-        // continue
-    }
+    // in case the connection is already set no need
+    // to anything more (it's already playing)
+    if (_connection) {}
+    
+    // otherwise in case the url is set, creates a new
+    // connection triggering the start of the motion
     else if (_url) {
         _connection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:_url]
                                                       delegate:self];
