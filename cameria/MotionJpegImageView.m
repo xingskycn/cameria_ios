@@ -396,6 +396,10 @@ static NSData *_endMarkerData = nil;
                                           options:0
                                             range:NSMakeRange(0, _receivedData.length)];
     
+    // calculates the end location (of the image) and in case the
+    // current received data length is greater than the end location
+    // retrieves the sub set of data that represents the image and sets
+    // it as the current image in display
     long long endLocation = endRange.location + endRange.length;
     if (_receivedData.length >= endLocation) {
         NSData *imageData = [_receivedData subdataWithRange:NSMakeRange(0, endLocation)];
