@@ -141,6 +141,9 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    // retrieves the username as text in the username field
+    // and then sets a dummy text in the username field and
+    // measures the size of the text field
     NSString *username = _usernameField.text;
     _usernameField.text = @"a";
     CGSize textFieldSize = [_usernameField sizeThatFits:CGSizeZero];
