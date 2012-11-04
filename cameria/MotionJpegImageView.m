@@ -41,7 +41,6 @@
     UITextField *_usernameField;
     UITextField *_passwordField;
     id<CredentialAlertDelegate> _credentialDelegate;
-    
 }
 
 @property (nonatomic, readwrite, copy) NSString *username;
@@ -371,11 +370,15 @@ static NSData *_endMarkerData = nil;
 #pragma mark - Private Methods
 
 - (void)cleanupConnection {
+    // in case the current connection is defined
+    // it must be releases and the reference unset
     if(_connection) {
         [_connection release];
         _connection = nil;
     }
-    
+
+    // in case the're currently received data set it
+    // must be releasead and the reference unset
     if(_receivedData) {
         [_receivedData release];
         _receivedData = nil;
@@ -435,16 +438,19 @@ static NSData *_endMarkerData = nil;
     if([challenge previousFailureCount] == 0 &&
         _username && _username.length > 0 &&
         _password && _password.length > 0) {
-        NSURLCredential *credentials = 
-            [NSURLCredential credentialWithUser:_username
-                                       password:_password
-                                    persistence:NSURLCredentialPersistenceForSession];
+        NSURLCredential *credentials = [NSURLCredential credentialWithUser:_username
+                                                                  password:_password
+                                                               persistence:NSURLCredentialPersistenceForSession];
         [[challenge sender] useCredential:credentials forAuthenticationChallenge:challenge];
     }
     else {
+        // cancels the current authentication chalenge and runs
+        // the cleanup operation in the current connection
         [[challenge sender] cancelAuthenticationChallenge:challenge];
         [self cleanupConnection];
         
+        // creates a new credential alert window and populates it
+        // with the currently set username then shows it
         CredentialAlertView *loginAlert = [[CredentialAlertView alloc] initWithDelegate:self
                                                                                 forHost:_url.host];
         loginAlert.username = self.username;
