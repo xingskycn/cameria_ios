@@ -233,7 +233,6 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
@@ -241,7 +240,6 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
@@ -254,7 +252,6 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if(textField.text.length == 0) {
-        // continue
     }
     else if(textField == _usernameField) {
         [_passwordField becomeFirstResponder];
