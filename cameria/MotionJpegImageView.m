@@ -149,35 +149,44 @@
     CGSize textFieldSize = [_usernameField sizeThatFits:CGSizeZero];
     _usernameField.text = username;
 
+    // sarts the reference to the title label, the message
+    // label and the array to hold the button views
     UILabel *titleLabel = nil;
     UILabel *messageLabel = nil;
     NSMutableArray *buttonViews = [NSMutableArray arrayWithCapacity:3];
     
+    // iterates over the complete set of subviews to update
+    // them and position them
     for(UIView *subview in self.subviews) {
+        // in case the current subview is either the username
+        // field or the password field, continue the loop
         if(subview == _usernameField || subview == _passwordField) {
-            // continue
+            continue;
         }
+        // in case the current subview is a label
         else if([subview isKindOfClass:[UILabel class]]) {
             if(titleLabel == nil) {
-                titleLabel = (UILabel *)subview;
+                titleLabel = (UILabel *) subview;
             }
             else if(titleLabel.frame.origin.y > subview.frame.origin.y) {
                 messageLabel = titleLabel;
-                titleLabel = (UILabel *)subview;
+                titleLabel = (UILabel *) subview;
             }
             else {
-                messageLabel = (UILabel *)subview;
+                messageLabel = (UILabel *) subview;
             }
         }
+        // in case the current subview is a image view
         else if([subview isKindOfClass:[UIImageView class]]) {
-            // continue
         }
+        // in case the current subview is a text field
         else if([subview isKindOfClass:[UITextField class]]) {
-            // continue
         }
+        // otherwise the current subview is considered to be
+        // a button and is added to the button views
         else {
             [buttonViews addObject:subview];
-        } 
+        }
     }
     
     CGFloat buttonViewTop = 0.0;
@@ -204,8 +213,7 @@
 
 #pragma mark - UIAlertView Delegate Methods
 
--    (void)alertView:(UIAlertView *)alertView 
-clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if(buttonIndex == [self cancelButtonIndex]) {
         if(_credentialDelegate) {
             [_credentialDelegate credentialAlertCancelled:self];
