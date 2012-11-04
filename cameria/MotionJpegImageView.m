@@ -151,16 +151,16 @@
     UILabel *messageLabel = nil;
     NSMutableArray *buttonViews = [NSMutableArray arrayWithCapacity:3];
     
-    for (UIView *subview in self.subviews) {
-        if (subview == _usernameField ||
+    for(UIView *subview in self.subviews) {
+        if(subview == _usernameField ||
             subview == _passwordField) {
             // continue
         }
-        else if ([subview isKindOfClass:[UILabel class]]) {
-            if (titleLabel == nil) {
+        else if([subview isKindOfClass:[UILabel class]]) {
+            if(titleLabel == nil) {
                 titleLabel = (UILabel *)subview;
             }
-            else if (titleLabel.frame.origin.y > subview.frame.origin.y) {
+            else if(titleLabel.frame.origin.y > subview.frame.origin.y) {
                 messageLabel = titleLabel;
                 titleLabel = (UILabel *)subview;
             }
@@ -168,10 +168,10 @@
                 messageLabel = (UILabel *)subview;
             }
         }
-        else if ([subview isKindOfClass:[UIImageView class]]) {
+        else if([subview isKindOfClass:[UIImageView class]]) {
             // continue
         }
-        else if ([subview isKindOfClass:[UITextField class]]) {
+        else if([subview isKindOfClass:[UITextField class]]) {
             // continue
         }
         else {
@@ -180,7 +180,7 @@
     }
     
     CGFloat buttonViewTop = 0.0;
-    for (UIView *buttonView in buttonViews) {
+    for(UIView *buttonView in buttonViews) {
         CGRect buttonViewFrame = buttonView.frame;
         buttonViewFrame.origin.y = 
         self.bounds.size.height - buttonViewFrame.size.height - BUTTON_MARGIN;
@@ -205,12 +205,12 @@
 
 -    (void)alertView:(UIAlertView *)alertView 
 clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == [self cancelButtonIndex]) {
-        if (_credentialDelegate) {
+    if(buttonIndex == [self cancelButtonIndex]) {
+        if(_credentialDelegate) {
             [_credentialDelegate credentialAlertCancelled:self];
         }
     }
-    else if (_credentialDelegate) {
+    else if(_credentialDelegate) {
         [_credentialDelegate credentialAlertSaved:self];
     }
     
@@ -244,13 +244,13 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField.text.length == 0) {
+    if(textField.text.length == 0) {
         // continue
     }
-    else if (textField == _usernameField) {
+    else if(textField == _usernameField) {
         [_passwordField becomeFirstResponder];
     }
-    else if (textField == _passwordField) {
+    else if(textField == _passwordField) {
         [textField resignFirstResponder];
     }
     
@@ -293,14 +293,14 @@ static NSData *_endMarkerData = nil;
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
-    if (self) {
+    if(self) {
         _url = nil;
         _receivedData = nil;
         _username = nil;
         _password = nil;
         _allowSelfSignedCertificates = NO;
         
-        if (_endMarkerData == nil) {
+        if(_endMarkerData == nil) {
             uint8_t endMarker[2] = END_MARKER_BYTES;
             _endMarkerData = [[NSData alloc] initWithBytes:endMarker length:2];
         }
@@ -314,20 +314,20 @@ static NSData *_endMarkerData = nil;
 #pragma mark - Overrides
 
 - (void)dealloc {
-    if (_connection) {
+    if(_connection) {
         [_connection cancel];
         [self cleanupConnection];
     }
     
-    if (_url) {
+    if(_url) {
         [_url release];
     }
     
-    if (_username) {
+    if(_username) {
         [_username release];
     }
     
-    if (_password) {
+    if(_password) {
         [_password release];
     }
     
@@ -339,24 +339,30 @@ static NSData *_endMarkerData = nil;
 - (void)play {
     // in case the connection is already set no need
     // to anything more (it's already playing)
-    if (_connection) {}
+    if(_connection) {}
     
     // otherwise in case the url is set, creates a new
     // connection triggering the start of the motion
-    else if (_url) {
+    else if(_url) {
         _connection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:_url]
                                                       delegate:self];
     }
 }
 
 - (void)pause {
-    if (_connection) {
-        [_connection cancel];
-        [self cleanupConnection];
-    }
+    // in case there is a connection currently
+    // set returns immediately, nothing to be done
+    if(_connection) { return; }
+    
+    // cancels the current connection and runs
+    // the cleanup operation in it
+    [_connection cancel];
+    [self cleanupConnection];
 }
 
 - (void)clear {
+    // unsets the reference to the image, this should
+    // hide the image from being displayed
     self.image = nil;
 }
 
@@ -368,12 +374,12 @@ static NSData *_endMarkerData = nil;
 #pragma mark - Private Methods
 
 - (void)cleanupConnection {
-    if (_connection) {
+    if(_connection) {
         [_connection release];
         _connection = nil;
     }
     
-    if (_receivedData) {
+    if(_receivedData) {
         [_receivedData release];
         _receivedData = nil;
     }
@@ -385,7 +391,7 @@ static NSData *_endMarkerData = nil;
     // releases the currently allocated data (no more data
     // pending for the current response) and creates a new
     // mutable data for the new response
-    if (_receivedData) { [_receivedData release]; }
+    if(_receivedData) { [_receivedData release]; }
     _receivedData = [[NSMutableData alloc] init];
 }
 
@@ -405,10 +411,10 @@ static NSData *_endMarkerData = nil;
     // retrieves the sub set of data that represents the image and sets
     // it as the current image in display
     long long endLocation = endRange.location + endRange.length;
-    if (_receivedData.length >= endLocation) {
+    if(_receivedData.length >= endLocation) {
         NSData *imageData = [_receivedData subdataWithRange:NSMakeRange(0, endLocation)];
         UIImage *receivedImage = [UIImage imageWithData:imageData];
-        if (receivedImage) { self.image = receivedImage; }
+        if(receivedImage) { self.image = receivedImage; }
     }
 }
 
@@ -418,7 +424,7 @@ static NSData *_endMarkerData = nil;
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
     BOOL allow = NO;
-    if ([protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+    if([protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
         allow = _allowSelfSignedCertificates;
     }
     else {
@@ -429,7 +435,7 @@ static NSData *_endMarkerData = nil;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-    if ([challenge previousFailureCount] == 0 &&
+    if([challenge previousFailureCount] == 0 &&
         _username && _username.length > 0 &&
         _password && _password.length > 0) {
         NSURLCredential *credentials = 
