@@ -87,11 +87,11 @@
 #pragma mark - Initializers
 
 - (id)initWithDelegate:(id<CredentialAlertDelegate>)delegate forHost:(NSString *)hostName {
-    self = [super initWithTitle:NSLocalizedString(@"CredentialAlertTitle", @"") 
-            message:hostName
-            delegate:self
-            cancelButtonTitle:NSLocalizedString(@"CancelButtonTitle", @"")
-            otherButtonTitles:NSLocalizedString(@"LoginButtonTitle", @""),
+    self = [super initWithTitle:NSLocalizedString(@"CredentialAlertTitle", @"")
+                        message:hostName
+                       delegate:self
+              cancelButtonTitle:NSLocalizedString(@"CancelButtonTitle", @"")
+              otherButtonTitles:NSLocalizedString(@"LoginButtonTitle", @""),
             nil];
     
     if(self) {
