@@ -15,7 +15,7 @@
 		C2E7074C1602913A00EAC308 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E707491602913A00EAC308 /* main.m */; };
 		C2E707531602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E707511602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.m */; };
 		C2E707561602915B00EAC308 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E707541602915B00EAC308 /* MainWindow_iPhone.xib */; };
-		C2EFA1BE1646C45F00200EC0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EFA1BD1646C45F00200EC0 /* Default-568h@2x.png */; };
+		C2EFA1D21646D1C000200EC0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EFA1D11646D1C000200EC0 /* Default-568h@2x.png */; };
 		C636B828143B7538008CB95D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B827143B7538008CB95D /* UIKit.framework */; };
 		C636B82A143B7538008CB95D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B829143B7538008CB95D /* Foundation.framework */; };
 		C636B82C143B7538008CB95D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B82B143B7538008CB95D /* CoreGraphics.framework */; };
@@ -36,7 +36,7 @@
 		C2E707501602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageViewAppDelegate_iPad.h; path = cameria/iPad/MotionJpegImageViewAppDelegate_iPad.h; sourceTree = SOURCE_ROOT; };
 		C2E707511602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionJpegImageViewAppDelegate_iPad.m; path = cameria/iPad/MotionJpegImageViewAppDelegate_iPad.m; sourceTree = SOURCE_ROOT; };
 		C2E707551602915B00EAC308 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = cameria/iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = SOURCE_ROOT; };
-		C2EFA1BD1646C45F00200EC0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C2EFA1D11646D1C000200EC0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "cameria/Resources/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		C636B823143B7538008CB95D /* cameria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C636B827143B7538008CB95D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C636B829143B7538008CB95D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,10 +57,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2EFA1D01646D14900200EC0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2EFA1D11646D1C000200EC0 /* Default-568h@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		C636B818143B7538008CB95D = {
 			isa = PBXGroup;
 			children = (
-				C2EFA1BD1646C45F00200EC0 /* Default-568h@2x.png */,
 				C636B82D143B7538008CB95D /* cameria */,
 				C636B826143B7538008CB95D /* Frameworks */,
 				C636B824143B7538008CB95D /* Products */,
@@ -92,6 +99,7 @@
 				C2E7073A160290BA00EAC308 /* MotionJpegImageView.m */,
 				C2E7073B160290BA00EAC308 /* MotionJpegImageViewAppDelegate.h */,
 				C2E7073C160290BA00EAC308 /* MotionJpegImageViewAppDelegate.m */,
+				C2EFA1D01646D14900200EC0 /* Resources */,
 				C636B839143B7538008CB95D /* iPhone */,
 				C636B840143B7538008CB95D /* iPad */,
 				C636B82E143B7538008CB95D /* Supporting Files */,
@@ -185,7 +193,7 @@
 				C2E7074B1602913A00EAC308 /* Localizable.strings in Resources */,
 				C2E707561602915B00EAC308 /* MainWindow_iPhone.xib in Resources */,
 				C274F3771602959F00FEF992 /* MainWindow_iPad.xib in Resources */,
-				C2EFA1BE1646C45F00200EC0 /* Default-568h@2x.png in Resources */,
+				C2EFA1D21646D1C000200EC0 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
