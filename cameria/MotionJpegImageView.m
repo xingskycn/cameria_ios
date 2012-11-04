@@ -456,8 +456,7 @@ static NSData *_endMarkerData = nil;
     return YES;
 }
 
-- (void)connection:(NSURLConnection *)connection 
-  didFailWithError:(NSError *)error {
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     [self cleanupConnection];
 }
 
