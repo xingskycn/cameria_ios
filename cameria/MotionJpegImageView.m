@@ -151,8 +151,7 @@
     NSMutableArray *buttonViews = [NSMutableArray arrayWithCapacity:3];
     
     for(UIView *subview in self.subviews) {
-        if(subview == _usernameField ||
-            subview == _passwordField) {
+        if(subview == _usernameField || subview == _passwordField) {
             // continue
         }
         else if([subview isKindOfClass:[UILabel class]]) {
@@ -188,7 +187,7 @@
     }
     
     CGRect labelFrame = messageLabel.frame;
-    CGRect textFieldFrame = CGRectMake(labelFrame.origin.x, 
+    CGRect textFieldFrame = CGRectMake(labelFrame.origin.x,
                                        labelFrame.origin.y + labelFrame.size.height + TEXT_FIELD_MARGIN, 
                                        labelFrame.size.width, 
                                        textFieldSize.height);
