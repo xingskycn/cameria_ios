@@ -390,8 +390,12 @@ static NSData *_endMarkerData = nil;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    // adds the "just" received data to the buffer containing
+    // the complete set of received data
     [_receivedData appendData:data];
-    
+
+    // tries to retrieve the end range value using the currently
+    // set end marker as the reference for such calculus
     NSRange endRange = [_receivedData rangeOfData:_endMarkerData
                                           options:0
                                             range:NSMakeRange(0, _receivedData.length)];
