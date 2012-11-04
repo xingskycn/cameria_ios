@@ -314,22 +314,19 @@ static NSData *_endMarkerData = nil;
 #pragma mark - Overrides
 
 - (void)dealloc {
+    // in case the connection is defined it
+    // must be canceled and the cleanup operation
+    // must be performed
     if(_connection) {
         [_connection cancel];
         [self cleanupConnection];
     }
     
-    if(_url) {
-        [_url release];
-    }
-    
-    if(_username) {
-        [_username release];
-    }
-    
-    if(_password) {
-        [_password release];
-    }
+    // releases the various components of the
+    // current structure in case they are defined
+    if(_url) { [_url release]; }
+    if(_username) { [_username release]; }
+    if(_password) { [_password release]; }
     
     [super dealloc];
 }
