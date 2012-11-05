@@ -68,7 +68,7 @@
 		C636B818143B7538008CB95D = {
 			isa = PBXGroup;
 			children = (
-				C636B82D143B7538008CB95D /* cameria */,
+				C636B82D143B7538008CB95D /* Cameria */,
 				C636B826143B7538008CB95D /* Frameworks */,
 				C636B824143B7538008CB95D /* Products */,
 			);
@@ -92,7 +92,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C636B82D143B7538008CB95D /* cameria */ = {
+		C636B82D143B7538008CB95D /* Cameria */ = {
 			isa = PBXGroup;
 			children = (
 				C2E70739160290BA00EAC308 /* MotionJpegImageView.h */,
@@ -104,7 +104,7 @@
 				C636B840143B7538008CB95D /* iPad */,
 				C636B82E143B7538008CB95D /* Supporting Files */,
 			);
-			name = cameria;
+			name = Cameria;
 			path = MotionJpegImageView;
 			sourceTree = "<group>";
 		};
