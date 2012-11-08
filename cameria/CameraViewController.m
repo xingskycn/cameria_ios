@@ -36,6 +36,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    /*self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.translucent = YES;
+    self.wantsFullScreenLayout = YES;*/
 }
 
 - (void)didReceiveMemoryWarning {

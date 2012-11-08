@@ -80,6 +80,9 @@
         self.cameraViewController = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
     }
     
+/*    [self presentModalViewController:theOtherViewController animated:YES];
+    momctr.modalPresentationStyle=UIModalPresentationFullScreen;*/
+    
     //self.detailViewController.detailItem = object;
     [self.navigationController pushViewController:self.cameraViewController animated:YES];
 }

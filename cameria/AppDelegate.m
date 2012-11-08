@@ -70,13 +70,18 @@
     UIViewController *setsViewController;
     UIViewController *camerasViewController;
     UIViewController *creditsViewController;
+    UINavigationController *setsNavigationViewController;
+    UINavigationController *camerasNavigationViewController;
     
     setsViewController = [[SetsViewController alloc] initWithNibName:@"SetsViewController" bundle:nil];
     camerasViewController = [[CamerasViewController alloc] initWithNibName:@"CamerasViewController" bundle:nil];
     creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];    
+
+    setsNavigationViewController = [[UINavigationController alloc] initWithRootViewController:setsViewController];
+    camerasNavigationViewController = [[UINavigationController alloc] initWithRootViewController:camerasViewController];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[setsViewController, camerasViewController, creditsViewController];
+    tabBarController.viewControllers = @[setsNavigationViewController, camerasNavigationViewController, creditsViewController];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     
