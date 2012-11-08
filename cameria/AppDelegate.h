@@ -26,11 +26,13 @@
 #import <UIKit/UIKit.h>
 #import "MotionJpegImageView.h"
 
-@interface AppDelegate : NSObject<UIApplicationDelegate> {
+@interface AppDelegate : UIResponder<UIApplicationDelegate> {
     @private
     MotionJpegImageView *_imageView;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) UISplitViewController *splitViewController;
 
 @end

@@ -65,24 +65,22 @@
     [self.window makeKeyAndVisible];*/
     
     
+    // creates a new window object and sets it in the current application
+    // (this should be the main window of the application)
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
     UIViewController *setsViewController;
     UIViewController *camerasViewController;
     UIViewController *creditsViewController;
     
     setsViewController = [[SetsViewController alloc] initWithNibName:@"SetsViewController" bundle:nil];
     camerasViewController = [[CamerasViewController alloc] initWithNibName:@"CamerasViewController" bundle:nil];
-    creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
-    
+    creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];    
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[setsViewController, camerasViewController, creditsViewController];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
-    
-    
-    
     
     return YES;
 }
