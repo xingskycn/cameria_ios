@@ -16,6 +16,16 @@
 		C2E707531602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E707511602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.m */; };
 		C2E707561602915B00EAC308 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E707541602915B00EAC308 /* MainWindow_iPhone.xib */; };
 		C2EFA1D21646D1C000200EC0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EFA1D11646D1C000200EC0 /* Default-568h@2x.png */; };
+		C3121F5A164BD4A200739ADB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C3121F50164BD4A200739ADB /* Icon-72.png */; };
+		C3121F5B164BD4A200739ADB /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3121F51164BD4A200739ADB /* Icon-72@2x.png */; };
+		C3121F5C164BD4A200739ADB /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3121F52164BD4A200739ADB /* Icon-Small-50.png */; };
+		C3121F5D164BD4A200739ADB /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3121F53164BD4A200739ADB /* Icon-Small-50@2x.png */; };
+		C3121F5E164BD4A200739ADB /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = C3121F54164BD4A200739ADB /* Icon-Small.png */; };
+		C3121F5F164BD4A200739ADB /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3121F55164BD4A200739ADB /* Icon-Small@2x.png */; };
+		C3121F60164BD4A200739ADB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3121F56164BD4A200739ADB /* Icon.png */; };
+		C3121F61164BD4A200739ADB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3121F57164BD4A200739ADB /* Icon@2x.png */; };
+		C3121F62164BD4A200739ADB /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = C3121F58164BD4A200739ADB /* iTunesArtwork.png */; };
+		C3121F63164BD4A200739ADB /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3121F59164BD4A200739ADB /* iTunesArtwork@2x.png */; };
 		C636B828143B7538008CB95D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B827143B7538008CB95D /* UIKit.framework */; };
 		C636B82A143B7538008CB95D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B829143B7538008CB95D /* Foundation.framework */; };
 		C636B82C143B7538008CB95D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B82B143B7538008CB95D /* CoreGraphics.framework */; };
@@ -37,6 +47,16 @@
 		C2E707511602914500EAC308 /* MotionJpegImageViewAppDelegate_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionJpegImageViewAppDelegate_iPad.m; path = cameria/iPad/MotionJpegImageViewAppDelegate_iPad.m; sourceTree = SOURCE_ROOT; };
 		C2E707551602915B00EAC308 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = cameria/iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = SOURCE_ROOT; };
 		C2EFA1D11646D1C000200EC0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "cameria/Resources/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		C3121F50164BD4A200739ADB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "cameria/Resources/Icon-72.png"; sourceTree = SOURCE_ROOT; };
+		C3121F51164BD4A200739ADB /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "cameria/Resources/Icon-72@2x.png"; sourceTree = SOURCE_ROOT; };
+		C3121F52164BD4A200739ADB /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "cameria/Resources/Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
+		C3121F53164BD4A200739ADB /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50@2x.png"; path = "cameria/Resources/Icon-Small-50@2x.png"; sourceTree = SOURCE_ROOT; };
+		C3121F54164BD4A200739ADB /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "cameria/Resources/Icon-Small.png"; sourceTree = SOURCE_ROOT; };
+		C3121F55164BD4A200739ADB /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "cameria/Resources/Icon-Small@2x.png"; sourceTree = SOURCE_ROOT; };
+		C3121F56164BD4A200739ADB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = cameria/Resources/Icon.png; sourceTree = SOURCE_ROOT; };
+		C3121F57164BD4A200739ADB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "cameria/Resources/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		C3121F58164BD4A200739ADB /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = cameria/Resources/iTunesArtwork.png; sourceTree = SOURCE_ROOT; };
+		C3121F59164BD4A200739ADB /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "cameria/Resources/iTunesArtwork@2x.png"; sourceTree = SOURCE_ROOT; };
 		C636B823143B7538008CB95D /* cameria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C636B827143B7538008CB95D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C636B829143B7538008CB95D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +80,16 @@
 		C2EFA1D01646D14900200EC0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C3121F50164BD4A200739ADB /* Icon-72.png */,
+				C3121F51164BD4A200739ADB /* Icon-72@2x.png */,
+				C3121F52164BD4A200739ADB /* Icon-Small-50.png */,
+				C3121F53164BD4A200739ADB /* Icon-Small-50@2x.png */,
+				C3121F54164BD4A200739ADB /* Icon-Small.png */,
+				C3121F55164BD4A200739ADB /* Icon-Small@2x.png */,
+				C3121F56164BD4A200739ADB /* Icon.png */,
+				C3121F57164BD4A200739ADB /* Icon@2x.png */,
+				C3121F58164BD4A200739ADB /* iTunesArtwork.png */,
+				C3121F59164BD4A200739ADB /* iTunesArtwork@2x.png */,
 				C2EFA1D11646D1C000200EC0 /* Default-568h@2x.png */,
 			);
 			name = Resources;
@@ -194,6 +224,16 @@
 				C2E707561602915B00EAC308 /* MainWindow_iPhone.xib in Resources */,
 				C274F3771602959F00FEF992 /* MainWindow_iPad.xib in Resources */,
 				C2EFA1D21646D1C000200EC0 /* Default-568h@2x.png in Resources */,
+				C3121F5A164BD4A200739ADB /* Icon-72.png in Resources */,
+				C3121F5B164BD4A200739ADB /* Icon-72@2x.png in Resources */,
+				C3121F5C164BD4A200739ADB /* Icon-Small-50.png in Resources */,
+				C3121F5D164BD4A200739ADB /* Icon-Small-50@2x.png in Resources */,
+				C3121F5E164BD4A200739ADB /* Icon-Small.png in Resources */,
+				C3121F5F164BD4A200739ADB /* Icon-Small@2x.png in Resources */,
+				C3121F60164BD4A200739ADB /* Icon.png in Resources */,
+				C3121F61164BD4A200739ADB /* Icon@2x.png in Resources */,
+				C3121F62164BD4A200739ADB /* iTunesArtwork.png in Resources */,
+				C3121F63164BD4A200739ADB /* iTunesArtwork@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
