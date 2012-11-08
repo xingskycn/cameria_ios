@@ -23,16 +23,22 @@
 // __copyright__ = Copyright (c) 2008-2012 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import "MotionJpegImageViewAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation MotionJpegImageViewAppDelegate
+
+
+#import "SetsViewController.h"
+#import "CamerasViewController.h"
+#import "CreditsViewController.h"
+
+@implementation AppDelegate
 
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // creates the url to be used in the visualization of
     // the data in the motion image view
-    NSURL *url = [NSURL URLWithString:@"http://root:root@lugardajoiadvdouro.dyndns.org:7000/axis-cgi/mjpg/video.cgi?camera=1&resolution=640x480&compression=30&fps=4&clock=0"];
+    /*NSURL *url = [NSURL URLWithString:@"http://root:root@lugardajoiadvdouro.dyndns.org:7000/axis-cgi/mjpg/video.cgi?camera=1&resolution=640x480&compression=30&fps=4&clock=0"];
 
     // creates the motion jpeg image view with the currently
     // defined frame and sets the url in it for the loading
@@ -47,7 +53,37 @@
     
     // makes the window visible and the returns
     // in success to the caller
+    [self.window makeKeyAndVisible];*/
+    
+    
+    // creates a new window object and sets it in the current application
+    // (this should be the main window of the application)
+    /*self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    CreditsViewController *creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
+    self.window.rootViewController = creditsViewController;
+    [self.window makeKeyAndVisible];*/
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    UIViewController *setsViewController;
+    UIViewController *camerasViewController;
+    UIViewController *creditsViewController;
+    
+    setsViewController = [[SetsViewController alloc] initWithNibName:@"SetsViewController" bundle:nil];
+    camerasViewController = [[CamerasViewController alloc] initWithNibName:@"CamerasViewController" bundle:nil];
+    creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
+    
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[setsViewController, camerasViewController, creditsViewController];
+    self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
+    
+    
+    
+    
     return YES;
 }
 

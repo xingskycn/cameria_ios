@@ -26,7 +26,7 @@
 #import <UIKit/UIKit.h>
 #import "MotionJpegImageView.h"
 
-@interface MotionJpegImageViewAppDelegate : NSObject<UIApplicationDelegate> {
+@interface AppDelegate : NSObject<UIApplicationDelegate> {
     @private
     MotionJpegImageView *_imageView;
 }
