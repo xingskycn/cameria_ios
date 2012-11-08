@@ -25,8 +25,6 @@
 
 #import "AppDelegate.h"
 
-
-
 #import "SetsViewController.h"
 #import "CamerasViewController.h"
 #import "CreditsViewController.h"

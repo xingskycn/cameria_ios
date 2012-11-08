@@ -25,6 +25,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetsViewController : UIViewController
+#import "CameraViewController.h"
+
+@interface SetsViewController : UIViewController<UITableViewDataSource> {
+    @private
+    CameraViewController *_cameraViewController;
+}
+
+@property (strong) CameraViewController *cameraViewController;
 
 @end

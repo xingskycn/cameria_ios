@@ -25,7 +25,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CamerasViewController : UIViewController<UITableViewDataSource> {
+@interface CameraViewController : UIViewController {
 }
 
 @end

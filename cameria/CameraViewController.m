@@ -23,53 +23,23 @@
 // __copyright__ = Copyright (c) 2008-2012 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import "CamerasViewController.h"
+#import "CameraViewController.h"
 
-@implementation CamerasViewController
+@implementation CameraViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Cameras", @"Cameras");
-        self.tabBarItem.image = [UIImage imageNamed:@"icon-cameras.png"];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // retrieves the pattern image to be used and sets it in
-    // the current view (should be able to change the background)
-    UIImage *patternImage = [UIImage imageNamed:@"main-background.png"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
-    
-    //NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = @"Tobias";
-    return cell;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
 }
 
 @end
