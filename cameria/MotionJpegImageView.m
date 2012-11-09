@@ -94,7 +94,7 @@
               otherButtonTitles:NSLocalizedString(@"LoginButtonTitle", @""),
             nil];
     
-    if(self) {
+    if(self) {       
         _credentialDelegate = delegate;
 
         _usernameField = [[UITextField alloc] initWithFrame:CGRectZero];
@@ -298,6 +298,27 @@ static NSData *_endMarkerData = nil;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
+    
+    if(self) {
+        _url = nil;
+        _receivedData = nil;
+        _username = nil;
+        _password = nil;
+        _allowSelfSignedCertificates = NO;
+        
+        if(_endMarkerData == nil) {
+            uint8_t endMarker[2] = END_MARKER_BYTES;
+            _endMarkerData = [[NSData alloc] initWithBytes:endMarker length:2];
+        }
+        
+        self.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
     
     if(self) {
         _url = nil;
