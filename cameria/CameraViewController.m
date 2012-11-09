@@ -46,6 +46,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // updates the scroll view frame so that it's possible to
+    // use a black margin to separate the various pages
+    self.scrollView.frame = CGRectMake(
+        0, 0, self.scrollView.frame.size.width + BLACK_MARGIN_SIZE, self.scrollView.frame.size.height
+    );
+    
     // sets the delegate for the assiciated scroll view
     // as the current controller this should allow it to
     // handle the scroll "events"
