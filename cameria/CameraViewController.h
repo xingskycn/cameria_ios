@@ -27,6 +27,12 @@
 
 #import "MotionJpegImageView.h"
 
+/**
+ * The margin to be used in between the various
+ * elements in the scroll panel.
+ */
+#define BLACK_MARGIN_SIZE 14.0f
+
 @interface CameraViewController : UIViewController<UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     @private
     bool _navigationVisible;

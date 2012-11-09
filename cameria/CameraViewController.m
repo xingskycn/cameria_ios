@@ -54,7 +54,7 @@
     // enables the user interaction so that the touch events
     // are gathered and correctly handled
     self.view.userInteractionEnabled = YES;
-
+    
     // creates the complete set of cameras panels to be used
     // to display the cameras (eager creation), this should
     // consume some resources (depending on the range of
@@ -154,6 +154,10 @@
     // thei height of it) to be able to position the cameraS
     CGFloat pageWidth = self.scrollView.frame.size.width;
     CGFloat pageHeight = self.scrollView.frame.size.height;
+
+    // calculates the "virtual" size of a page in order to be
+    // able to use the "black margin" between pages"
+    CGFloat _pageWidth = self.scrollView.frame.size.width - BLACK_MARGIN_SIZE;
     
     // iterates over the complete set of cameras to be
     // displayed in the current panel
@@ -167,10 +171,16 @@
         // to be used in the motion image connection
         NSURL *url = [NSURL URLWithString:cameraUrl];
         
-        // retrieves the current view associated as a motion jpeg
+        // creates the image view container that will contain the image
+        // in order to provide capabilities for the "black margin"
+        UIView *imageContainerView = [[UIView alloc] initWithFrame:CGRectMake(index * pageWidth, 0, pageWidth, pageHeight)];
+        imageContainerView.backgroundColor = [UIColor blackColor];
+        imageContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+        
+        // retrieves/creates the current view associated as a motion jpeg
         // image view to be used for visualization
-        MotionJpegImageView *imageView = [[MotionJpegImageView alloc] initWithFrame:CGRectMake(index * pageWidth, 0, pageWidth, pageHeight)];
-        imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+        MotionJpegImageView *imageView = [[MotionJpegImageView alloc] initWithFrame:CGRectMake(0, 0, _pageWidth, pageHeight)];
+        imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         // sets the "target" url value in the image view and then
         // starts playing the motion image (loading started)
@@ -178,8 +188,10 @@
         [imageView play];
         
         // adds the image view panel to the scroll view push it
-        // into the end of the video panels "stack"
-        [self.scrollView addSubview:imageView];
+        // into the end of the video panels "stack", note that
+        // the image view is contained under the image container
+        [imageContainerView addSubview:imageView];
+        [self.scrollView addSubview:imageContainerView];
     }
 }
 
