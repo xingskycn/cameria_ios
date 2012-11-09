@@ -34,34 +34,9 @@
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // creates the url to be used in the visualization of
-    // the data in the motion image view
-    /*NSURL *url = [NSURL URLWithString:@"http://root:root@lugardajoiadvdouro.dyndns.org:7000/axis-cgi/mjpg/video.cgi?camera=1&resolution=640x480&compression=30&fps=4&clock=0"];
-
-    // creates the motion jpeg image view with the currently
-    // defined frame and sets the url in it for the loading
-    // of the image (simple usage)
-    _imageView = [[MotionJpegImageView alloc] initWithFrame:self.window.frame];
-    _imageView.url = url;
-    
-    // adds the image view to the window and starts
-    // playing the image (downloads content)
-    [self.window addSubview:_imageView];
-    [_imageView play];
-    
-    // makes the window visible and the returns
-    // in success to the caller
-    [self.window makeKeyAndVisible];*/
-    
-    
-    // creates a new window object and sets it in the current application
-    // (this should be the main window of the application)
-    /*self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    CreditsViewController *creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
-    self.window.rootViewController = creditsViewController;
-    [self.window makeKeyAndVisible];*/
-    
+    // initializes the default values in the preferences structure
+    // in case they don't already exist (and are defined)
+    [self setDefaults];    
     
     // creates a new window object and sets it in the current application
     // (this should be the main window of the application)
@@ -107,6 +82,21 @@
     [_imageView release];
     
     [super dealloc];
+}
+
+- (void)setDefaults {
+    // retrieves the current preferences structure and tries to
+    // retrieve the values that are considered basic, in order
+    // to check if theya are already defined
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *baseUrl = [preferences valueForKey:@"baseUrl"];
+    
+    // checks various value for the presence of the value and in
+    // case it's not defined sets the default value, then flushes
+    // the preferences to the secondary storage
+    if(baseUrl == nil) { [preferences setValue:@"https://cameria.herokuapp.com/"
+                                        forKey:@"baseUrl"];}
+    [preferences synchronize];
 }
 
 @end

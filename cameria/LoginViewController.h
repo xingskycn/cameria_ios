@@ -25,15 +25,13 @@
 
 #import "Dependencies.h"
 
-#import "CameraViewController.h"
 #import "ProxyRequest.h"
 #import "ProxyRequestDelegate.h"
 
-@interface SetsViewController : UIViewController<UITableViewDataSource, ProxyRequestDelegate> {
-    @private
-    CameraViewController *_cameraViewController;
+@interface LoginViewController : UIViewController<UITextFieldDelegate, ProxyRequestDelegate> {
 }
 
-@property (strong) CameraViewController *cameraViewController;
+- (IBAction)textFieldFinished:(id)sender;
+- (void)handleException:(NSDictionary *)exception;
 
 @end

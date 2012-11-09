@@ -25,15 +25,39 @@
 
 #import "Dependencies.h"
 
-#import "CameraViewController.h"
-#import "ProxyRequest.h"
+#import "HMJsonRequest.h"
+#import "HMJsonRequestDelegate.h"
 #import "ProxyRequestDelegate.h"
+#import "LoginViewController.h"
 
-@interface SetsViewController : UIViewController<UITableViewDataSource, ProxyRequestDelegate> {
+/**
+ * Responsible for the coordination of the remote calls
+ * with the proper visual changes (loading mask settings).
+ */
+@interface ProxyRequest : NSObject<HMJsonRequestDelegate> {
     @private
-    CameraViewController *_cameraViewController;
+    NSObject<ProxyRequestDelegate> *_delegate;
+    UIViewController *_controller;
+    NSString *_path;
+    NSArray *_parameters;
+    UIView *_mask;
+    UIActivityIndicatorView *_maskIndicator;
+    HMJsonRequest *_jsonRequest;
+    bool _loading;
+    bool _useSession;
 }
 
-@property (strong) CameraViewController *cameraViewController;
+@property (strong) NSObject<ProxyRequestDelegate> *delegate;
+@property (strong) UIViewController *controller;
+@property (strong) NSString *path;
+@property (strong) NSArray *parameters;
+@property (strong) UIView *mask;
+@property (strong) UIActivityIndicatorView *maskIndicator;
+@property (strong) HMJsonRequest *jsonRequest;
+@property bool loading;
+@property bool useSession;
+
+- initWithPath:(UIViewController *)controller path:(NSString *)path;
+- (void)load;
 
 @end

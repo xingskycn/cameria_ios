@@ -25,15 +25,16 @@
 
 #import "Dependencies.h"
 
-#import "CameraViewController.h"
-#import "ProxyRequest.h"
-#import "ProxyRequestDelegate.h"
+@protocol ProxyRequestDelegate<NSObject>
 
-@interface SetsViewController : UIViewController<UITableViewDataSource, ProxyRequestDelegate> {
-    @private
-    CameraViewController *_cameraViewController;
-}
+@optional
 
-@property (strong) CameraViewController *cameraViewController;
+- (void)didSend;
+- (void)didReceive;
+
+@required
+
+- (void)didReceiveData:(NSDictionary *)data;
+- (void)didReceiveError:(NSError *)error;
 
 @end

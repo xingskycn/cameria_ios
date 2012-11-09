@@ -23,7 +23,7 @@
 // __copyright__ = Copyright (c) 2008-2012 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
-#import <UIKit/UIKit.h>
+#import "Dependencies.h"
 
 #import "MotionJpegImageView.h"
 
@@ -31,7 +31,7 @@
  * The margin to be used in between the various
  * elements in the scroll panel.
  */
-#define BLACK_MARGIN_SIZE 24
+#define BLACK_MARGIN_SIZE 36
 
 @interface CameraViewController : UIViewController<UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     @private

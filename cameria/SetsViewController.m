@@ -47,6 +47,12 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidLoad];
+    
+    [self loadValues];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -85,6 +91,23 @@
     }
     
     [self.navigationController pushViewController:self.cameraViewController animated:YES];
+}
+
+
+- (void)loadValues {
+    ProxyRequest *proxyRequest = [[ProxyRequest alloc] initWithPath:self path:@"sale_snapshots/stats.json"];
+    proxyRequest.delegate = self;
+    proxyRequest.parameters = [NSArray arrayWithObjects:
+                               [NSArray arrayWithObjects:@"unit", @"day", nil],
+                               [NSArray arrayWithObjects:@"span", @"6", nil],
+                               [NSArray arrayWithObjects:@"output", @"extended", nil], nil];
+    [proxyRequest load];
+}
+
+- (void)didReceiveData:(NSDictionary *)data {
+}
+
+- (void)didReceiveError:(NSError *)error {
 }
 
 @end
