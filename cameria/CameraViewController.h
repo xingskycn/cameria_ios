@@ -25,7 +25,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CameraViewController : UIViewController {
+#import "MotionJpegImageView.h"
+
+@interface CameraViewController : UIViewController<UIGestureRecognizerDelegate> {
+    @private
+    bool _navigationVisible;
+    NSArray *_cameras;
+    NSMutableArray *_cameraViews;
+    UIScrollView *_scrollView;
 }
+
+@property bool navigationVisible;
+@property (strong) NSArray *cameras;
+@property (strong) NSMutableArray *cameraViews;
+@property (strong) IBOutlet UIScrollView *scrollView;
 
 @end

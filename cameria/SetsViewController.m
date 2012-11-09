@@ -78,12 +78,12 @@
     
     if(!self.cameraViewController) {
         self.cameraViewController = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
+        self.cameraViewController.cameras = [NSArray arrayWithObjects:
+                                             [NSArray arrayWithObjects:@"dvd_01", @"http://root:root@lugardajoiadvdouro.dyndns.org:7000/axis-cgi/mjpg/video.cgi?camera=1&resolution=640x480&compression=30&fps=4&clock=0", nil],
+                                             [NSArray arrayWithObjects:@"dvd_02", @"http://root:root@lugardajoiadvdouro.dyndns.org:7001/axis-cgi/mjpg/video.cgi?camera=1&resolution=640x480&compression=30&fps=4&clock=0", nil],
+                                             [NSArray arrayWithObjects:@"dvd_03", @"http://root:root@lugardajoiadvdouro.dyndns.org:7002/axis-cgi/mjpg/video.cgi?camera=1&resolution=640x480&compression=30&fps=4&clock=0", nil],nil];
     }
     
-/*    [self presentModalViewController:theOtherViewController animated:YES];
-    momctr.modalPresentationStyle=UIModalPresentationFullScreen;*/
-    
-    //self.detailViewController.detailItem = object;
     [self.navigationController pushViewController:self.cameraViewController animated:YES];
 }
 
