@@ -27,15 +27,17 @@
 
 #import "MotionJpegImageView.h"
 
-@interface CameraViewController : UIViewController<UIGestureRecognizerDelegate> {
+@interface CameraViewController : UIViewController<UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     @private
     bool _navigationVisible;
+    int _pageIndex;
     NSArray *_cameras;
     NSMutableArray *_cameraViews;
     UIScrollView *_scrollView;
 }
 
 @property bool navigationVisible;
+@property int pageIndex;
 @property (strong) NSArray *cameras;
 @property (strong) NSMutableArray *cameraViews;
 @property (strong) IBOutlet UIScrollView *scrollView;
