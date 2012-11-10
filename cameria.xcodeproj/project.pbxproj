@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C29A0B45164E95E200FE0A1A /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29A0B44164E95E200FE0A1A /* CreditsViewController.xib */; };
 		C2E7073D160290BA00EAC308 /* MotionJpegImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E7073A160290BA00EAC308 /* MotionJpegImageView.m */; };
 		C2E7073E160290BA00EAC308 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E7073C160290BA00EAC308 /* AppDelegate.m */; };
 		C2E7074B1602913A00EAC308 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2E707481602913A00EAC308 /* Localizable.strings */; };
 		C2E7074C1602913A00EAC308 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E707491602913A00EAC308 /* main.m */; };
 		C30432A6164C30170037CE05 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30432A5164C30170037CE05 /* MainWindow.xib */; };
-		C3505498164C1870006AEFB1 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3505497164C1870006AEFB1 /* CreditsViewController.xib */; };
 		C35054A5164C18C0006AEFB1 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C350549B164C18C0006AEFB1 /* Icon-72.png */; };
 		C35054A6164C18C0006AEFB1 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C350549C164C18C0006AEFB1 /* Icon-72@2x.png */; };
 		C35054A7164C18C0006AEFB1 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C350549D164C18C0006AEFB1 /* Icon-Small-50.png */; };
@@ -59,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C29A0B44164E95E200FE0A1A /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreditsViewController.xib; path = cameria/CreditsViewController.xib; sourceTree = SOURCE_ROOT; };
 		C2E70739160290BA00EAC308 /* MotionJpegImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageView.h; path = cameria/MotionJpegImageView.h; sourceTree = SOURCE_ROOT; };
 		C2E7073A160290BA00EAC308 /* MotionJpegImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionJpegImageView.m; path = cameria/MotionJpegImageView.m; sourceTree = SOURCE_ROOT; };
 		C2E7073B160290BA00EAC308 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cameria/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -68,7 +69,6 @@
 		C2E707481602913A00EAC308 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = cameria/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		C2E707491602913A00EAC308 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cameria/main.m; sourceTree = SOURCE_ROOT; };
 		C30432A5164C30170037CE05 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = cameria/MainWindow.xib; sourceTree = SOURCE_ROOT; };
-		C3505497164C1870006AEFB1 /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = SOURCE_ROOT; };
 		C350549B164C18C0006AEFB1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "cameria/Resources/icons/Icon-72.png"; sourceTree = SOURCE_ROOT; };
 		C350549C164C18C0006AEFB1 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "cameria/Resources/icons/Icon-72@2x.png"; sourceTree = SOURCE_ROOT; };
 		C350549D164C18C0006AEFB1 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "cameria/Resources/icons/Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
@@ -242,7 +242,7 @@
 				C37C7AC1164C378F00E956ED /* CameraViewController.xib */,
 				C35054CE164C19D6006AEFB1 /* CreditsViewController.h */,
 				C35054CF164C19D6006AEFB1 /* CreditsViewController.m */,
-				C3505497164C1870006AEFB1 /* CreditsViewController.xib */,
+				C29A0B44164E95E200FE0A1A /* CreditsViewController.xib */,
 				C3FB288A164D84A1008F4981 /* HMJsonRequest.h */,
 				C3FB288B164D84A1008F4981 /* HMJsonRequest.m */,
 				C3FB288C164D84A2008F4981 /* HMJsonRequestDelegate.h */,
@@ -326,7 +326,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2E7074B1602913A00EAC308 /* Localizable.strings in Resources */,
-				C3505498164C1870006AEFB1 /* CreditsViewController.xib in Resources */,
 				C35054A5164C18C0006AEFB1 /* Icon-72.png in Resources */,
 				C35054A6164C18C0006AEFB1 /* Icon-72@2x.png in Resources */,
 				C35054A7164C18C0006AEFB1 /* Icon-Small-50.png in Resources */,
@@ -361,6 +360,7 @@
 				C3FB2885164D83C1008F4981 /* button@2x.png in Resources */,
 				C3FB2886164D83C1008F4981 /* textfields_a.png in Resources */,
 				C3FB2887164D83C1008F4981 /* textfields_a@2x.png in Resources */,
+				C29A0B45164E95E200FE0A1A /* CreditsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
