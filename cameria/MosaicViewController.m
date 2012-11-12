@@ -25,7 +25,11 @@
 
 #import "MosaicViewController.h"
 
+#import "MotionJpegImageView.h"
+
 @implementation MosaicViewController
+
+@synthesize mosaicView = _mosaicView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,6 +39,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    for(int index = 0; index < 20; index++) {
+        //        UIImageView *tobias = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
+        
+        MotionJpegImageView *tobias = [[MotionJpegImageView alloc] init];
+        tobias.url = [NSURL URLWithString:@"http://root:root@lugardajoiafa.dyndns.org:7000/axis-cgi/mjpg/video.cgi?camera=1&resolution=320x240&compression=50&fps=1&clock=0"];
+        tobias.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        tobias.loadingImage.image = [UIImage imageNamed:@"loading.png"];
+        tobias.errorImage.image = [UIImage imageNamed:@"error.png"];
+        
+        [self.mosaicView addImageView:tobias];
+        
+        [tobias play];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

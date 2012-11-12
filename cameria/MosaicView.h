@@ -25,13 +25,14 @@
 
 #import "Dependencies.h"
 
-#import "MosaicView.h"
-
-@interface MosaicViewController : UIViewController {
+@interface MosaicView : UIView {
     @private
-    MosaicView *_mosaicView;
+    UIScrollView *_scrollView;
+    NSMutableArray *_imageViews;
 }
 
-@property (strong) IBOutlet MosaicView *mosaicView;
+@property (strong) NSMutableArray *imageViews;
+
+- (void)addImageView:(UIImageView *)imageView;
 
 @end
