@@ -546,6 +546,12 @@ static NSData *_endMarkerData = nil;
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     [self cleanupConnection];
 
+    // unsets the current image so that nothing is display
+    // in the screen (black screen)
+    self.image = nil;
+    
+    // hides the loading image and show the error image so
+    // that the uses is notified about the error
     _loadingImage.hidden = YES;
     _errorImage.hidden = NO;
 

@@ -79,6 +79,14 @@
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     tapRecognizer.delegate = self;
     [self.view addGestureRecognizer:tapRecognizer];
+    
+    // creates the structure for the refresh button and then adds
+    // itto the right of the navigation panel
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(refreshClick:)];
+    self.navigationItem.rightBarButtonItem = refreshButton;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -194,6 +202,12 @@
     // according to the current navigation visibility
     if(self.navigationVisible) { [self hideHeader]; }
     else { [self showHeader]; }
+}
+
+- (IBAction)refreshClick:(id)sender {
+    // runs the play cameras operation so that a new
+    // tryout is done to the loading of the stream
+    [self playCameras];
 }
 
 - (void)createCameras {
