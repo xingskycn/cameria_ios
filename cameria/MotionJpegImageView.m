@@ -432,6 +432,18 @@ static NSData *_endMarkerData = nil;
 
 #pragma mark - Private Methods
 
+- (void)createImages {
+    _loadingImage = [[UIImageView alloc] initWithFrame:CGRectMake(80, 199, 160, 150)];
+    _loadingImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    
+    _errorImage = [[UIImageView alloc] initWithFrame:CGRectMake(80, 199, 160, 150)];
+    _errorImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    _errorImage.hidden = YES;
+    
+    [self addSubview:_loadingImage];
+    [self addSubview:_errorImage];
+}
+
 - (void)cleanupConnection {
     // in case the current connection is defined
     // it must be releases and the reference unset
@@ -446,18 +458,6 @@ static NSData *_endMarkerData = nil;
         [_receivedData release];
         _receivedData = nil;
     }
-}
-
-- (void)createImages {
-    _loadingImage = [[UIImageView alloc] initWithFrame:CGRectMake(80, 199, 160, 150)];
-    _loadingImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    
-    _errorImage = [[UIImageView alloc] initWithFrame:CGRectMake(80, 199, 160, 150)];
-    _errorImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    _errorImage.hidden = YES;
-    
-    [self addSubview:_loadingImage];
-    [self addSubview:_errorImage];
 }
 
 #pragma mark - NSURLConnection Delegate Methods
