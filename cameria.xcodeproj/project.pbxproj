@@ -53,6 +53,10 @@
 		C3FB2886164D83C1008F4981 /* textfields_a.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB2882164D83C1008F4981 /* textfields_a.png */; };
 		C3FB2887164D83C1008F4981 /* textfields_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB2883164D83C1008F4981 /* textfields_a@2x.png */; };
 		C3FB288D164D84A2008F4981 /* HMJsonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB288B164D84A1008F4981 /* HMJsonRequest.m */; };
+		C3FB8904165166CB004253FC /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB8902165166CB004253FC /* error.png */; };
+		C3FB8905165166CB004253FC /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB8903165166CB004253FC /* error@2x.png */; };
+		C3FB890A165169C5004253FC /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB8908165169C5004253FC /* loading.png */; };
+		C3FB890B165169C5004253FC /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB8909165169C5004253FC /* loading@2x.png */; };
 		C636B828143B7538008CB95D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B827143B7538008CB95D /* UIKit.framework */; };
 		C636B82A143B7538008CB95D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B829143B7538008CB95D /* Foundation.framework */; };
 		C636B82C143B7538008CB95D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B82B143B7538008CB95D /* CoreGraphics.framework */; };
@@ -119,6 +123,11 @@
 		C3FB288A164D84A1008F4981 /* HMJsonRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMJsonRequest.h; path = cameria/HMJsonRequest.h; sourceTree = SOURCE_ROOT; };
 		C3FB288B164D84A1008F4981 /* HMJsonRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMJsonRequest.m; path = cameria/HMJsonRequest.m; sourceTree = SOURCE_ROOT; };
 		C3FB288C164D84A2008F4981 /* HMJsonRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMJsonRequestDelegate.h; path = cameria/HMJsonRequestDelegate.h; sourceTree = SOURCE_ROOT; };
+		C3FB8902165166CB004253FC /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = error.png; path = cameria/Resources/error.png; sourceTree = SOURCE_ROOT; };
+		C3FB8903165166CB004253FC /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "error@2x.png"; path = "cameria/Resources/error@2x.png"; sourceTree = SOURCE_ROOT; };
+		C3FB8907165167D8004253FC /* MotionJpegImageViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageViewDelegate.h; path = cameria/MotionJpegImageViewDelegate.h; sourceTree = SOURCE_ROOT; };
+		C3FB8908165169C5004253FC /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loading.png; path = cameria/Resources/loading.png; sourceTree = SOURCE_ROOT; };
+		C3FB8909165169C5004253FC /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading@2x.png"; path = "cameria/Resources/loading@2x.png"; sourceTree = SOURCE_ROOT; };
 		C636B823143B7538008CB95D /* cameria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C636B827143B7538008CB95D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C636B829143B7538008CB95D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,6 +151,10 @@
 		C2EFA1D01646D14900200EC0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C3FB8908165169C5004253FC /* loading.png */,
+				C3FB8909165169C5004253FC /* loading@2x.png */,
+				C3FB8902165166CB004253FC /* error.png */,
+				C3FB8903165166CB004253FC /* error@2x.png */,
 				C3FB2880164D83C1008F4981 /* button.png */,
 				C3FB2881164D83C1008F4981 /* button@2x.png */,
 				C3FB2882164D83C1008F4981 /* textfields_a.png */,
@@ -252,6 +265,7 @@
 				C30432A5164C30170037CE05 /* MainWindow.xib */,
 				C2E70739160290BA00EAC308 /* MotionJpegImageView.h */,
 				C2E7073A160290BA00EAC308 /* MotionJpegImageView.m */,
+				C3FB8907165167D8004253FC /* MotionJpegImageViewDelegate.h */,
 				C3FB2879164D8318008F4981 /* ProxyRequest.h */,
 				C3FB287A164D8318008F4981 /* ProxyRequest.m */,
 				C3FB287B164D8319008F4981 /* ProxyRequestDelegate.h */,
@@ -361,6 +375,10 @@
 				C3FB2886164D83C1008F4981 /* textfields_a.png in Resources */,
 				C3FB2887164D83C1008F4981 /* textfields_a@2x.png in Resources */,
 				C29A0B45164E95E200FE0A1A /* CreditsViewController.xib in Resources */,
+				C3FB8904165166CB004253FC /* error.png in Resources */,
+				C3FB8905165166CB004253FC /* error@2x.png in Resources */,
+				C3FB890A165169C5004253FC /* loading.png in Resources */,
+				C3FB890B165169C5004253FC /* loading@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
