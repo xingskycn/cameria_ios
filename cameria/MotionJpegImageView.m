@@ -361,6 +361,10 @@ static NSData *_endMarkerData = nil;
 #pragma mark - Public Methods
 
 - (void)play {
+    // unsets the thumb mode, the stream is meant to
+    // be started in "continuous" mode
+    _thumbMode = NO;
+    
     // in case the connection is already set no need
     // to anything more (it's already playing)
     if(_connection) {}
@@ -393,6 +397,27 @@ static NSData *_endMarkerData = nil;
 - (void)stop {
     [self pause];
     [self clear];
+}
+
+- (void)thumb {
+    // sets the thumb mode flag so that only one image
+    // is loaded for the current motion jpeg
+    _thumbMode = YES;
+    
+    // in case there's already a thumb in the current motion
+    // image view must return immediately nothing to be done
+    if(_hasThumb) { return; }
+
+    // in case the connection is already set no need
+    // to anything more (it's already playing)
+    if(_connection) {}
+    
+    // otherwise in case the url is set, creates a new
+    // connection triggering the start of the motion
+    else if(_url) {
+        _connection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:_url]
+                                                      delegate:self];
+    }
 }
 
 #pragma mark - Private Methods
@@ -443,6 +468,8 @@ static NSData *_endMarkerData = nil;
         NSData *imageData = [_receivedData subdataWithRange:NSMakeRange(0, endLocation)];
         UIImage *receivedImage = [UIImage imageWithData:imageData];
         if(receivedImage) { self.image = receivedImage; }
+        if(_thumbMode) { [self pause]; }
+        _hasThumb = YES;
     }
 }
 

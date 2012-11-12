@@ -34,6 +34,8 @@
     NSString *_password;
     BOOL _allowSelfSignedCertificates;
     BOOL _allowClearTextCredentials;
+    BOOL _thumbMode;
+    BOOL _hasThumb;
 }
 
 @property (nonatomic, readwrite, copy) NSURL *url;
@@ -52,5 +54,6 @@
 - (void)pause;
 - (void)clear;
 - (void)stop;
+- (void)thumb;
 
 @end

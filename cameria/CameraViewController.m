@@ -239,8 +239,28 @@
 - (void)playCameras {
     for(int index = 0; index < [self.cameraViews count]; index++) {
         MotionJpegImageView *cameraView = self.cameraViews[index];
-        [cameraView play];
+        [cameraView thumb];
     }
+    
+    // retrieves the width of a page as the scroll view frame size
+    // and calculates the current page number using the current position
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    float pageNumberFloat = self.scrollView.contentOffset.x / pageWidth;
+    NSInteger pageNumber = lround(pageNumberFloat);
+
+    // retrieves the references to the previous and the next pages and
+    // uses them to retrieve the previous and next camera views
+    NSInteger previousPage = pageNumber > 0 ? pageNumber - 1 : 0;
+    NSInteger nextPage = pageNumber < [self.cameraViews count] - 1 ? pageNumber + 1 : [self.cameraViews count] - 1;
+    MotionJpegImageView *cameraView = self.cameraViews[pageNumber];
+    MotionJpegImageView *previousCameraView = self.cameraViews[previousPage];
+    MotionJpegImageView *nextCameraView = self.cameraViews[nextPage];
+    
+    // runs the play operation (starting the strem) on the various cameras
+    // that are meant to be streaming (only the border ones)
+    [cameraView play];
+    [previousCameraView play];
+    [nextCameraView play];
 }
 
 - (void)pauseCameras {
@@ -344,6 +364,10 @@
     NSArray *camera = self.cameras[pageNumber];
     NSString *cameraName = camera[0];
     self.navigationController.navigationBar.topItem.title = cameraName;
+    
+    // runs the play operation on the cameras to update their
+    // states according to the new page position
+    [self playCameras];
 }
 
 @end
