@@ -310,8 +310,12 @@ static NSData *_endMarkerData = nil;
             uint8_t endMarker[2] = END_MARKER_BYTES;
             _endMarkerData = [[NSData alloc] initWithBytes:endMarker length:2];
         }
-        
+
         self.contentMode = UIViewContentModeScaleAspectFit;
+        
+        // creates the placeholder images to be used in the current
+        // motion image view
+        [self createImages];
     }
     
     return self;
@@ -333,6 +337,10 @@ static NSData *_endMarkerData = nil;
         }
         
         self.contentMode = UIViewContentModeScaleAspectFit;
+        
+        // creates the placeholder images to be used in the current
+        // motion image view
+        [self createImages];
     }
     
     return self;
@@ -351,6 +359,8 @@ static NSData *_endMarkerData = nil;
     
     // releases the various components of the
     // current structure in case they are defined
+    if(_loadingImage) { [_loadingImage release]; }
+    if(_errorImage) { [_errorImage release]; }
     if(_url) { [_url release]; }
     if(_username) { [_username release]; }
     if(_password) { [_password release]; }
@@ -438,6 +448,18 @@ static NSData *_endMarkerData = nil;
     }
 }
 
+- (void)createImages {
+    _loadingImage = [[UIImageView alloc] initWithFrame:CGRectMake(80, 199, 160, 150)];
+    _loadingImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    
+    _errorImage = [[UIImageView alloc] initWithFrame:CGRectMake(80, 199, 160, 150)];
+    _errorImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    _errorImage.hidden = YES;
+    
+    [self addSubview:_loadingImage];
+    [self addSubview:_errorImage];
+}
+
 #pragma mark - NSURLConnection Delegate Methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -470,6 +492,10 @@ static NSData *_endMarkerData = nil;
         if(receivedImage) { self.image = receivedImage; }
         if(_thumbMode) { [self pause]; }
         _hasThumb = YES;
+        _loadingImage.hidden = YES;
+        _errorImage.hidden = YES;
+        
+        if(self.delegate) { [self.delegate didReceiveImage:self]; }
     }
 }
 
@@ -519,6 +545,11 @@ static NSData *_endMarkerData = nil;
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     [self cleanupConnection];
+    
+    _loadingImage.hidden = YES;
+    _errorImage.hidden = NO;
+    
+    if(self.delegate) { [self.delegate didFailImage:self withError:error]; }
 }
 
 #pragma mark - CredentialAlertView Delegate Methods

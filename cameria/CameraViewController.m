@@ -218,7 +218,10 @@
         // image view to be used for visualization
         MotionJpegImageView *imageView = [[MotionJpegImageView alloc] initWithFrame:CGRectMake(0, 0, _pageWidth, pageHeight)];
         imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
+        imageView.loadingImage.image = [UIImage imageNamed:@"loading.png"];
+        imageView.errorImage.image = [UIImage imageNamed:@"error.png"];
+        imageView.delegate = self;
+    
         // sets the "target" url value in the image view and then
         // starts playing the motion image (loading started)
         imageView.url = url;
@@ -368,6 +371,12 @@
     // runs the play operation on the cameras to update their
     // states according to the new page position
     [self playCameras];
+}
+
+- (void)didReceiveImage:(UIImageView *)image {
+}
+
+- (void)didFailImage:(UIImageView *)image withError:(NSError *)error {
 }
 
 @end

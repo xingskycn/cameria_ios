@@ -25,8 +25,13 @@
 
 #import "Dependencies.h"
 
+#import "MotionJpegImageViewDelegate.h"
+
 @interface MotionJpegImageView : UIImageView {
     @private
+    UIImageView *_loadingImage;
+    UIImageView *_errorImage;
+    NSObject<MotionJpegImageViewDelegate> *_delegate;
     NSURL *_url;
     NSURLConnection *_connection;
     NSMutableData *_receivedData;
@@ -38,6 +43,9 @@
     BOOL _hasThumb;
 }
 
+@property (readonly) UIImageView *loadingImage;
+@property (readonly) UIImageView *errorImage;
+@property (nonatomic, readwrite, assign) NSObject<MotionJpegImageViewDelegate> *delegate;
 @property (nonatomic, readwrite, copy) NSURL *url;
 @property (readonly) BOOL isPlaying;
 @property (nonatomic, readwrite, copy) NSString *username;
