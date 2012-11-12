@@ -45,12 +45,26 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidLoad];
+    
+    // in case no cameras are currently defined must load the
+    // values (initial values loading) this should trigger a
+    // remote call to retrieve the data
+    if(!self.cameras) { [self loadValues]; }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(self.cameras) { return [self.cameras count]; }
+    else { return 0; }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,14 +76,69 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    
-    //NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = @"Tobias";
+    cell.textLabel.text = [self.cameras[indexPath.row] valueForKey:@"id"];
     return cell;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // removes the selection indication from the "just" selected element
+    // this is considered to be the default behavior
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // onvers the row index into a string representation and uses it to
+    // retieve the camera view controller associated with the current index
+    NSString *rowString = [NSString stringWithFormat:@"%d", indexPath.row];
+    CameraViewController *cameraViewController = [self.cameraControllers valueForKey:rowString];
+    
+    if(!cameraViewController) {
+        cameraViewController = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
+        
+        NSDictionary *camera = self.cameras[indexPath.row];
+        
+        NSString *_id = [camera valueForKey:@"id"];
+        NSString *protocol = [camera valueForKey:@"protocol"];
+        NSString *username = [camera valueForKey:@"username"];
+        NSString *password = [camera valueForKey:@"password"];
+        NSString *_url = [camera valueForKey:@"url"];
+        NSString *_camera = [camera valueForKey:@"camera"];
+        NSString *resolution = [camera valueForKey:@"resolution"];
+        NSString *compression = [camera valueForKey:@"compression"];
+        NSString *fps = [camera valueForKey:@"fps"];
+        NSString *clock = [camera valueForKey:@"clock"];
+        
+        NSString *url = [NSString stringWithFormat:@"%@://%@:%@@%@/axis-cgi/mjpg/video.cgi?camera=%@&compression=%@&fps=%@&clock=%@",
+                         protocol,
+                         username,
+                         password,
+                         _url,
+                         _camera,
+                         compression,
+                         fps,
+                         clock, nil];
+        if(resolution) { url = [NSString stringWithFormat:@"%@&resolution=%@", url, resolution]; }
+
+        cameraViewController.cameras = [[NSArray alloc] initWithObjects:
+                                        [[NSArray alloc] initWithObjects:_id, url, nil], nil];
+    }
+    
+    [self.cameraControllers setValue:cameraViewController forKey:rowString];
+    [self.navigationController pushViewController:cameraViewController animated:YES];
+}
+
+- (void)loadValues {
+    ProxyRequest *proxyRequest = [[ProxyRequest alloc] initWithPath:self path:@"cameras.json"];
+    proxyRequest.delegate = self;
+    proxyRequest.parameters = [NSArray arrayWithObjects: nil];
+    [proxyRequest load];
+}
+
+- (void)didReceiveData:(NSDictionary *)data {
+    self.cameras = [data valueForKey:@"cameras"];
+    self.cameraControllers = [[NSMutableDictionary alloc] init];
+    [self.tableView reloadData];
+}
+
+- (void)didReceiveError:(NSError *)error {
 }
 
 @end

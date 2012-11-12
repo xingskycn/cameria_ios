@@ -52,6 +52,9 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidLoad];
     
+    // in case no sets are currently defined must load the
+    // values (initial values loading) this should trigger a
+    // remote call to retrieve the data
     if(!self.sets) { [self loadValues]; }
 }
 

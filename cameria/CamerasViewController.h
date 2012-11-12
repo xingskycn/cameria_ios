@@ -25,7 +25,18 @@
 
 #import "Dependencies.h"
 
-@interface CamerasViewController : UIViewController<UITableViewDataSource> {
+#import "CameraViewController.h"
+#import "ProxyRequest.h"
+#import "ProxyRequestDelegate.h"
+
+@interface CamerasViewController : UIViewController<UITableViewDataSource, ProxyRequestDelegate> {
+    NSMutableDictionary *_cameraControllers;
+    NSArray *_sets;
+    UITableView *_tableView;
 }
+
+@property (strong) NSMutableDictionary *cameraControllers;
+@property (strong) NSArray *cameras;
+@property (strong) IBOutlet UITableView *tableView;
 
 @end
