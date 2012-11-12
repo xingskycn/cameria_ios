@@ -195,7 +195,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     // allocates space for the variable that will hold
     // the error structure for error in json deserialization
-    NSError *error;
+    NSError *error = nil;
     NSDictionary *data = [NSJSONSerialization JSONObjectWithData:self.receivedData
                                                          options:kNilOptions
                                                            error:&error];
