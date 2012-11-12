@@ -83,7 +83,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
+    
     self.wantsFullScreenLayout = YES;
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
@@ -93,6 +93,10 @@
     CGFloat pageWidth = self.scrollView.frame.size.width;
     CGFloat pageHeight = self.scrollView.frame.size.height;
     self.scrollView.contentSize = CGSizeMake(pageWidth * [self.cameras count], pageHeight);
+    
+    // updates the current page so that the value remains
+    // exactly the same as the one in the previous position
+    [self setPage:self.pageIndex animated:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -125,6 +129,12 @@
     [self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
     [self.navigationController.navigationBar setAlpha:1.0];
     [self showTabBar:self.tabBarController];
+    
+    // calculates the current page index using the currently set page
+    // width and then stores it for latter usage
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    float pageNumberFloat = self.scrollView.contentOffset.x / pageWidth;
+    self.pageIndex = lround(pageNumberFloat);
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -175,7 +185,7 @@
     if(self.navigationVisible == NO) { [[UIApplication sharedApplication] setStatusBarHidden:YES]; }
 
     // updates the current page so that the value remains
-    // exactly the same as the on in the previous position
+    // exactly the same as the one in the previous position
     [self setPage:self.pageIndex animated:NO];
 }
 
