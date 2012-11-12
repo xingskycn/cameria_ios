@@ -25,6 +25,7 @@
 
 #import "Dependencies.h"
 
+#import "AppDelegate.h"
 #import "MotionJpegImageView.h"
 
 /**
@@ -47,5 +48,9 @@
 @property (strong) NSArray *cameras;
 @property (strong) NSMutableArray *cameraViews;
 @property (strong) IBOutlet UIScrollView *scrollView;
+
+- (void)playCameras;
+- (void)pauseCameras;
+- (void)stopCameras;
 
 @end

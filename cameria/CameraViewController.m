@@ -82,6 +82,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
     self.wantsFullScreenLayout = YES;
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
@@ -94,6 +96,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
@@ -101,13 +105,40 @@
     [UIView commitAnimations];
     [self hideTabBar:self.tabBarController];
     self.navigationVisible = NO;
+    
+    // retrieves the reference to the current application delegate
+    // and sets the camera view controller in it so that it's able
+    // to stop the current cameras in case the application resigns
+    // as active (provides bandwidth saving)
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate.cameraViewController = self;
+    
+    // starts the playback of the motion in the various
+    // camera views contained in the object
+    [self playCameras];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
     [self.navigationController.navigationBar setAlpha:1.0];
     [self showTabBar:self.tabBarController];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    // retrieves the reference to the current application delegate
+    // and unsets the camera view controller reference in it, no need
+    // to stop cameras that are already stopped
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate.cameraViewController = nil;
+    
+    // pauses the playback of the motion in the various
+    // camera views contained in the object
+    [self pauseCameras];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -198,6 +229,31 @@
         // the image view is contained under the image container
         [imageContainerView addSubview:imageView];
         [self.scrollView addSubview:imageContainerView];
+        
+        // adds the current view as a camera view to the current
+        // camera view container object, to be used for reference
+        [self.cameraViews addObject:imageView];
+    }
+}
+
+- (void)playCameras {
+    for(int index = 0; index < [self.cameraViews count]; index++) {
+        MotionJpegImageView *cameraView = self.cameraViews[index];
+        [cameraView play];
+    }
+}
+
+- (void)pauseCameras {
+    for(int index = 0; index < [self.cameraViews count]; index++) {
+        MotionJpegImageView *cameraView = self.cameraViews[index];
+        [cameraView pause];
+    }
+}
+
+- (void)stopCameras {
+    for(int index = 0; index < [self.cameraViews count]; index++) {
+        MotionJpegImageView *cameraView = self.cameraViews[index];
+        [cameraView stop];
     }
 }
 
