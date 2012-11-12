@@ -145,7 +145,8 @@
     [preferences removeObjectForKey:@"username"];
     [preferences removeObjectForKey:@"objectId"];
     [preferences removeObjectForKey:@"sessionId"];
-    
+
+    self.cameras = nil;
     [self loadValues];
 }
 
@@ -158,6 +159,16 @@
     proxyRequest.delegate = self;
     proxyRequest.parameters = [NSArray arrayWithObjects: nil];
     [proxyRequest load];
+}
+
+- (void)didSend {
+    self.navigationItem.leftBarButtonItem.enabled = NO;
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+}
+
+- (void)didReceive {
+    self.navigationItem.leftBarButtonItem.enabled = YES;
+    self.navigationItem.rightBarButtonItem.enabled = YES;
 }
 
 - (void)didReceiveData:(NSDictionary *)data {

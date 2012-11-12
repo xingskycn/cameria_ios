@@ -193,6 +193,11 @@
                                    selector:@selector(showMask)
                                    userInfo:nil
                                     repeats:NO];
+    
+    if(self.delegate) {
+        bool responds = [self.delegate respondsToSelector:@selector(didSend)];
+        if(responds) { [self.delegate didSend]; }
+    }
 }
 
 - (void)didReceive {
@@ -203,6 +208,11 @@
     // hides the mask view to indicate the user about the
     // end of the loading process
     [self hideMask];
+    
+    if(self.delegate) {
+        bool responds = [self.delegate respondsToSelector:@selector(didReceive)];
+        if(responds) { [self.delegate didReceive]; }
+    }
 }
 
 - (void)didReceiveJson:(NSDictionary *)data {
