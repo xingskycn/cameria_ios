@@ -45,22 +45,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // updates the scroll view frame so that it's possible to
     // use a black margin to separate the various pages
     self.scrollView.frame = CGRectMake(
         0, 0, self.scrollView.frame.size.width + BLACK_MARGIN_SIZE, self.scrollView.frame.size.height
     );
-    
+
     // sets the delegate for the assiciated scroll view
     // as the current controller this should allow it to
     // handle the scroll "events"
     self.scrollView.delegate = self;
-    
+
     // enables the user interaction so that the touch events
     // are gathered and correctly handled
     self.view.userInteractionEnabled = YES;
-    
+
     // creates the complete set of cameras panels to be used
     // to display the cameras (eager creation), this should
     // consume some resources (depending on the range of
@@ -72,7 +72,7 @@
     NSArray *camera = self.cameras[0];
     NSString *cameraName = camera[0];
     self.title = cameraName;
-    
+
     // creates the tap recognizer object to be to toggle the
     // visibility of the header panels and then sets it in the
     // current scroll view panel reference
@@ -89,7 +89,7 @@
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
     }
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
-    
+
     CGFloat pageWidth = self.scrollView.frame.size.width;
     CGFloat pageHeight = self.scrollView.frame.size.height;
     self.scrollView.contentSize = CGSizeMake(pageWidth * [self.cameras count], pageHeight);
@@ -97,7 +97,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
@@ -105,14 +105,14 @@
     [UIView commitAnimations];
     [self hideTabBar:self.tabBarController];
     self.navigationVisible = NO;
-    
+
     // retrieves the reference to the current application delegate
     // and sets the camera view controller in it so that it's able
     // to stop the current cameras in case the application resigns
     // as active (provides bandwidth saving)
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.cameraViewController = self;
-    
+
     // starts the playback of the motion in the various
     // camera views contained in the object
     [self playCameras];
@@ -120,7 +120,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
     [self.navigationController.navigationBar setAlpha:1.0];
@@ -129,13 +129,13 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    
+
     // retrieves the reference to the current application delegate
     // and unsets the camera view controller reference in it, no need
     // to stop cameras that are already stopped
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.cameraViewController = nil;
-    
+
     // pauses the playback of the motion in the various
     // camera views contained in the object
     [self pauseCameras];
@@ -152,28 +152,28 @@
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     CGFloat pageWidth = self.scrollView.frame.size.width;
     CGFloat pageHeight = self.scrollView.frame.size.height;
-    
+
     self.scrollView.contentSize = CGSizeMake(pageWidth * [self.cameras count], pageHeight);
     self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, 0);
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    
+
     // calculates the current page index using the currently set page
     // width and then stores it for latter usage
     CGFloat pageWidth = self.scrollView.frame.size.width;
     float pageNumberFloat = self.scrollView.contentOffset.x / pageWidth;
     self.pageIndex = lround(pageNumberFloat);
-    
+
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    
+
     if(self.navigationVisible == NO) { [[UIApplication sharedApplication] setStatusBarHidden:YES]; }
-    
+
     // updates the current page so that the value remains
     // exactly the same as the on in the previous position
     [self setPage:self.pageIndex animated:NO];
@@ -195,7 +195,7 @@
     // calculates the "virtual" size of a page in order to be
     // able to use the "black margin" between pages"
     CGFloat _pageWidth = self.scrollView.frame.size.width - BLACK_MARGIN_SIZE;
-    
+
     // iterates over the complete set of cameras to be
     // displayed in the current panel
     for(int index = 0; index < [self.cameras count]; index++) {
@@ -203,17 +203,17 @@
         // then unpacks it into the name and url
         NSArray *camera = self.cameras[index];
         NSString *cameraUrl = camera[1];
-        
+
         // creates the "final" url structure for the current camera
         // to be used in the motion image connection
         NSURL *url = [NSURL URLWithString:cameraUrl];
-        
+
         // creates the image view container that will contain the image
         // in order to provide capabilities for the "black margin"
         UIView *imageContainerView = [[UIView alloc] initWithFrame:CGRectMake(index * pageWidth, 0, pageWidth, pageHeight)];
         imageContainerView.backgroundColor = [UIColor blackColor];
         imageContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-        
+
         // retrieves/creates the current view associated as a motion jpeg
         // image view to be used for visualization
         MotionJpegImageView *imageView = [[MotionJpegImageView alloc] initWithFrame:CGRectMake(0, 0, _pageWidth, pageHeight)];
@@ -221,18 +221,18 @@
         imageView.loadingImage.image = [UIImage imageNamed:@"loading.png"];
         imageView.errorImage.image = [UIImage imageNamed:@"error.png"];
         imageView.delegate = self;
-    
+
         // sets the "target" url value in the image view and then
         // starts playing the motion image (loading started)
         imageView.url = url;
         [imageView play];
-        
+
         // adds the image view panel to the scroll view push it
         // into the end of the video panels "stack", note that
         // the image view is contained under the image container
         [imageContainerView addSubview:imageView];
         [self.scrollView addSubview:imageContainerView];
-        
+
         // adds the current view as a camera view to the current
         // camera view container object, to be used for reference
         [self.cameraViews addObject:imageView];
@@ -244,7 +244,7 @@
         MotionJpegImageView *cameraView = self.cameraViews[index];
         [cameraView thumb];
     }
-    
+
     // retrieves the width of a page as the scroll view frame size
     // and calculates the current page number using the current position
     CGFloat pageWidth = self.scrollView.frame.size.width;
@@ -258,7 +258,7 @@
     MotionJpegImageView *cameraView = self.cameraViews[pageNumber];
     MotionJpegImageView *previousCameraView = self.cameraViews[previousPage];
     MotionJpegImageView *nextCameraView = self.cameraViews[nextPage];
-    
+
     // runs the play operation (starting the strem) on the various cameras
     // that are meant to be streaming (only the border ones)
     [cameraView play];
@@ -310,11 +310,11 @@
 - (void)showTabBar:(UITabBarController *) tabBarController {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     float fHeight = screenRect.size.height - 49.0;
-    
+
     if(UIDeviceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
         fHeight = screenRect.size.width - 49.0;
     }
-    
+
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
     for(UIView *view in tabBarController.view.subviews) {
@@ -330,7 +330,7 @@
 
 - (void)hideTabBar:(UITabBarController *) tabBarController {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    
+
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
     float fHeight = screenRect.size.height;
@@ -367,7 +367,7 @@
     NSArray *camera = self.cameras[pageNumber];
     NSString *cameraName = camera[0];
     self.navigationController.navigationBar.topItem.title = cameraName;
-    
+
     // runs the play operation on the cameras to update their
     // states according to the new page position
     [self playCameras];

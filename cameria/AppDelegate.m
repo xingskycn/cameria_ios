@@ -33,8 +33,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // initializes the default values in the preferences structure
     // in case they don't already exist (and are defined)
-    [self setDefaults];    
-    
+    [self setDefaults];
+
     // creates a new window object and sets it in the current application
     // (this should be the main window of the application)
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -47,16 +47,16 @@
 
     setsViewController = [[SetsViewController alloc] initWithNibName:@"SetsViewController" bundle:nil];
     camerasViewController = [[CamerasViewController alloc] initWithNibName:@"CamerasViewController" bundle:nil];
-    creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];    
+    creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
 
     setsNavigationViewController = [[UINavigationController alloc] initWithRootViewController:setsViewController];
     camerasNavigationViewController = [[UINavigationController alloc] initWithRootViewController:camerasViewController];
-    
+
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[setsNavigationViewController, camerasNavigationViewController, creditsViewController];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
-    
+
     return YES;
 }
 
@@ -91,7 +91,7 @@
     // to check if theya are already defined
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *baseUrl = [preferences valueForKey:@"baseUrl"];
-    
+
     // checks various value for the presence of the value and in
     // case it's not defined sets the default value, then flushes
     // the preferences to the secondary storage

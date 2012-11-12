@@ -38,12 +38,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // retrieves the pattern image to be used and sets it in
     // the current view (should be able to change the background)
     UIImage *patternImage = [UIImage imageNamed:@"main-background.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
-    
+
     // creates the structure for both the logout and the refresh
     // buttons and then adds them to the left anr right of the
     // navigation panel
@@ -55,14 +55,14 @@
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(refreshClick:)];
-    
+
     self.navigationItem.leftBarButtonItem = logoutButton;
     self.navigationItem.rightBarButtonItem = refreshButton;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidLoad];
-    
+
     // in case no cameras are currently defined must load the
     // values (initial values loading) this should trigger a
     // remote call to retrieve the data
@@ -84,13 +84,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    
+
     cell.textLabel.text = [self.cameras[indexPath.row] valueForKey:@"id"];
     return cell;
 }
@@ -99,17 +99,17 @@
     // removes the selection indication from the "just" selected element
     // this is considered to be the default behavior
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+
     // onvers the row index into a string representation and uses it to
     // retieve the camera view controller associated with the current index
     NSString *rowString = [NSString stringWithFormat:@"%d", indexPath.row];
     CameraViewController *cameraViewController = [self.cameraControllers valueForKey:rowString];
-    
+
     if(!cameraViewController) {
         cameraViewController = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
-        
+
         NSDictionary *camera = self.cameras[indexPath.row];
-        
+
         NSString *_id = [camera valueForKey:@"id"];
         NSString *protocol = [camera valueForKey:@"protocol"];
         NSString *username = [camera valueForKey:@"username"];
@@ -120,7 +120,7 @@
         NSString *compression = [camera valueForKey:@"compression"];
         NSString *fps = [camera valueForKey:@"fps"];
         NSString *clock = [camera valueForKey:@"clock"];
-        
+
         NSString *url = [NSString stringWithFormat:@"%@://%@:%@@%@/axis-cgi/mjpg/video.cgi?camera=%@&compression=%@&fps=%@&clock=%@",
                          protocol,
                          username,
@@ -135,7 +135,7 @@
         cameraViewController.cameras = [[NSArray alloc] initWithObjects:
                                         [[NSArray alloc] initWithObjects:_id, url, nil], nil];
     }
-    
+
     [self.cameraControllers setValue:cameraViewController forKey:rowString];
     [self.navigationController pushViewController:cameraViewController animated:YES];
 }

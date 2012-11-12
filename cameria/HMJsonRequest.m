@@ -62,18 +62,18 @@
     // in the current instance must return immediately
     // (cannot load the resource)
     if(!self.url) { return; }
-    
+
     // construct the "final" url value taking into account
     // the parameters sequence in the url value
     NSURL *url = [self constructUrl];
-    
+
     // creates a request using the current url and then uses it
     // to create the connection to be used setting the current instace
     // as the delegate object for it
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     self.connection = [[NSURLConnection alloc] initWithRequest:request
                                                       delegate:self];
-    
+
     // notifies the delegate about the sending of data to the remote
     // connection (initial communication)
     if(self.delegate && [self.delegate respondsToSelector:@selector(didSend)]) {
@@ -88,14 +88,14 @@
     // url structure immediately
     if(!self.parameters) { return self.url; }
     if(self.url.query) { return self.url; }
-    
+
     // retrieves the (base) url string from the url and
     // constructs the parameters string (query) and uses
     // both to construct the "final" url string
     NSString *urlString = self.url.absoluteString;
     NSString *parameters = [self contructParameters];
     urlString = [NSString stringWithFormat:@"%@?%@", urlString, parameters];
-    
+
     // creates the url structures using the url string and
     // then returns it to the caller method
     NSURL *url = [NSURL URLWithString:urlString];
@@ -105,58 +105,58 @@
 - (NSString *)contructParameters {
     // retrives the remote sequence data enumerator
     NSEnumerator *parametersEnumerator = [self.parameters objectEnumerator];
-    
+
     // allocates the object value
     id object;
-    
+
     // creats the buffer to hold the string, this should be
     // a faster alternative to concatenate strings
     NSMutableArray *stringBuffer = [[NSMutableArray alloc] init];
-    
+
     // sets the is first flag
     BOOL isFirst = YES;
-    
+
     // iterates over the various parameter tuples to be
     // used to compose the url string
     while((object = [parametersEnumerator nextObject])) {
         // casts the object as an array (tuple)
         // that should contain both the key and value
         NSArray *tuple = (NSArray *) object;
-        
+
         // retrieves the key and the value to create
         // the string tuple value (key value pair)
         NSString *key = [tuple objectAtIndex:0];
         NSString *value = [tuple objectAtIndex:1];
-        
+
         // in case the value is not defined or it's
         // an empty string
         if(value == nil || (NSNull *) value == [NSNull null] || value.length < 1) {
             // sets the value as an empty string
             value = @"";
         }
-        
+
         // in case it's the first iteration
         // must unset the is first flag
         if(isFirst) { isFirst = NO; }
         // otherwise it must be a different iteration
         // and must add the "and" character
         else { [stringBuffer addObject:@"&"]; }
-        
+
         // creates the line value
         NSString *lineValue = [NSString stringWithFormat:@"%@=%@", key, value];
-        
+
         // adds the line value to the string buffer
         [stringBuffer addObject:lineValue];
     }
-    
+
     // joins the http string buffer retrieving the string
     NSString *httpString = [stringBuffer componentsJoinedByString:@""];
-    
+
     // escapes the http string unsing the correct escaping
     // characters to archieve the purpose
     NSString *escapedHttpString = [httpString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     escapedHttpString = [escapedHttpString stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
-    
+
     // returns the escaped http string with the encoded values
     // to the caller function (encoded parameters)
     return escapedHttpString;
@@ -168,7 +168,7 @@
     if(self.delegate && [self.delegate respondsToSelector:@selector(didReceive)]) {
         [self.delegate didReceive];
     }
-    
+
     // notifies the delegate about the receival of the error
     // value from the remote connection
     if(self.delegate) { [self.delegate didReceiveError:error]; }
@@ -199,7 +199,7 @@
     NSDictionary *data = [NSJSONSerialization JSONObjectWithData:self.receivedData
                                                          options:kNilOptions
                                                            error:&error];
-    
+
     // in case there was an error handling the json must
     // handle it in the correct manner
     if(error) { [self handleError:error]; return; }
@@ -209,7 +209,7 @@
     if(self.delegate && [self.delegate respondsToSelector:@selector(didReceive)]) {
         [self.delegate didReceive];
     }
-    
+
     // notifies the delegate about the receival of the json
     // value from the remote connection
     if(self.delegate) { [self.delegate didReceiveJson:data]; }

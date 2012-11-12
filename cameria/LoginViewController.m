@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // retrieves the references for both the username and the password
     // text field element to be used for behavior change
     UITextField *usernameField = (UITextField *) [self.view viewWithTag:1];
@@ -79,10 +79,10 @@
     // retrieves both the username and the password text field and uses
     // them to retrieve these values to be used in the authentication
     UITextField *usernameField = (UITextField *) [self.view viewWithTag:1];
-    UITextField *passwordField = (UITextField *) [self.view viewWithTag:2];    
+    UITextField *passwordField = (UITextField *) [self.view viewWithTag:2];
     NSString *username = usernameField.text;
     NSString *password = passwordField.text;
-    
+
     // creates the base path template containing both the username and
     // the password values than formats the value using these values
     NSString *basePath = @"login.json?username=%@&password=%@";
@@ -94,7 +94,7 @@
     proxyRequest.delegate = self;
     proxyRequest.useSession = NO;
     [proxyRequest load];
-    
+
     // sends the resign as first responder to the "broadcast" application
     // this should hide the currently present keyboard
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder)
@@ -107,7 +107,7 @@
     // retrieves the message contained in the exception structure
     // to be able to display it in a window
     NSString *message = [exception objectForKey:@"message"];
-    
+
     // creates the alert window that will be used to display the error
     // associated with the current authentication failure and then shows
     // it in a modal fashion, then returns immediately to the caller method
@@ -127,14 +127,14 @@
     // in such case handles it and returns immediately
     NSDictionary *exception = [data valueForKey:@"exception"];
     if(exception) { [self handleException:exception]; return; }
-    
+
     // retrieves the username, the object id and the session id
     // values from the authentication structure to be used in the
     // current persistent storage
     NSString *username = [data valueForKey:@"username"];
     NSString *objectId = [data valueForKey:@"object_id"];
     NSString *sessionId = [data valueForKey:@"session_id"];
-    
+
     // retrieves the preferences object and uses it to set the "new"
     // session identifier value in it
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
@@ -142,7 +142,7 @@
     [preferences setValue:objectId forKey:@"objectId"];
     [preferences setValue:sessionId forKey:@"sessionId"];
     [preferences synchronize];
-    
+
     // closes the current modal window triggering the pop of the
     // previous panel (will show it again)
     [self dismissModalViewControllerAnimated:YES];

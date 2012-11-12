@@ -42,7 +42,7 @@
     if(self) {
         self.loading = NO;
         self.useSession = YES;
-        
+
         self.controller = controller;
         self.path = path;
     }
@@ -55,16 +55,16 @@
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *sessionId = [preferences valueForKey:@"sessionId"];
     if(!sessionId && self.useSession == YES) { [self showLogin]; return; }
-    
+
     // allocates space for the array that will contain the various
     // key value tuples with the request parameters
     NSMutableArray *parameters;
-    
+
     // retrieves the value for the base url from the preferences and
     // uses it together with the path value to construct the url string
     NSString *baseUrl = [preferences valueForKey:@"baseUrl"];
     NSString *urlString = [NSString stringWithFormat:@"%@%@", baseUrl, self.path];
-    
+
     // in case there are already parameters defined in the structure
     // they should be used and the parameters structure extended otherwise
     // an empty array is used instead, then adds the session id value into
@@ -74,7 +74,7 @@
     if(self.useSession == YES) {
         [parameters addObject:[NSArray arrayWithObjects:@"session_id", sessionId, nil]];
     }
-    
+
     // creates a json request object and sets the currently created
     // parameters structure in it together with the setting of the
     // delegate reference and then triggers the loading of it
@@ -95,7 +95,7 @@
     // in case the mask view in case it's not currently
     // set in the instance (lazy create)
     if(self.mask == nil) { [self createMask]; }
-    
+
     // shows the (now transparent) mask so that the user
     // is not able to click in the screen (avoids double
     // request, and problems)
@@ -107,11 +107,11 @@
     // commnicating with the server anymore no need
     // to show the mask (finished)
     if(self.loading == NO) { return; }
-    
+
     // in case the mask view in case it's not currently
     // set in the instance (lazy create)
     if(self.mask == nil) { [self createMask]; }
-    
+
     // shows the mask view (display) and starts the animation
     // in the indicator object, note that the color of the
     // mask is changed to black (visible)
@@ -127,14 +127,14 @@
     // in case the mask view in case it's not currently
     // set in the instance (lazy create)
     if(self.mask == nil) { [self createMask]; }
-    
+
     // creates the fade out animation for the mask view
     // so that it hides using an animation
     [UIView beginAnimations:@"fadeOut" context: nil];
     [UIView setAnimationDuration:0.25];
     self.mask.alpha = 0.0;
     [UIView commitAnimations];
-    
+
     // stops animating the mask (activity) indicator
     // this should stop the animation
     [self.maskIndicator stopAnimating];
@@ -144,11 +144,11 @@
     // in case the view is already
     // created must return immediately
     if(self.mask != nil) { return; }
-    
+
     // retrieves the view associated with the current controller
     // as the target view for the mask (activity indicator)
     UIView *view = self.controller.view;
-    
+
     // creates the mask view to be used for the purpose of indicating
     // a loading activity
     CGRect maskFrame = CGRectMake(0, 0, view.bounds.size.width, view.bounds.size.height);
@@ -157,7 +157,7 @@
     mask.backgroundColor = [UIColor clearColor];
     mask.alpha = 0.35;
     mask.hidden = YES;
-    
+
     // creates the mask (activity) indicator indicator to be used as
     // an animation
     CGRect maskIndicatorFrame = CGRectMake(view.bounds.size.width / 2 - 12, view.bounds.size.height / 2 - 12, 24, 24);
@@ -165,11 +165,11 @@
     maskIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
     maskIndicator.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     maskIndicator.hidden = YES;
-    
+
     // creates the activity structure
     [view addSubview:mask];
     [view addSubview:maskIndicator];
-    
+
     // sets the mask attribute in the current instance
     // to be used latter for display
     self.mask = mask;
@@ -180,11 +180,11 @@
     // sets the loading flag indicating that the current
     // proxy is communicating with the server side
     self.loading = YES;
-    
+
     // shows the light mask (transparent mask) so that the
     // user is forbidden from touching other items
     [self showLightMask];
-    
+
     // schedules the the showing of the mask for a bit latter
     // so that it's only displayed for long loadings
     [NSTimer scheduledTimerWithTimeInterval:1.25
@@ -192,7 +192,7 @@
                                    selector:@selector(showMask)
                                    userInfo:nil
                                     repeats:NO];
-    
+
     if(self.delegate) {
         bool responds = [self.delegate respondsToSelector:@selector(didSend)];
         if(responds) { [self.delegate didSend]; }
@@ -203,11 +203,11 @@
     // unsets the loading flag indicating that the current
     // proxy is not communicating with the server side
     self.loading = NO;
-    
+
     // hides the mask view to indicate the user about the
     // end of the loading process
     [self hideMask];
-    
+
     if(self.delegate) {
         bool responds = [self.delegate respondsToSelector:@selector(didReceive)];
         if(responds) { [self.delegate didReceive]; }
@@ -217,7 +217,7 @@
 - (void)didReceiveJson:(NSDictionary *)data {
     NSDictionary *exception = [data valueForKey:@"exception"];
     if(exception && self.useSession == YES) { [self showLogin]; return; }
-    
+
     if(self.delegate) { [self.delegate didReceiveData:data]; }
 }
 
@@ -225,7 +225,7 @@
     // retrieves the localized error description, this is considered
     // to be the message to be presented
     NSString *message = [error localizedDescription];
-    
+
     // creates the alert window that will be used to display the error
     // associated with the current authentication failure and then shows
     // it in a modal fashion, then returns immediately to the caller method
@@ -235,7 +235,7 @@
                                           cancelButtonTitle:NSLocalizedString(@"Confirm", @"Confirm")
                                           otherButtonTitles:nil];
     [alert show];
-    
+
     if(self.delegate) { [self.delegate didReceiveError:error]; }
 }
 

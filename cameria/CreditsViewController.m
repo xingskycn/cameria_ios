@@ -42,7 +42,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // retrieves the pattern image to be used and sets it in
     // the current view (should be able to change the background)
     UIImage *patternImage = [UIImage imageNamed:@"main-background.png"];

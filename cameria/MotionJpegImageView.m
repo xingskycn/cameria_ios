@@ -93,8 +93,8 @@
               cancelButtonTitle:NSLocalizedString(@"CancelButtonTitle", @"")
               otherButtonTitles:NSLocalizedString(@"LoginButtonTitle", @""),
             nil];
-    
-    if(self) {       
+
+    if(self) {
         _credentialDelegate = delegate;
 
         _usernameField = [[UITextField alloc] initWithFrame:CGRectZero];
@@ -108,7 +108,7 @@
         _usernameField.clearButtonMode = UITextFieldViewModeUnlessEditing;
         [self addSubview:_usernameField];
         [_usernameField release];
-        
+
         _passwordField = [[UITextField alloc] initWithFrame:CGRectZero];
         _passwordField.secureTextEntry = YES;
         _passwordField.borderStyle = UITextBorderStyleBezel;
@@ -122,7 +122,7 @@
         [self addSubview:_passwordField];
         [_passwordField release];
     }
-    
+
     return self;
 }
 
@@ -140,7 +140,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+
     // retrieves the username as text in the username field
     // and then sets a dummy text in the username field and
     // measures the size of the text field
@@ -154,7 +154,7 @@
     UILabel *titleLabel = nil;
     UILabel *messageLabel = nil;
     NSMutableArray *buttonViews = [NSMutableArray arrayWithCapacity:3];
-    
+
     // iterates over the complete set of subviews to update
     // them and position them
     for(UIView *subview in self.subviews) {
@@ -188,24 +188,24 @@
             [buttonViews addObject:subview];
         }
     }
-    
+
     CGFloat buttonViewTop = 0.0;
     for(UIView *buttonView in buttonViews) {
         CGRect buttonViewFrame = buttonView.frame;
-        buttonViewFrame.origin.y = 
+        buttonViewFrame.origin.y =
         self.bounds.size.height - buttonViewFrame.size.height - BUTTON_MARGIN;
         buttonView.frame = buttonViewFrame;
         buttonViewTop = CGRectGetMinY(buttonViewFrame);
     }
-    
+
     CGRect labelFrame = messageLabel.frame;
     CGRect textFieldFrame = CGRectMake(labelFrame.origin.x,
-                                       labelFrame.origin.y + labelFrame.size.height + TEXT_FIELD_MARGIN, 
-                                       labelFrame.size.width, 
+                                       labelFrame.origin.y + labelFrame.size.height + TEXT_FIELD_MARGIN,
+                                       labelFrame.size.width,
                                        textFieldSize.height);
     _usernameField.frame = textFieldFrame;
     [self bringSubviewToFront:_usernameField];
-    
+
     textFieldFrame.origin.y += textFieldFrame.size.height + TEXT_FIELD_MARGIN;
     _passwordField.frame = textFieldFrame;
     [self bringSubviewToFront:_passwordField];
@@ -222,7 +222,7 @@
     else if(_credentialDelegate) {
         [_credentialDelegate credentialAlertSaved:self];
     }
-    
+
     [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
 }
 
@@ -259,7 +259,7 @@
     else if(textField == _passwordField) {
         [textField resignFirstResponder];
     }
-    
+
     return NO;
 }
 
@@ -298,51 +298,51 @@ static NSData *_endMarkerData = nil;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    
+
     if(self) {
         _url = nil;
         _receivedData = nil;
         _username = nil;
         _password = nil;
         _allowSelfSignedCertificates = NO;
-        
+
         if(_endMarkerData == nil) {
             uint8_t endMarker[2] = END_MARKER_BYTES;
             _endMarkerData = [[NSData alloc] initWithBytes:endMarker length:2];
         }
 
         self.contentMode = UIViewContentModeScaleAspectFit;
-        
+
         // creates the placeholder images to be used in the current
         // motion image view
         [self createImages];
     }
-    
+
     return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
-    
+
     if(self) {
         _url = nil;
         _receivedData = nil;
         _username = nil;
         _password = nil;
         _allowSelfSignedCertificates = NO;
-        
+
         if(_endMarkerData == nil) {
             uint8_t endMarker[2] = END_MARKER_BYTES;
             _endMarkerData = [[NSData alloc] initWithBytes:endMarker length:2];
         }
-        
+
         self.contentMode = UIViewContentModeScaleAspectFit;
-        
+
         // creates the placeholder images to be used in the current
         // motion image view
         [self createImages];
     }
-    
+
     return self;
 }
 
@@ -356,7 +356,7 @@ static NSData *_endMarkerData = nil;
         [_connection cancel];
         [self cleanupConnection];
     }
-    
+
     // releases the various components of the
     // current structure in case they are defined
     if(_loadingImage) { [_loadingImage release]; }
@@ -364,7 +364,7 @@ static NSData *_endMarkerData = nil;
     if(_url) { [_url release]; }
     if(_username) { [_username release]; }
     if(_password) { [_password release]; }
-    
+
     [super dealloc];
 }
 
@@ -374,11 +374,11 @@ static NSData *_endMarkerData = nil;
     // unsets the thumb mode, the stream is meant to
     // be started in "continuous" mode
     _thumbMode = NO;
-    
+
     // in case the connection is already set no need
     // to anything more (it's already playing)
     if(_connection) {}
-    
+
     // otherwise in case the url is set, creates a new
     // connection triggering the start of the motion
     else if(_url) {
@@ -391,7 +391,7 @@ static NSData *_endMarkerData = nil;
     // in case there is no connection currently
     // set returns immediately, nothing to be done
     if(!_connection) { return; }
-    
+
     // cancels the current connection and runs
     // the cleanup operation in it
     [_connection cancel];
@@ -413,7 +413,7 @@ static NSData *_endMarkerData = nil;
     // sets the thumb mode flag so that only one image
     // is loaded for the current motion jpeg
     _thumbMode = YES;
-    
+
     // in case there's already a thumb in the current motion
     // image view must return immediately nothing to be done
     if(_hasThumb) { return; }
@@ -421,7 +421,7 @@ static NSData *_endMarkerData = nil;
     // in case the connection is already set no need
     // to anything more (it's already playing)
     if(_connection) {}
-    
+
     // otherwise in case the url is set, creates a new
     // connection triggering the start of the motion
     else if(_url) {
@@ -435,11 +435,11 @@ static NSData *_endMarkerData = nil;
 - (void)createImages {
     _loadingImage = [[UIImageView alloc] initWithFrame:CGRectMake(80, 199, 160, 150)];
     _loadingImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    
+
     _errorImage = [[UIImageView alloc] initWithFrame:CGRectMake(80, 199, 160, 150)];
     _errorImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     _errorImage.hidden = YES;
-    
+
     [self addSubview:_loadingImage];
     [self addSubview:_errorImage];
 }
@@ -480,7 +480,7 @@ static NSData *_endMarkerData = nil;
     NSRange endRange = [_receivedData rangeOfData:_endMarkerData
                                           options:0
                                             range:NSMakeRange(0, _receivedData.length)];
-    
+
     // calculates the end location (of the image) and in case the
     // current received data length is greater than the end location
     // retrieves the sub set of data that represents the image and sets
@@ -494,7 +494,7 @@ static NSData *_endMarkerData = nil;
         _hasThumb = YES;
         _loadingImage.hidden = YES;
         _errorImage.hidden = YES;
-        
+
         if(self.delegate) { [self.delegate didReceiveImage:self]; }
     }
 }
@@ -511,7 +511,7 @@ static NSData *_endMarkerData = nil;
     else {
         allow = _allowClearTextCredentials;
     }
-    
+
     return allow;
 }
 
@@ -529,7 +529,7 @@ static NSData *_endMarkerData = nil;
         // the cleanup operation in the current connection
         [[challenge sender] cancelAuthenticationChallenge:challenge];
         [self cleanupConnection];
-        
+
         // creates a new credential alert window and populates it
         // with the currently set username then shows it
         CredentialAlertView *loginAlert = [[CredentialAlertView alloc] initWithDelegate:self
@@ -545,10 +545,10 @@ static NSData *_endMarkerData = nil;
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     [self cleanupConnection];
-    
+
     _loadingImage.hidden = YES;
     _errorImage.hidden = NO;
-    
+
     if(self.delegate) { [self.delegate didFailImage:self withError:error]; }
 }
 
@@ -566,7 +566,7 @@ static NSData *_endMarkerData = nil;
     self.username = alert.username;
     self.password = alert.password;
     [alert release];
-    
+
     // tries to sttart playing the motion, now
     // using the newly set credentials
     [self play];
