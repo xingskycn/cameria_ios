@@ -238,3 +238,5 @@
     
     if(self.delegate) { [self.delegate didReceiveError:error]; }
 }
+
+@end
