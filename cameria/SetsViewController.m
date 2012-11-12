@@ -27,7 +27,9 @@
 
 @implementation SetsViewController
 
-@synthesize cameraViewController = _cameraViewController;
+@synthesize cameraControllers = _cameraControllers;
+@synthesize sets = _sets;
+@synthesize tableView = _tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -50,7 +52,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidLoad];
     
-    [self loadValues];
+    if(!self.sets) { [self loadValues]; }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,7 +64,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    if(self.sets) { return [self.sets count]; }
+    else { return 0; }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,37 +77,76 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
-    //NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = @"Tobias";
+    cell.textLabel.text = [self.sets[indexPath.row] valueForKey:@"name"];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-   // NSDate *object = _objects[indexPath.row];
+    // removes the selection indication from the "just" selected element
+    // this is considered to be the default behavior
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if(!self.cameraViewController) {
-        self.cameraViewController = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
-        self.cameraViewController.cameras = [NSArray arrayWithObjects:
-                                             [NSArray arrayWithObjects:@"dvd_01", @"http://root:root@lugardajoiadvdouro.dyndns.org:7000/axis-cgi/mjpg/video.cgi?camera=1&resolution=640x480&compression=30&fps=4&clock=0", nil],
-                                             [NSArray arrayWithObjects:@"dvd_02", @"http://root:root@lugardajoiadvdouro.dyndns.org:7001/axis-cgi/mjpg/video.cgi?camera=1&resolution=640x480&compression=30&fps=4&clock=0", nil],
-                                             [NSArray arrayWithObjects:@"dvd_03", @"http://root:root@lugardajoiadvdouro.dyndns.org:7002/axis-cgi/mjpg/video.cgi?camera=1&resolution=640x480&compression=30&fps=4&clock=0", nil],nil];
+    // onvers the row index into a string representation and uses it to
+    // retieve the camera view controller associated with the current index
+    NSString *rowString = [NSString stringWithFormat:@"%d", indexPath.row];
+    CameraViewController *cameraViewController = [self.cameraControllers valueForKey:rowString];
+    
+    if(!cameraViewController) {
+        cameraViewController = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
+        
+        NSDictionary *set = self.sets[indexPath.row];
+        NSArray *cameras = [set valueForKey:@"cameras"];
+        
+        NSMutableArray *_cameras = [[NSMutableArray alloc] init];
+
+        for(int index = 0; index < [cameras count]; index++) {
+            NSDictionary *camera = cameras[index];
+ 
+            NSString *_id = [camera valueForKey:@"id"];
+            NSString *protocol = [camera valueForKey:@"protocol"];
+            NSString *username = [camera valueForKey:@"username"];
+            NSString *password = [camera valueForKey:@"password"];
+            NSString *_url = [camera valueForKey:@"url"];
+            NSString *_camera = [camera valueForKey:@"camera"];
+            NSString *resolution = [camera valueForKey:@"resolution"];
+            NSString *compression = [camera valueForKey:@"compression"];
+            NSString *fps = [camera valueForKey:@"fps"];
+            NSString *clock = [camera valueForKey:@"clock"];
+            
+            NSString *url = [NSString stringWithFormat:@"%@://%@:%@@%@/axis-cgi/mjpg/video.cgi?camera=%@&compression=%@&fps=%@&clock=%@",
+                             protocol,
+                             username,
+                             password,
+                             _url,
+                             _camera,
+                             compression,
+                             fps,
+                             clock, nil];
+            if(resolution) { url = [NSString stringWithFormat:@"%@&resolution=%@", url, resolution]; }
+
+            [_cameras addObject:[[NSArray alloc] initWithObjects:_id, url, nil]];
+        }
+
+        // updates the reference to the cameras sequence in the camera view
+        // controller with the "just" constructed list of camera tuples
+        cameraViewController.cameras = _cameras;
     }
     
-    [self.navigationController pushViewController:self.cameraViewController animated:YES];
+    [self.cameraControllers setValue:cameraViewController forKey:rowString];
+    [self.navigationController pushViewController:cameraViewController animated:YES];
 }
 
-
 - (void)loadValues {
-    ProxyRequest *proxyRequest = [[ProxyRequest alloc] initWithPath:self path:@"sale_snapshots/stats.json"];
+    ProxyRequest *proxyRequest = [[ProxyRequest alloc] initWithPath:self path:@"sets.json"];
     proxyRequest.delegate = self;
-    proxyRequest.parameters = [NSArray arrayWithObjects:
-                               [NSArray arrayWithObjects:@"unit", @"day", nil],
-                               [NSArray arrayWithObjects:@"span", @"6", nil],
-                               [NSArray arrayWithObjects:@"output", @"extended", nil], nil];
+    proxyRequest.parameters = [NSArray arrayWithObjects: nil];
     [proxyRequest load];
 }
 
 - (void)didReceiveData:(NSDictionary *)data {
+    self.sets = [data valueForKey:@"sets"];
+    self.cameraControllers = [[NSMutableDictionary alloc] init];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveError:(NSError *)error {
