@@ -374,9 +374,9 @@ static NSData *_endMarkerData = nil;
 }
 
 - (void)pause {
-    // in case there is a connection currently
+    // in case there is no connection currently
     // set returns immediately, nothing to be done
-    if(_connection) { return; }
+    if(!_connection) { return; }
     
     // cancels the current connection and runs
     // the cleanup operation in it
