@@ -29,6 +29,19 @@
 #import "CamerasViewController.h"
 #import "CreditsViewController.h"
 
+
+
+
+
+
+
+
+
+#import "MosaicViewController.h"
+
+
+
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -43,6 +56,8 @@
     // (this should be the main window of the application)
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
+    // creates the naviagtion controllers for both the sets and the cameras
+    // these controllers will contain the respective entrance points
     UINavigationController *setsNavigationViewController;
     UINavigationController *camerasNavigationViewController;
 
@@ -50,11 +65,14 @@
     _camerasViewController = [[CamerasViewController alloc] initWithNibName:@"CamerasViewController" bundle:nil];
     _creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
 
+    MosaicViewController *_mvc = [[MosaicViewController alloc] initWithNibName:@"MosaicViewController" bundle:nil];
+
+    
     setsNavigationViewController = [[UINavigationController alloc] initWithRootViewController:_setsViewController];
     camerasNavigationViewController = [[UINavigationController alloc] initWithRootViewController:_camerasViewController];
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[setsNavigationViewController, camerasNavigationViewController, _creditsViewController];
+    tabBarController.viewControllers = @[setsNavigationViewController, camerasNavigationViewController, _mvc, _creditsViewController];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
 
