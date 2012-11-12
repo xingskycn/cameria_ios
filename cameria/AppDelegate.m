@@ -68,8 +68,13 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // resumes the playback of the image views
-    // bandwidth is used again
-    if(self.cameraViewController) { [self.cameraViewController playCameras]; }
+    // bandwidth is used again, not that the status
+    // bar must be updated to the "correct" status
+    if(self.cameraViewController) {
+        [self.cameraViewController playCameras];
+        [[UIApplication sharedApplication] setStatusBarHidden:NO];
+        [self performSelector:@selector(updateNavigation) withObject:self afterDelay:0];
+    }
 }
 
 - (void)dealloc {
@@ -93,6 +98,11 @@
     if(baseUrl == nil) { [preferences setValue:@"https://cameria-staging.herokuapp.com/"
                                         forKey:@"baseUrl"];}
     [preferences synchronize];
+}
+
+- (void)updateNavigation {
+    if(self.cameraViewController.navigationVisible == YES) { return; }
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 
 @end
