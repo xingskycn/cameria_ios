@@ -25,15 +25,19 @@
 
 #import "Dependencies.h"
 
-#import "MotionJpegImageView.h"
+#import "SetsViewController.h"
+#import "CamerasViewController.h"
+#import "CreditsViewController.h"
+
+@class CameraViewController;
 
 @interface AppDelegate : UIResponder<UIApplicationDelegate> {
     @private
-    MotionJpegImageView *_imageView;
+    UIWindow *_window;
+    CameraViewController *_cameraViewController;
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UINavigationController *navigationController;
-@property (strong, nonatomic) UISplitViewController *splitViewController;
+@property (strong, nonatomic) CameraViewController *cameraViewController;
 
 @end

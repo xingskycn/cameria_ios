@@ -25,13 +25,10 @@
 
 #import "AppDelegate.h"
 
-#import "SetsViewController.h"
-#import "CamerasViewController.h"
-#import "CreditsViewController.h"
-
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize cameraViewController = _cameraViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // initializes the default values in the preferences structure
@@ -47,7 +44,7 @@
     UIViewController *creditsViewController;
     UINavigationController *setsNavigationViewController;
     UINavigationController *camerasNavigationViewController;
-    
+
     setsViewController = [[SetsViewController alloc] initWithNibName:@"SetsViewController" bundle:nil];
     camerasViewController = [[CamerasViewController alloc] initWithNibName:@"CamerasViewController" bundle:nil];
     creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];    
@@ -66,21 +63,20 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     // pauses the image view to avoid extra
     // usage of traffic (bandwidth waste)
-    [_imageView pause];
+    if(self.cameraViewController) { [self.cameraViewController pauseCameras]; }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // resumes the playback of the image views
     // bandwidth is used again
-    [_imageView play];
+    if(self.cameraViewController) { [self.cameraViewController playCameras]; }
 }
 
 - (void)dealloc {
     // releases the window and the image view
     // references no more need to hold them
     [_window release];
-    [_imageView release];
-    
+
     [super dealloc];
 }
 
@@ -94,7 +90,7 @@
     // checks various value for the presence of the value and in
     // case it's not defined sets the default value, then flushes
     // the preferences to the secondary storage
-    if(baseUrl == nil) { [preferences setValue:@"https://cameria.herokuapp.com/"
+    if(baseUrl == nil) { [preferences setValue:@"https://cameria-staging.herokuapp.com/"
                                         forKey:@"baseUrl"];}
     [preferences synchronize];
 }
