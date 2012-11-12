@@ -59,12 +59,12 @@
     // allocates space for the array that will contain the various
     // key value tuples with the request parameters
     NSMutableArray *parameters;
-
+    
     // retrieves the value for the base url from the preferences and
     // uses it together with the path value to construct the url string
     NSString *baseUrl = [preferences valueForKey:@"baseUrl"];
     NSString *urlString = [NSString stringWithFormat:@"%@%@", baseUrl, self.path];
-
+    
     // in case there are already parameters defined in the structure
     // they should be used and the parameters structure extended otherwise
     // an empty array is used instead, then adds the session id value into
@@ -95,7 +95,7 @@
     // in case the mask view in case it's not currently
     // set in the instance (lazy create)
     if(self.mask == nil) { [self createMask]; }
-
+    
     // shows the (now transparent) mask so that the user
     // is not able to click in the screen (avoids double
     // request, and problems)
@@ -127,7 +127,7 @@
     // in case the mask view in case it's not currently
     // set in the instance (lazy create)
     if(self.mask == nil) { [self createMask]; }
-
+    
     // creates the fade out animation for the mask view
     // so that it hides using an animation
     [UIView beginAnimations:@"fadeOut" context: nil];
@@ -157,7 +157,6 @@
     mask.backgroundColor = [UIColor clearColor];
     mask.alpha = 0.35;
     mask.hidden = YES;
-
     
     // creates the mask (activity) indicator indicator to be used as
     // an animation
@@ -218,7 +217,7 @@
 - (void)didReceiveJson:(NSDictionary *)data {
     NSDictionary *exception = [data valueForKey:@"exception"];
     if(exception && self.useSession == YES) { [self showLogin]; return; }
-
+    
     if(self.delegate) { [self.delegate didReceiveData:data]; }
 }
 
@@ -226,18 +225,16 @@
     // retrieves the localized error description, this is considered
     // to be the message to be presented
     NSString *message = [error localizedDescription];
-        
+    
     // creates the alert window that will be used to display the error
     // associated with the current authentication failure and then shows
     // it in a modal fashion, then returns immediately to the caller method
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ConnectionError", @"ConnectionError")
                                                     message:NSLocalizedString(message, message)
-                                                    delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"Confirm", @"Confirm")
-                                            otherButtonTitles:nil];
+                                                   delegate:nil
+                                          cancelButtonTitle:NSLocalizedString(@"Confirm", @"Confirm")
+                                          otherButtonTitles:nil];
     [alert show];
     
     if(self.delegate) { [self.delegate didReceiveError:error]; }
 }
-
-@end
