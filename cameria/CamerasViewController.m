@@ -43,6 +43,21 @@
     // the current view (should be able to change the background)
     UIImage *patternImage = [UIImage imageNamed:@"main-background.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
+    
+    // creates the structure for both the logout and the refresh
+    // buttons and then adds them to the left anr right of the
+    // navigation panel
+    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(logoutClick:)];
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(refreshClick:)];
+    
+    self.navigationItem.leftBarButtonItem = logoutButton;
+    self.navigationItem.rightBarButtonItem = refreshButton;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -123,6 +138,19 @@
     
     [self.cameraControllers setValue:cameraViewController forKey:rowString];
     [self.navigationController pushViewController:cameraViewController animated:YES];
+}
+
+- (IBAction)logoutClick:(id)sender {
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    [preferences removeObjectForKey:@"username"];
+    [preferences removeObjectForKey:@"objectId"];
+    [preferences removeObjectForKey:@"sessionId"];
+    
+    [self loadValues];
+}
+
+- (IBAction)refreshClick:(id)sender {
+    [self loadValues];
 }
 
 - (void)loadValues {
