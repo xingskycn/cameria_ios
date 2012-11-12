@@ -25,6 +25,7 @@
 
 #import "Dependencies.h"
 
+#import "AppDelegate.h"
 #import "CameraViewController.h"
 #import "ProxyRequest.h"
 #import "ProxyRequestDelegate.h"
@@ -39,5 +40,7 @@
 @property (strong) NSMutableDictionary *cameraControllers;
 @property (strong) NSArray *sets;
 @property (strong) IBOutlet UITableView *tableView;
+
+- (void)reset;
 
 @end

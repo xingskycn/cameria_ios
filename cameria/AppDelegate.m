@@ -25,6 +25,10 @@
 
 #import "AppDelegate.h"
 
+#import "SetsViewController.h"
+#import "CamerasViewController.h"
+#import "CreditsViewController.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -39,21 +43,18 @@
     // (this should be the main window of the application)
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    UIViewController *setsViewController;
-    UIViewController *camerasViewController;
-    UIViewController *creditsViewController;
     UINavigationController *setsNavigationViewController;
     UINavigationController *camerasNavigationViewController;
 
-    setsViewController = [[SetsViewController alloc] initWithNibName:@"SetsViewController" bundle:nil];
-    camerasViewController = [[CamerasViewController alloc] initWithNibName:@"CamerasViewController" bundle:nil];
-    creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
+    _setsViewController = [[SetsViewController alloc] initWithNibName:@"SetsViewController" bundle:nil];
+    _camerasViewController = [[CamerasViewController alloc] initWithNibName:@"CamerasViewController" bundle:nil];
+    _creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
 
-    setsNavigationViewController = [[UINavigationController alloc] initWithRootViewController:setsViewController];
-    camerasNavigationViewController = [[UINavigationController alloc] initWithRootViewController:camerasViewController];
+    setsNavigationViewController = [[UINavigationController alloc] initWithRootViewController:_setsViewController];
+    camerasNavigationViewController = [[UINavigationController alloc] initWithRootViewController:_camerasViewController];
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[setsNavigationViewController, camerasNavigationViewController, creditsViewController];
+    tabBarController.viewControllers = @[setsNavigationViewController, camerasNavigationViewController, _creditsViewController];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
 
@@ -83,6 +84,13 @@
     [_window release];
 
     [super dealloc];
+}
+
+- (void)reset {
+    // runs the reet operation on both the sets and
+    // the cameras controller (global reset)
+    [_setsViewController reset];
+    [_camerasViewController reset];
 }
 
 - (void)setDefaults {

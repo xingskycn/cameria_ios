@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C29A0B45164E95E200FE0A1A /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29A0B44164E95E200FE0A1A /* CreditsViewController.xib */; };
+		C2A3E9231651A602009E108C /* MosaicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E9211651A602009E108C /* MosaicViewController.m */; };
+		C2A3E9241651A602009E108C /* MosaicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A3E9221651A602009E108C /* MosaicViewController.xib */; };
 		C2E7073D160290BA00EAC308 /* MotionJpegImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E7073A160290BA00EAC308 /* MotionJpegImageView.m */; };
 		C2E7073E160290BA00EAC308 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E7073C160290BA00EAC308 /* AppDelegate.m */; };
 		C2E7074B1602913A00EAC308 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2E707481602913A00EAC308 /* Localizable.strings */; };
@@ -64,6 +66,9 @@
 
 /* Begin PBXFileReference section */
 		C29A0B44164E95E200FE0A1A /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreditsViewController.xib; path = cameria/CreditsViewController.xib; sourceTree = SOURCE_ROOT; };
+		C2A3E9201651A602009E108C /* MosaicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MosaicViewController.h; path = cameria/MosaicViewController.h; sourceTree = SOURCE_ROOT; };
+		C2A3E9211651A602009E108C /* MosaicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MosaicViewController.m; path = cameria/MosaicViewController.m; sourceTree = SOURCE_ROOT; };
+		C2A3E9221651A602009E108C /* MosaicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MosaicViewController.xib; path = cameria/MosaicViewController.xib; sourceTree = SOURCE_ROOT; };
 		C2E70739160290BA00EAC308 /* MotionJpegImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageView.h; path = cameria/MotionJpegImageView.h; sourceTree = SOURCE_ROOT; };
 		C2E7073A160290BA00EAC308 /* MotionJpegImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionJpegImageView.m; path = cameria/MotionJpegImageView.m; sourceTree = SOURCE_ROOT; };
 		C2E7073B160290BA00EAC308 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cameria/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -272,6 +277,9 @@
 				C3505537164C27F1006AEFB1 /* SetsViewController.h */,
 				C3505538164C27F2006AEFB1 /* SetsViewController.m */,
 				C3505539164C27F2006AEFB1 /* SetsViewController.xib */,
+				C2A3E9201651A602009E108C /* MosaicViewController.h */,
+				C2A3E9211651A602009E108C /* MosaicViewController.m */,
+				C2A3E9221651A602009E108C /* MosaicViewController.xib */,
 			);
 			name = Cameria;
 			path = MotionJpegImageView;
@@ -379,6 +387,7 @@
 				C3FB8905165166CB004253FC /* error@2x.png in Resources */,
 				C3FB890A165169C5004253FC /* loading.png in Resources */,
 				C3FB890B165169C5004253FC /* loading@2x.png in Resources */,
+				C2A3E9241651A602009E108C /* MosaicViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +408,7 @@
 				C3FB287C164D8319008F4981 /* LoginViewController.m in Sources */,
 				C3FB287E164D8319008F4981 /* ProxyRequest.m in Sources */,
 				C3FB288D164D84A2008F4981 /* HMJsonRequest.m in Sources */,
+				C2A3E9231651A602009E108C /* MosaicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -146,12 +146,24 @@
     [preferences removeObjectForKey:@"objectId"];
     [preferences removeObjectForKey:@"sessionId"];
 
-    self.cameras = nil;
+    // retrieves the reference to the current application delegate
+    // and unsets the camera view controller reference in it, no need
+    // to stop cameras that are already stopped
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [appDelegate reset];
+    
+    // tries to load the "new" value in order to trigger the display
+    // of the login screen (no authentication)
     [self loadValues];
 }
 
 - (IBAction)refreshClick:(id)sender {
     [self loadValues];
+}
+
+- (void)reset {
+    self.cameras = nil;
+    [self.tableView reloadData];
 }
 
 - (void)loadValues {
