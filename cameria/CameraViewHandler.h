@@ -1,13 +1,37 @@
+// Hive Cameria Service
+// Copyright (C) 2008-2012 Hive Solutions Lda.
 //
-//  CameraViewHandler.h
-//  cameria
+// This file is part of Hive Cameria Service.
 //
-//  Created by Administrator on 11/13/12.
-//  Copyright (c) 2012 ThinkFlood Inc. All rights reserved.
+// Hive Cameria Service is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 //
+// Hive Cameria Service is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Hive Cameria Service. If not, see <http://www.gnu.org/licenses/>.
 
-#import <Foundation/Foundation.h>
+// __author__    = João Magalhães <joamag@hive.pt>
+// __version__   = 1.0.0
+// __revision__  = $LastChangedRevision$
+// __date__      = $LastChangedDate$
+// __copyright__ = Copyright (c) 2008-2012 Hive Solutions Lda.
+// __license__   = GNU General Public License (GPL), Version 3
 
-@protocol CameraViewHandler <NSObject>
+#import "Dependencies.h"
+
+@protocol CameraViewHandler<NSObject>
+
+@property bool navigationVisible;
+@property (strong) NSArray *cameras;
+
+- (void)playCameras;
+- (void)pauseCameras;
+- (void)stopCameras;
 
 @end
