@@ -68,11 +68,11 @@
     [super viewDidAppear:animated];
     
     // retrieves the reference to the current application delegate
-    // and sets the camera view controller in it so that it's able
+    // and sets the camera view handler in it so that it's able
     // to stop the current cameras in case the application resigns
     // as active (provides bandwidth saving)
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    appDelegate.cameraViewController = self;
+    appDelegate.cameraViewHandler = self;
 
     [self playCameras];
 }
@@ -87,10 +87,10 @@
     [super viewDidDisappear:animated];
     
     // retrieves the reference to the current application delegate
-    // and unsets the camera view controller reference in it, no need
+    // and unsets the camera view handler reference in it, no need
     // to stop cameras that are already stopped
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    appDelegate.cameraViewController = nil;
+    appDelegate.cameraViewHandler = nil;
     
     [self pauseCameras];
 }

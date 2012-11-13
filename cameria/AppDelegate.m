@@ -32,7 +32,7 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize cameraViewController = _cameraViewController;
+@synthesize cameraViewHandler = _cameraViewHandler;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // initializes the default values in the preferences structure
@@ -66,15 +66,15 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     // pauses the image view to avoid extra
     // usage of traffic (bandwidth waste)
-    if(self.cameraViewController) { [self.cameraViewController pauseCameras]; }
+    if(self.cameraViewHandler) { [self.cameraViewHandler pauseCameras]; }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // resumes the playback of the image views
     // bandwidth is used again, not that the status
     // bar must be updated to the "correct" status
-    if(self.cameraViewController) {
-        [self.cameraViewController playCameras];
+    if(self.cameraViewHandler) {
+        [self.cameraViewHandler playCameras];
         [[UIApplication sharedApplication] setStatusBarHidden:NO];
         [self performSelector:@selector(updateNavigation) withObject:self afterDelay:0];
     }
@@ -111,7 +111,7 @@
 }
 
 - (void)updateNavigation {
-    if(self.cameraViewController.navigationVisible == YES) { return; }
+    if(self.cameraViewHandler.navigationVisible == YES) { return; }
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 
