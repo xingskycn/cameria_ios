@@ -167,10 +167,10 @@
 }
 
 - (void)loadValues {
-    ProxyRequest *proxyRequest = [[ProxyRequest alloc] initWithPath:self path:@"cameras.json"];
-    proxyRequest.delegate = self;
-    proxyRequest.parameters = [NSArray arrayWithObjects: nil];
-    [proxyRequest load];
+    _proxyRequest = [[ProxyRequest alloc] initWithPath:self path:@"cameras.json"];
+    _proxyRequest.delegate = self;
+    _proxyRequest.parameters = [NSArray arrayWithObjects: nil];
+    [_proxyRequest load];
 }
 
 - (void)didSend {

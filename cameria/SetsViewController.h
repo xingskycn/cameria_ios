@@ -30,13 +30,13 @@
 #import "CameraViewController.h"
 #import "MosaicViewController.h"
 #import "ProxyRequest.h"
-#import "ProxyRequestDelegate.h"
 
 @interface SetsViewController : UIViewController<UITableViewDataSource, ProxyRequestDelegate> {
     @private
     NSMutableDictionary *_cameraControllers;
     NSArray *_sets;
     UITableView *_tableView;
+    ProxyRequest *_proxyRequest;
 }
 
 @property (nonatomic) NSMutableDictionary *cameraControllers;

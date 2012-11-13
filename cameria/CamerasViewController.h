@@ -34,6 +34,7 @@
     NSMutableDictionary *_cameraControllers;
     NSArray *_sets;
     UITableView *_tableView;
+    ProxyRequest *_proxyRequest;
 }
 
 @property (nonatomic) NSMutableDictionary *cameraControllers;

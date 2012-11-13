@@ -90,10 +90,10 @@
 
     // creates a new proxy request to be used in the authentication procedure
     // note that this is an asynchronous call and may take some time
-    ProxyRequest *proxyRequest = [[ProxyRequest alloc] initWithPath:self path:path];
-    proxyRequest.delegate = self;
-    proxyRequest.useSession = NO;
-    [proxyRequest load];
+    _proxyRequest = [[ProxyRequest alloc] initWithPath:self path:path];
+    _proxyRequest.delegate = self;
+    _proxyRequest.useSession = NO;
+    [_proxyRequest load];
 
     // sends the resign as first responder to the "broadcast" application
     // this should hide the currently present keyboard

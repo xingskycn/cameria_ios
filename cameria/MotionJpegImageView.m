@@ -266,6 +266,8 @@ static NSData *_endMarkerData = nil;
 
 @interface MotionJpegImageView () <CredentialAlertDelegate>
 
+- (void)cleanupConnection;
+
 @end
 
 #pragma mark - Implementation
@@ -367,8 +369,10 @@ static NSData *_endMarkerData = nil;
     // set returns immediately, nothing to be done
     if(!_connection) { return; }
 
-    // cancels the current connection
+    // cancels the current connection and runs
+    // the cleanup operation in it
     [_connection cancel];
+    [self cleanupConnection];
 }
 
 - (void)clear {
@@ -434,6 +438,16 @@ static NSData *_endMarkerData = nil;
     _errorImage.frame = CGRectMake(x, y, 160, 150);
 }
 
+- (void)cleanupConnection {
+    // in case the current connection is defined
+    // it must have the reference unset
+    if(_connection) { _connection = nil; }
+    
+    // in case the're currently received data set it
+    // must have the reference unset
+    if(_receivedData) { _receivedData = nil; }
+}
+
 #pragma mark - NSURLConnection Delegate Methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -471,6 +485,7 @@ static NSData *_endMarkerData = nil;
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    [self cleanupConnection];
 }
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
@@ -495,8 +510,10 @@ static NSData *_endMarkerData = nil;
         [[challenge sender] useCredential:credentials forAuthenticationChallenge:challenge];
     }
     else {
-        // cancels the current authentication chalenge
+        // cancels the current authentication chalenge and runs
+        // the cleanup operation in the current connection
         [[challenge sender] cancelAuthenticationChallenge:challenge];
+        [self cleanupConnection];
         
         // creates a new credential alert window and populates it
         // with the currently set username then shows it
@@ -512,6 +529,8 @@ static NSData *_endMarkerData = nil;
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    [self cleanupConnection];
+    
     // unsets the current image so that nothing is display
     // in the screen (black screen)
     self.image = nil;

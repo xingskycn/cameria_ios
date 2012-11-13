@@ -28,7 +28,10 @@
 #import "ProxyRequest.h"
 #import "ProxyRequestDelegate.h"
 
+@class ProxyRequest;
+
 @interface LoginViewController : UIViewController<UITextFieldDelegate, ProxyRequestDelegate> {
+    ProxyRequest *_proxyRequest;
 }
 
 - (IBAction)textFieldFinished:(id)sender;
