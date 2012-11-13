@@ -23,8 +23,19 @@
 // __copyright__ = Copyright (c) 2008-2012 Hive Solutions Lda.
 // __license__   = GNU General Public License (GPL), Version 3
 
+"Sets" = "Sets";
+"Cameras" = "Cameras";
+"About" = "Sobre";
+"Confirm" = "Confirmar";
+"Sign In" = "Entrar";
+"Forgot your password ?" = "Esqueceu a sua palavra-passe ?";
+
+"LoginErrorName" = "Problema no login";
+
 "CredentialAlertTitle" = "Autorização Necessária";
 "CancelButtonTitle" = "Cancelar";
 "LoginButtonTitle" = "Entrar";
+"LogoutButtonTitle" = "Sair";
+"RefreshButtonTitle" = "Refrescar";
 "UsernamePlaceholderText" = "Utilizador";
 "PasswordPlaceholderText" = "Palavra-passe";

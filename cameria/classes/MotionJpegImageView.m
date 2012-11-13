@@ -86,11 +86,11 @@
 #pragma mark - Initializers
 
 - (id)initWithDelegate:(id<CredentialAlertDelegate>)delegate forHost:(NSString *)hostName {
-    self = [super initWithTitle:NSLocalizedString(@"CredentialAlertTitle", @"")
+    self = [super initWithTitle:NSLocalizedString(@"CredentialAlertTitle", @"Authorization Required")
                         message:hostName
                        delegate:self
-              cancelButtonTitle:NSLocalizedString(@"CancelButtonTitle", @"")
-              otherButtonTitles:NSLocalizedString(@"LoginButtonTitle", @""),
+              cancelButtonTitle:NSLocalizedString(@"CancelButtonTitle", @"Cancel")
+              otherButtonTitles:NSLocalizedString(@"LoginButtonTitle", @"Log In"),
             nil];
 
     if(self) {
@@ -99,7 +99,7 @@
         _usernameField = [[UITextField alloc] initWithFrame:CGRectZero];
         _usernameField.borderStyle = UITextBorderStyleBezel;
         _usernameField.backgroundColor = [UIColor whiteColor];
-        _usernameField.placeholder = NSLocalizedString(@"UsernamePlaceholderText", @"");
+        _usernameField.placeholder = NSLocalizedString(@"UsernamePlaceholderText", @"Username");
         _usernameField.delegate = self;
         _usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
         _usernameField.autocapitalizationType = UITextAutocapitalizationTypeNone;
@@ -111,7 +111,7 @@
         _passwordField.secureTextEntry = YES;
         _passwordField.borderStyle = UITextBorderStyleBezel;
         _passwordField.backgroundColor = [UIColor whiteColor];
-        _passwordField.placeholder = NSLocalizedString(@"PasswordPlaceholderText", @"");
+        _passwordField.placeholder = NSLocalizedString(@"PasswordPlaceholderText", @"Password");
         _passwordField.delegate = self;
         _passwordField.autocorrectionType = UITextAutocorrectionTypeNo;
         _passwordField.autocapitalizationType = UITextAutocapitalizationTypeNone;

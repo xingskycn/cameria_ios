@@ -43,8 +43,15 @@
     
     // updates the localization string on both the username field and
     // the password field
-    usernameField.placeholder = NSLocalizedString(@"UsernamePlaceholderText", @"UsernamePlaceholderText");
-    passwordField.placeholder = NSLocalizedString(@"PasswordPlaceholderText", @"PasswordPlaceholderText");
+    usernameField.placeholder = NSLocalizedString(@"UsernamePlaceholderText", @"Username");
+    passwordField.placeholder = NSLocalizedString(@"PasswordPlaceholderText", @"Password");
+    
+    
+    UIButton *signinButton = (UIButton *) [self.view viewWithTag:4];
+    [signinButton setTitle:NSLocalizedString(@"Sign In", @"Sign In") forState:UIControlStateNormal];
+    
+    UILabel *forgotLabel = (UILabel *) [self.view viewWithTag:5];
+    forgotLabel.text = NSLocalizedString(@"Forgot your password ?", @"Forgot your password ?");
 
     // forces the username field to become the first
     // responder (focus on the text field element)
@@ -112,11 +119,15 @@
     // retrieves the message contained in the exception structure
     // to be able to display it in a window
     NSString *message = [exception objectForKey:@"message"];
+    
+    NSLog(NSLocalizedString(message, message));
+    NSLog(NSLocalizedString(@"Both username and password must be provided", @"Both username and password must be provided"));
+    NSLog(NSLocalizedString(@"tobias", @"tobias"));
 
     // creates the alert window that will be used to display the error
     // associated with the current authentication failure and then shows
     // it in a modal fashion, then returns immediately to the caller method
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"LoginErrorName", @"LoginErrorName")
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"LoginErrorName", @"Problem in login")
                                                     message:NSLocalizedString(message, message)
                                                    delegate:nil
                                           cancelButtonTitle:NSLocalizedString(@"Confirm", @"Confirm")

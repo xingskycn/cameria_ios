@@ -47,11 +47,11 @@
     // creates the structure for both the logout and the refresh
     // buttons and then adds them to the left anr right of the
     // navigation panel
-    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"LogoutButtonTitle", @"Logout")
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(logoutClick:)];
-    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh"
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"RefreshButtonTitle", @"Refresh")
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(refreshClick:)];
