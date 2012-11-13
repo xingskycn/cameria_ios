@@ -27,16 +27,6 @@
 
 @implementation ProxyRequest
 
-@synthesize delegate = _delegate;
-@synthesize controller = _controller;
-@synthesize path = _path;
-@synthesize parameters = _parameters;
-@synthesize mask = _mask;
-@synthesize maskIndicator = _maskIndicator;
-@synthesize jsonRequest = _jsonRequest;
-@synthesize loading = _loading;
-@synthesize useSession = _useSession;
-
 - initWithPath:(UIViewController *)controller path:(NSString *)path {
     self = [super init];
     if(self) {

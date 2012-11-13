@@ -28,12 +28,6 @@
 #import "HMJsonRequestDelegate.h"
 
 @interface HMJsonRequest : NSObject {
-    @private
-    NSURL *_url;
-    NSArray *_parameters;
-    NSURLConnection *_connection;
-    NSMutableData *_receivedData;
-    __unsafe_unretained NSObject<HMJsonRequestDelegate> *_delegate;
 }
 
 /**

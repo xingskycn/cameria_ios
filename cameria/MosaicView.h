@@ -28,7 +28,6 @@
 @interface MosaicView : UIView {
     @private
     UIScrollView *_scrollView;
-    NSMutableArray *_imageViews;
 }
 
 @property (nonatomic) NSMutableArray *imageViews;

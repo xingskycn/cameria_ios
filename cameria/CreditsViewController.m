@@ -25,10 +25,6 @@
 
 #import "CreditsViewController.h"
 
-@interface CreditsViewController ()
-
-@end
-
 @implementation CreditsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

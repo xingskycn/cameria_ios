@@ -33,11 +33,9 @@
 
 @interface AppDelegate : UIResponder<UIApplicationDelegate> {
     @private
-    UIWindow *_window;
     SetsViewController *_setsViewController;
     CamerasViewController *_camerasViewController;
     CreditsViewController *_creditsViewController;
-    UIViewController<CameraViewHandler> *_cameraViewHandler;
 }
 
 @property (nonatomic) UIWindow *window;

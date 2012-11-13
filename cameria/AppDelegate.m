@@ -31,9 +31,6 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window;
-@synthesize cameraViewHandler = _cameraViewHandler;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // initializes the default values in the preferences structure
     // in case they don't already exist (and are defined)

@@ -27,10 +27,6 @@
 
 @implementation SetsViewController
 
-@synthesize cameraControllers = _cameraControllers;
-@synthesize sets = _sets;
-@synthesize tableView = _tableView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {

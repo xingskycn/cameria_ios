@@ -66,7 +66,6 @@
 
 @dynamic username;
 @dynamic password;
-@synthesize credentialDelegate = _credentialDelegate;
 
 - (NSString *)username {
     return _usernameField.text;
@@ -274,11 +273,6 @@ static NSData *_endMarkerData = nil;
 
 @implementation MotionJpegImageView
 
-@synthesize url = _url;
-@synthesize username = _username;
-@synthesize password = _password;
-@synthesize allowSelfSignedCertificates = _allowSelfSignedCertificates;
-@synthesize allowClearTextCredentials = _allowClearTextCredentials;
 @dynamic isPlaying;
 
 - (BOOL)isPlaying {

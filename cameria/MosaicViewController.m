@@ -31,9 +31,6 @@
 
 @synthesize navigationVisible = _navigationVisible;
 @synthesize cameras = _cameras;
-@synthesize cameraViews = _cameraViews;
-@synthesize cameraViewController = _cameraViewController;
-@synthesize mosaicView = _mosaicView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

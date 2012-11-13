@@ -31,12 +31,6 @@
 #import "CameraViewController.h"
 
 @interface MosaicViewController : UIViewController<CameraViewHandler, UIGestureRecognizerDelegate> {
-    @private
-    bool _navigationVisible;
-    NSArray *_cameras;
-    NSMutableArray *_cameraViews;
-    CameraViewController *_cameraViewController;
-    MosaicView *_mosaicView;
 }
 
 @property (nonatomic) NSMutableArray *cameraViews;

@@ -28,10 +28,7 @@
 @implementation CameraViewController
 
 @synthesize navigationVisible = _navigationVisible;
-@synthesize pageIndex = _pageIndex;
 @synthesize cameras = _cameras;
-@synthesize cameraViews = _cameraViews;
-@synthesize scrollView = _scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -27,12 +27,6 @@
 
 @implementation HMJsonRequest
 
-@synthesize url = _url;
-@synthesize parameters = _parameters;
-@synthesize connection = _connection;
-@synthesize receivedData = _receivedData;
-@synthesize delegate = _delegate;
-
 - initWithUrl:(NSURL *)url {
     self = [super init];
     if(self) {

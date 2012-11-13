@@ -29,16 +29,8 @@
 
 @interface MotionJpegImageView : UIImageView {
     @private
-    UIImageView *_loadingImage;
-    UIImageView *_errorImage;
-    __unsafe_unretained NSObject<MotionJpegImageViewDelegate> *_delegate;
-    NSURL *_url;
     NSURLConnection *_connection;
     NSMutableData *_receivedData;
-    NSString *_username;
-    NSString *_password;
-    BOOL _allowSelfSignedCertificates;
-    BOOL _allowClearTextCredentials;
     BOOL _thumbMode;
     BOOL _hasThumb;
 }

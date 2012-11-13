@@ -35,16 +35,6 @@
  * with the proper visual changes (loading mask settings).
  */
 @interface ProxyRequest : NSObject<HMJsonRequestDelegate> {
-    @private
-    __unsafe_unretained NSObject<ProxyRequestDelegate> *_delegate;
-    UIViewController *_controller;
-    NSString *_path;
-    NSArray *_parameters;
-    UIView *_mask;
-    UIActivityIndicatorView *_maskIndicator;
-    HMJsonRequest *_jsonRequest;
-    bool _loading;
-    bool _useSession;
 }
 
 @property (nonatomic, unsafe_unretained) NSObject<ProxyRequestDelegate> *delegate;

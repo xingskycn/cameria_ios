@@ -31,9 +31,7 @@
 #import "ProxyRequestDelegate.h"
 
 @interface CamerasViewController : UIViewController<UITableViewDataSource, ProxyRequestDelegate> {
-    NSMutableDictionary *_cameraControllers;
-    NSArray *_sets;
-    UITableView *_tableView;
+    @private
     ProxyRequest *_proxyRequest;
 }
 

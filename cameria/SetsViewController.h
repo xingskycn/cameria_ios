@@ -33,9 +33,6 @@
 
 @interface SetsViewController : UIViewController<UITableViewDataSource, ProxyRequestDelegate> {
     @private
-    NSMutableDictionary *_cameraControllers;
-    NSArray *_sets;
-    UITableView *_tableView;
     ProxyRequest *_proxyRequest;
 }
 

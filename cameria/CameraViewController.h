@@ -37,12 +37,6 @@
 #define BLACK_MARGIN_SIZE 36
 
 @interface CameraViewController : UIViewController<CameraViewHandler, UIGestureRecognizerDelegate, UIScrollViewDelegate, MotionJpegImageViewDelegate> {
-    @private
-    bool _navigationVisible;
-    int _pageIndex;
-    NSArray *_cameras;
-    NSMutableArray *_cameraViews;
-    UIScrollView *_scrollView;
 }
 
 @property (nonatomic) int pageIndex;
