@@ -26,7 +26,9 @@
 #import "Dependencies.h"
 
 #import "AppDelegate.h"
+#import "CameraViewHandler.h"
 #import "CameraViewController.h"
+#import "MosaicViewController.h"
 #import "ProxyRequest.h"
 #import "ProxyRequestDelegate.h"
 

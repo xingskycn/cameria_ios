@@ -104,14 +104,22 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     // onvers the row index into a string representation and uses it to
-    // retieve the camera view controller associated with the current index
+    // retieve the camera view handler associated with the current index
     NSString *rowString = [NSString stringWithFormat:@"%d", indexPath.row];
-    CameraViewController *cameraViewController = [self.cameraControllers valueForKey:rowString];
+    UIViewController<CameraViewHandler> *cameraViewHandler = [self.cameraControllers valueForKey:rowString];
 
-    if(!cameraViewController) {
-        cameraViewController = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
+    if(!cameraViewHandler) {
+        // checks if the current device is a phone or rather an pad device for
+        // the first case the camera controller should be displayed, otherwise
+        // the mosaic view shoud be disaplyed (for the pad)
+        if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            cameraViewHandler = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
+        } else {
+            cameraViewHandler = [[MosaicViewController alloc] initWithNibName:@"MosaicViewController" bundle:nil];
+        }
 
         NSDictionary *set = self.sets[indexPath.row];
+        NSString *name = [set valueForKey:@"name"];
         NSArray *cameras = [set valueForKey:@"cameras"];
 
         NSMutableArray *_cameras = [[NSMutableArray alloc] init];
@@ -143,14 +151,18 @@
 
             [_cameras addObject:[[NSArray alloc] initWithObjects:_id, url, nil]];
         }
+        
+        // sets the title in the camera view controller with the name
+        // of the current set to be populated
+        cameraViewHandler.title = name;
 
         // updates the reference to the cameras sequence in the camera view
-        // controller with the "just" constructed list of camera tuples
-        cameraViewController.cameras = _cameras;
+        // handler with the "just" constructed list of camera tuples
+        cameraViewHandler.cameras = _cameras;
     }
 
-    [self.cameraControllers setValue:cameraViewController forKey:rowString];
-    [self.navigationController pushViewController:cameraViewController animated:YES];
+    [self.cameraControllers setValue:cameraViewHandler forKey:rowString];
+    [self.navigationController pushViewController:cameraViewHandler animated:YES];
 }
 
 - (IBAction)logoutClick:(id)sender {
