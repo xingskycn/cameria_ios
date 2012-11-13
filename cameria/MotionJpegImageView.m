@@ -348,6 +348,12 @@ static NSData *_endMarkerData = nil;
 
 #pragma mark - Overrides
 
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    
+    [self positionImages];
+}
+
 - (void)dealloc {
     // in case the connection is defined it
     // must be canceled and the cleanup operation
@@ -433,15 +439,32 @@ static NSData *_endMarkerData = nil;
 #pragma mark - Private Methods
 
 - (void)createImages {
-    _loadingImage = [[UIImageView alloc] initWithFrame:CGRectMake(80, 199, 160, 150)];
+    CGFloat width = self.frame.size.width;
+    CGFloat height = self.frame.size.height;
+    
+    CGFloat x = (width / 2.0f) - (160.0f / 2.0f);
+    CGFloat y = (height / 2.0f) - (150.0f / 2.0f);
+    
+    _loadingImage = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 160, 150)];
     _loadingImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
 
-    _errorImage = [[UIImageView alloc] initWithFrame:CGRectMake(80, 199, 160, 150)];
+    _errorImage = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 160, 150)];
     _errorImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     _errorImage.hidden = YES;
 
     [self addSubview:_loadingImage];
     [self addSubview:_errorImage];
+}
+
+- (void)positionImages {
+    CGFloat width = self.frame.size.width;
+    CGFloat height = self.frame.size.height;
+    
+    CGFloat x = (width / 2.0f) - (160.0f / 2.0f);
+    CGFloat y = (height / 2.0f) - (150.0f / 2.0f);
+    
+    _loadingImage.frame = CGRectMake(x, y, 160, 150);
+    _errorImage.frame = CGRectMake(x, y, 160, 150);
 }
 
 - (void)cleanupConnection {
