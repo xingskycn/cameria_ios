@@ -19,9 +19,48 @@
 		C351F54F1652A9E40072BF7E /* MotionJpegImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F53F1652A9E40072BF7E /* MotionJpegImageView.m */; };
 		C351F5501652A9E40072BF7E /* ProxyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5421652A9E40072BF7E /* ProxyRequest.m */; };
 		C351F5511652A9E40072BF7E /* SetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5451652A9E40072BF7E /* SetsViewController.m */; };
-		C351F5531652AA800072BF7E /* static in Resources */ = {isa = PBXBuildFile; fileRef = C351F5521652AA800072BF7E /* static */; };
-		C351F5561652AAC10072BF7E /* support in Resources */ = {isa = PBXBuildFile; fileRef = C351F5551652AAC10072BF7E /* support */; };
-		C351F5581652AB0B0072BF7E /* views in Resources */ = {isa = PBXBuildFile; fileRef = C351F5571652AB0B0072BF7E /* views */; };
+		C3CE1AB51652AD8F00F57EA3 /* CamerasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AAE1652AD8F00F57EA3 /* CamerasViewController.xib */; };
+		C3CE1AB61652AD8F00F57EA3 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AAF1652AD8F00F57EA3 /* CameraViewController.xib */; };
+		C3CE1AB71652AD8F00F57EA3 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AB01652AD8F00F57EA3 /* CreditsViewController.xib */; };
+		C3CE1AB81652AD8F00F57EA3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AB11652AD8F00F57EA3 /* LoginViewController.xib */; };
+		C3CE1AB91652AD8F00F57EA3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AB21652AD8F00F57EA3 /* MainWindow.xib */; };
+		C3CE1ABA1652AD8F00F57EA3 /* MosaicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AB31652AD8F00F57EA3 /* MosaicViewController.xib */; };
+		C3CE1ABB1652AD8F00F57EA3 /* SetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AB41652AD8F00F57EA3 /* SetsViewController.xib */; };
+		C3CE1AE31652AE6B00F57EA3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AC01652AE6B00F57EA3 /* Icon-72.png */; };
+		C3CE1AE41652AE6B00F57EA3 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AC11652AE6B00F57EA3 /* Icon-72@2x.png */; };
+		C3CE1AE51652AE6B00F57EA3 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AC21652AE6B00F57EA3 /* Icon-Small-50.png */; };
+		C3CE1AE61652AE6B00F57EA3 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AC31652AE6B00F57EA3 /* Icon-Small-50@2x.png */; };
+		C3CE1AE71652AE6B00F57EA3 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AC41652AE6B00F57EA3 /* Icon-Small.png */; };
+		C3CE1AE81652AE6B00F57EA3 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AC51652AE6B00F57EA3 /* Icon-Small@2x.png */; };
+		C3CE1AE91652AE6B00F57EA3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AC61652AE6B00F57EA3 /* Icon.png */; };
+		C3CE1AEA1652AE6B00F57EA3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AC71652AE6B00F57EA3 /* Icon@2x.png */; };
+		C3CE1AEB1652AE6B00F57EA3 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AC81652AE6B00F57EA3 /* iTunesArtwork.png */; };
+		C3CE1AEC1652AE6B00F57EA3 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AC91652AE6B00F57EA3 /* iTunesArtwork@2x.png */; };
+		C3CE1AED1652AE6B00F57EA3 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ACB1652AE6B00F57EA3 /* button.png */; };
+		C3CE1AEE1652AE6B00F57EA3 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ACC1652AE6B00F57EA3 /* button@2x.png */; };
+		C3CE1AEF1652AE6B00F57EA3 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ACD1652AE6B00F57EA3 /* error.png */; };
+		C3CE1AF01652AE6B00F57EA3 /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ACE1652AE6B00F57EA3 /* error@2x.png */; };
+		C3CE1AF11652AE6B00F57EA3 /* icon-about.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ACF1652AE6B00F57EA3 /* icon-about.png */; };
+		C3CE1AF21652AE6B00F57EA3 /* icon-about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AD01652AE6B00F57EA3 /* icon-about@2x.png */; };
+		C3CE1AF31652AE6B00F57EA3 /* icon-cameras.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AD11652AE6B00F57EA3 /* icon-cameras.png */; };
+		C3CE1AF41652AE6B00F57EA3 /* icon-cameras@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AD21652AE6B00F57EA3 /* icon-cameras@2x.png */; };
+		C3CE1AF51652AE6B00F57EA3 /* icon-sets.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AD31652AE6B00F57EA3 /* icon-sets.png */; };
+		C3CE1AF61652AE6B00F57EA3 /* icon-sets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AD41652AE6B00F57EA3 /* icon-sets@2x.png */; };
+		C3CE1AF71652AE6B00F57EA3 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AD51652AE6B00F57EA3 /* loading.png */; };
+		C3CE1AF81652AE6B00F57EA3 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AD61652AE6B00F57EA3 /* loading@2x.png */; };
+		C3CE1AF91652AE6B00F57EA3 /* logo-about.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AD71652AE6B00F57EA3 /* logo-about.png */; };
+		C3CE1AFA1652AE6B00F57EA3 /* logo-about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AD81652AE6B00F57EA3 /* logo-about@2x.png */; };
+		C3CE1AFB1652AE6B00F57EA3 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AD91652AE6B00F57EA3 /* logo.png */; };
+		C3CE1AFC1652AE6B00F57EA3 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ADA1652AE6B00F57EA3 /* logo@2x.png */; };
+		C3CE1AFD1652AE6B00F57EA3 /* main-background-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ADB1652AE6B00F57EA3 /* main-background-dark.png */; };
+		C3CE1AFE1652AE6B00F57EA3 /* main-background-dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ADC1652AE6B00F57EA3 /* main-background-dark@2x.png */; };
+		C3CE1AFF1652AE6B00F57EA3 /* main-background.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ADD1652AE6B00F57EA3 /* main-background.png */; };
+		C3CE1B001652AE6B00F57EA3 /* main-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ADE1652AE6B00F57EA3 /* main-background@2x.png */; };
+		C3CE1B011652AE6B00F57EA3 /* textfields_a.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ADF1652AE6B00F57EA3 /* textfields_a.png */; };
+		C3CE1B021652AE6B00F57EA3 /* textfields_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AE01652AE6B00F57EA3 /* textfields_a@2x.png */; };
+		C3CE1B031652AE6B00F57EA3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AE21652AE6B00F57EA3 /* Default-568h@2x.png */; };
+		C3CE1B081652AE9000F57EA3 /* cameria.xcodeproj-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1B051652AE9000F57EA3 /* cameria.xcodeproj-Info.plist */; };
+		C3CE1B091652AE9000F57EA3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1B071652AE9000F57EA3 /* Localizable.strings */; };
 		C636B828143B7538008CB95D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B827143B7538008CB95D /* UIKit.framework */; };
 		C636B82A143B7538008CB95D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B829143B7538008CB95D /* Foundation.framework */; };
 		C636B82C143B7538008CB95D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B82B143B7538008CB95D /* CoreGraphics.framework */; };
@@ -55,9 +94,49 @@
 		C351F5431652A9E40072BF7E /* ProxyRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProxyRequestDelegate.h; path = cameria/classes/ProxyRequestDelegate.h; sourceTree = SOURCE_ROOT; };
 		C351F5441652A9E40072BF7E /* SetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetsViewController.h; path = cameria/classes/SetsViewController.h; sourceTree = SOURCE_ROOT; };
 		C351F5451652A9E40072BF7E /* SetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetsViewController.m; path = cameria/classes/SetsViewController.m; sourceTree = SOURCE_ROOT; };
-		C351F5521652AA800072BF7E /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; name = static; path = cameria/static; sourceTree = SOURCE_ROOT; };
-		C351F5551652AAC10072BF7E /* support */ = {isa = PBXFileReference; lastKnownFileType = folder; name = support; path = cameria/support; sourceTree = SOURCE_ROOT; };
-		C351F5571652AB0B0072BF7E /* views */ = {isa = PBXFileReference; lastKnownFileType = folder; name = views; path = cameria/views; sourceTree = SOURCE_ROOT; };
+		C3CE1AAE1652AD8F00F57EA3 /* CamerasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CamerasViewController.xib; path = cameria/views/CamerasViewController.xib; sourceTree = SOURCE_ROOT; };
+		C3CE1AAF1652AD8F00F57EA3 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraViewController.xib; path = cameria/views/CameraViewController.xib; sourceTree = SOURCE_ROOT; };
+		C3CE1AB01652AD8F00F57EA3 /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreditsViewController.xib; path = cameria/views/CreditsViewController.xib; sourceTree = SOURCE_ROOT; };
+		C3CE1AB11652AD8F00F57EA3 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = cameria/views/LoginViewController.xib; sourceTree = SOURCE_ROOT; };
+		C3CE1AB21652AD8F00F57EA3 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = cameria/views/MainWindow.xib; sourceTree = SOURCE_ROOT; };
+		C3CE1AB31652AD8F00F57EA3 /* MosaicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MosaicViewController.xib; path = cameria/views/MosaicViewController.xib; sourceTree = SOURCE_ROOT; };
+		C3CE1AB41652AD8F00F57EA3 /* SetsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SetsViewController.xib; path = cameria/views/SetsViewController.xib; sourceTree = SOURCE_ROOT; };
+		C3CE1AC01652AE6B00F57EA3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		C3CE1AC11652AE6B00F57EA3 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		C3CE1AC21652AE6B00F57EA3 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		C3CE1AC31652AE6B00F57EA3 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		C3CE1AC41652AE6B00F57EA3 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		C3CE1AC51652AE6B00F57EA3 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		C3CE1AC61652AE6B00F57EA3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C3CE1AC71652AE6B00F57EA3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		C3CE1AC81652AE6B00F57EA3 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		C3CE1AC91652AE6B00F57EA3 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		C3CE1ACB1652AE6B00F57EA3 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		C3CE1ACC1652AE6B00F57EA3 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		C3CE1ACD1652AE6B00F57EA3 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
+		C3CE1ACE1652AE6B00F57EA3 /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error@2x.png"; sourceTree = "<group>"; };
+		C3CE1ACF1652AE6B00F57EA3 /* icon-about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-about.png"; sourceTree = "<group>"; };
+		C3CE1AD01652AE6B00F57EA3 /* icon-about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-about@2x.png"; sourceTree = "<group>"; };
+		C3CE1AD11652AE6B00F57EA3 /* icon-cameras.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-cameras.png"; sourceTree = "<group>"; };
+		C3CE1AD21652AE6B00F57EA3 /* icon-cameras@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-cameras@2x.png"; sourceTree = "<group>"; };
+		C3CE1AD31652AE6B00F57EA3 /* icon-sets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-sets.png"; sourceTree = "<group>"; };
+		C3CE1AD41652AE6B00F57EA3 /* icon-sets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-sets@2x.png"; sourceTree = "<group>"; };
+		C3CE1AD51652AE6B00F57EA3 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		C3CE1AD61652AE6B00F57EA3 /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
+		C3CE1AD71652AE6B00F57EA3 /* logo-about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-about.png"; sourceTree = "<group>"; };
+		C3CE1AD81652AE6B00F57EA3 /* logo-about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-about@2x.png"; sourceTree = "<group>"; };
+		C3CE1AD91652AE6B00F57EA3 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		C3CE1ADA1652AE6B00F57EA3 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		C3CE1ADB1652AE6B00F57EA3 /* main-background-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background-dark.png"; sourceTree = "<group>"; };
+		C3CE1ADC1652AE6B00F57EA3 /* main-background-dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background-dark@2x.png"; sourceTree = "<group>"; };
+		C3CE1ADD1652AE6B00F57EA3 /* main-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background.png"; sourceTree = "<group>"; };
+		C3CE1ADE1652AE6B00F57EA3 /* main-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background@2x.png"; sourceTree = "<group>"; };
+		C3CE1ADF1652AE6B00F57EA3 /* textfields_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textfields_a.png; sourceTree = "<group>"; };
+		C3CE1AE01652AE6B00F57EA3 /* textfields_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfields_a@2x.png"; sourceTree = "<group>"; };
+		C3CE1AE21652AE6B00F57EA3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C3CE1B051652AE9000F57EA3 /* cameria.xcodeproj-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cameria.xcodeproj-Info.plist"; sourceTree = "<group>"; };
+		C3CE1B061652AE9000F57EA3 /* cameria.xcodeproj-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cameria.xcodeproj-Prefix.pch"; sourceTree = "<group>"; };
+		C3CE1B071652AE9000F57EA3 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C3FB2889164D843F008F4981 /* Dependencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dependencies.h; path = cameria/classes/Dependencies.h; sourceTree = SOURCE_ROOT; };
 		C636B823143B7538008CB95D /* cameria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C636B827143B7538008CB95D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -79,6 +158,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3CE1AAD1652AD7F00F57EA3 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE1AAE1652AD8F00F57EA3 /* CamerasViewController.xib */,
+				C3CE1AAF1652AD8F00F57EA3 /* CameraViewController.xib */,
+				C3CE1AB01652AD8F00F57EA3 /* CreditsViewController.xib */,
+				C3CE1AB11652AD8F00F57EA3 /* LoginViewController.xib */,
+				C3CE1AB21652AD8F00F57EA3 /* MainWindow.xib */,
+				C3CE1AB31652AD8F00F57EA3 /* MosaicViewController.xib */,
+				C3CE1AB41652AD8F00F57EA3 /* SetsViewController.xib */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		C3CE1ABE1652AE6B00F57EA3 /* static */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE1ABF1652AE6B00F57EA3 /* icons */,
+				C3CE1ACA1652AE6B00F57EA3 /* images */,
+				C3CE1AE11652AE6B00F57EA3 /* tiles */,
+			);
+			name = static;
+			path = cameria/static;
+			sourceTree = SOURCE_ROOT;
+		};
+		C3CE1ABF1652AE6B00F57EA3 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE1AC01652AE6B00F57EA3 /* Icon-72.png */,
+				C3CE1AC11652AE6B00F57EA3 /* Icon-72@2x.png */,
+				C3CE1AC21652AE6B00F57EA3 /* Icon-Small-50.png */,
+				C3CE1AC31652AE6B00F57EA3 /* Icon-Small-50@2x.png */,
+				C3CE1AC41652AE6B00F57EA3 /* Icon-Small.png */,
+				C3CE1AC51652AE6B00F57EA3 /* Icon-Small@2x.png */,
+				C3CE1AC61652AE6B00F57EA3 /* Icon.png */,
+				C3CE1AC71652AE6B00F57EA3 /* Icon@2x.png */,
+				C3CE1AC81652AE6B00F57EA3 /* iTunesArtwork.png */,
+				C3CE1AC91652AE6B00F57EA3 /* iTunesArtwork@2x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		C3CE1ACA1652AE6B00F57EA3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE1ACB1652AE6B00F57EA3 /* button.png */,
+				C3CE1ACC1652AE6B00F57EA3 /* button@2x.png */,
+				C3CE1ACD1652AE6B00F57EA3 /* error.png */,
+				C3CE1ACE1652AE6B00F57EA3 /* error@2x.png */,
+				C3CE1ACF1652AE6B00F57EA3 /* icon-about.png */,
+				C3CE1AD01652AE6B00F57EA3 /* icon-about@2x.png */,
+				C3CE1AD11652AE6B00F57EA3 /* icon-cameras.png */,
+				C3CE1AD21652AE6B00F57EA3 /* icon-cameras@2x.png */,
+				C3CE1AD31652AE6B00F57EA3 /* icon-sets.png */,
+				C3CE1AD41652AE6B00F57EA3 /* icon-sets@2x.png */,
+				C3CE1AD51652AE6B00F57EA3 /* loading.png */,
+				C3CE1AD61652AE6B00F57EA3 /* loading@2x.png */,
+				C3CE1AD71652AE6B00F57EA3 /* logo-about.png */,
+				C3CE1AD81652AE6B00F57EA3 /* logo-about@2x.png */,
+				C3CE1AD91652AE6B00F57EA3 /* logo.png */,
+				C3CE1ADA1652AE6B00F57EA3 /* logo@2x.png */,
+				C3CE1ADB1652AE6B00F57EA3 /* main-background-dark.png */,
+				C3CE1ADC1652AE6B00F57EA3 /* main-background-dark@2x.png */,
+				C3CE1ADD1652AE6B00F57EA3 /* main-background.png */,
+				C3CE1ADE1652AE6B00F57EA3 /* main-background@2x.png */,
+				C3CE1ADF1652AE6B00F57EA3 /* textfields_a.png */,
+				C3CE1AE01652AE6B00F57EA3 /* textfields_a@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		C3CE1AE11652AE6B00F57EA3 /* tiles */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE1AE21652AE6B00F57EA3 /* Default-568h@2x.png */,
+			);
+			path = tiles;
+			sourceTree = "<group>";
+		};
+		C3CE1B041652AE8F00F57EA3 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				C3CE1B051652AE9000F57EA3 /* cameria.xcodeproj-Info.plist */,
+				C3CE1B061652AE9000F57EA3 /* cameria.xcodeproj-Prefix.pch */,
+				C3CE1B071652AE9000F57EA3 /* Localizable.strings */,
+			);
+			name = support;
+			path = cameria/support;
+			sourceTree = SOURCE_ROOT;
+		};
 		C3FB2888164D8437008F4981 /* classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,9 +314,9 @@
 			isa = PBXGroup;
 			children = (
 				C3FB2888164D8437008F4981 /* classes */,
-				C351F5521652AA800072BF7E /* static */,
-				C351F5551652AAC10072BF7E /* support */,
-				C351F5571652AB0B0072BF7E /* views */,
+				C3CE1ABE1652AE6B00F57EA3 /* static */,
+				C3CE1B041652AE8F00F57EA3 /* support */,
+				C3CE1AAD1652AD7F00F57EA3 /* views */,
 			);
 			name = Cameria;
 			path = MotionJpegImageView;
@@ -204,9 +373,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C351F5531652AA800072BF7E /* static in Resources */,
-				C351F5561652AAC10072BF7E /* support in Resources */,
-				C351F5581652AB0B0072BF7E /* views in Resources */,
+				C3CE1AB51652AD8F00F57EA3 /* CamerasViewController.xib in Resources */,
+				C3CE1AB61652AD8F00F57EA3 /* CameraViewController.xib in Resources */,
+				C3CE1AB71652AD8F00F57EA3 /* CreditsViewController.xib in Resources */,
+				C3CE1AB81652AD8F00F57EA3 /* LoginViewController.xib in Resources */,
+				C3CE1AB91652AD8F00F57EA3 /* MainWindow.xib in Resources */,
+				C3CE1ABA1652AD8F00F57EA3 /* MosaicViewController.xib in Resources */,
+				C3CE1ABB1652AD8F00F57EA3 /* SetsViewController.xib in Resources */,
+				C3CE1AE31652AE6B00F57EA3 /* Icon-72.png in Resources */,
+				C3CE1AE41652AE6B00F57EA3 /* Icon-72@2x.png in Resources */,
+				C3CE1AE51652AE6B00F57EA3 /* Icon-Small-50.png in Resources */,
+				C3CE1AE61652AE6B00F57EA3 /* Icon-Small-50@2x.png in Resources */,
+				C3CE1AE71652AE6B00F57EA3 /* Icon-Small.png in Resources */,
+				C3CE1AE81652AE6B00F57EA3 /* Icon-Small@2x.png in Resources */,
+				C3CE1AE91652AE6B00F57EA3 /* Icon.png in Resources */,
+				C3CE1AEA1652AE6B00F57EA3 /* Icon@2x.png in Resources */,
+				C3CE1AEB1652AE6B00F57EA3 /* iTunesArtwork.png in Resources */,
+				C3CE1AEC1652AE6B00F57EA3 /* iTunesArtwork@2x.png in Resources */,
+				C3CE1AED1652AE6B00F57EA3 /* button.png in Resources */,
+				C3CE1AEE1652AE6B00F57EA3 /* button@2x.png in Resources */,
+				C3CE1AEF1652AE6B00F57EA3 /* error.png in Resources */,
+				C3CE1AF01652AE6B00F57EA3 /* error@2x.png in Resources */,
+				C3CE1AF11652AE6B00F57EA3 /* icon-about.png in Resources */,
+				C3CE1AF21652AE6B00F57EA3 /* icon-about@2x.png in Resources */,
+				C3CE1AF31652AE6B00F57EA3 /* icon-cameras.png in Resources */,
+				C3CE1AF41652AE6B00F57EA3 /* icon-cameras@2x.png in Resources */,
+				C3CE1AF51652AE6B00F57EA3 /* icon-sets.png in Resources */,
+				C3CE1AF61652AE6B00F57EA3 /* icon-sets@2x.png in Resources */,
+				C3CE1AF71652AE6B00F57EA3 /* loading.png in Resources */,
+				C3CE1AF81652AE6B00F57EA3 /* loading@2x.png in Resources */,
+				C3CE1AF91652AE6B00F57EA3 /* logo-about.png in Resources */,
+				C3CE1AFA1652AE6B00F57EA3 /* logo-about@2x.png in Resources */,
+				C3CE1AFB1652AE6B00F57EA3 /* logo.png in Resources */,
+				C3CE1AFC1652AE6B00F57EA3 /* logo@2x.png in Resources */,
+				C3CE1AFD1652AE6B00F57EA3 /* main-background-dark.png in Resources */,
+				C3CE1AFE1652AE6B00F57EA3 /* main-background-dark@2x.png in Resources */,
+				C3CE1AFF1652AE6B00F57EA3 /* main-background.png in Resources */,
+				C3CE1B001652AE6B00F57EA3 /* main-background@2x.png in Resources */,
+				C3CE1B011652AE6B00F57EA3 /* textfields_a.png in Resources */,
+				C3CE1B021652AE6B00F57EA3 /* textfields_a@2x.png in Resources */,
+				C3CE1B031652AE6B00F57EA3 /* Default-568h@2x.png in Resources */,
+				C3CE1B081652AE9000F57EA3 /* cameria.xcodeproj-Info.plist in Resources */,
+				C3CE1B091652AE9000F57EA3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
