@@ -40,7 +40,7 @@
  * The url of the resource to be retrieved
  * by the json request.
  */
-@property (strong) NSURL *url;
+@property (nonatomic) NSURL *url;
 
 /**
  * The sequence of tuples containing the various
@@ -50,19 +50,19 @@
  * (under the url) in case the current request is of
  * type get.
  */
-@property (strong) NSArray *parameters;
+@property (nonatomic) NSArray *parameters;
 
 /**
  * The connection to be used for the retrieval
  * of the resources.
  */
-@property (strong) NSURLConnection *connection;
+@property (nonatomic) NSURLConnection *connection;
 
 /**
  * The buffer to be used to store the received
  * data while the data transfer is not complete.
  */
-@property (strong) NSMutableData *receivedData;
+@property (nonatomic) NSMutableData *receivedData;
 
 /**
  * The delegate object that will be notified about
@@ -72,7 +72,7 @@
  * In case this value is set notifications will be sent
  * for both errors and data receivals.
  */
-@property (strong) NSObject<HMJsonRequestDelegate> *delegate;
+@property (nonatomic) NSObject<HMJsonRequestDelegate> *delegate;
 
 - initWithUrl:(NSURL *)url;
 - initWithUrlString:(NSString *)urlString;

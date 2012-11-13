@@ -47,15 +47,15 @@
     bool _useSession;
 }
 
-@property (strong) NSObject<ProxyRequestDelegate> *delegate;
-@property (strong) UIViewController *controller;
-@property (strong) NSString *path;
-@property (strong) NSArray *parameters;
-@property (strong) UIView *mask;
-@property (strong) UIActivityIndicatorView *maskIndicator;
-@property (strong) HMJsonRequest *jsonRequest;
-@property bool loading;
-@property bool useSession;
+@property (nonatomic) NSObject<ProxyRequestDelegate> *delegate;
+@property (nonatomic) UIViewController *controller;
+@property (nonatomic) NSString *path;
+@property (nonatomic) NSArray *parameters;
+@property (nonatomic) UIView *mask;
+@property (nonatomic) UIActivityIndicatorView *maskIndicator;
+@property (nonatomic) HMJsonRequest *jsonRequest;
+@property (nonatomic) bool loading;
+@property (nonatomic) bool useSession;
 
 - initWithPath:(UIViewController *)controller path:(NSString *)path;
 - (void)load;

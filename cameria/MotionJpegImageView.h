@@ -31,7 +31,7 @@
     @private
     UIImageView *_loadingImage;
     UIImageView *_errorImage;
-    NSObject<MotionJpegImageViewDelegate> *_delegate;
+    __unsafe_unretained NSObject<MotionJpegImageViewDelegate> *_delegate;
     NSURL *_url;
     NSURLConnection *_connection;
     NSMutableData *_receivedData;
@@ -43,15 +43,15 @@
     BOOL _hasThumb;
 }
 
-@property (readonly) UIImageView *loadingImage;
-@property (readonly) UIImageView *errorImage;
-@property (nonatomic, readwrite, assign) NSObject<MotionJpegImageViewDelegate> *delegate;
+@property (nonatomic, readonly) UIImageView *loadingImage;
+@property (nonatomic, readonly) UIImageView *errorImage;
+@property (nonatomic, readwrite, unsafe_unretained) NSObject<MotionJpegImageViewDelegate> *delegate;
 @property (nonatomic, readwrite, copy) NSURL *url;
-@property (readonly) BOOL isPlaying;
+@property (nonatomic, readonly) BOOL isPlaying;
 @property (nonatomic, readwrite, copy) NSString *username;
 @property (nonatomic, readwrite, copy) NSString *password;
-@property (nonatomic, readwrite, assign) BOOL allowSelfSignedCertificates;
-@property (nonatomic, readwrite, assign) BOOL allowClearTextCredentials;
+@property (nonatomic, readwrite) BOOL allowSelfSignedCertificates;
+@property (nonatomic, readwrite) BOOL allowClearTextCredentials;
 
 /**
  * Plays the image motion from the start in case

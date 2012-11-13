@@ -31,7 +31,7 @@
     NSMutableArray *_imageViews;
 }
 
-@property (strong) NSMutableArray *imageViews;
+@property (nonatomic) NSMutableArray *imageViews;
 
 - (void)addImageView:(UIImageView *)imageView;
 

@@ -27,8 +27,8 @@
 
 @protocol CameraViewHandler<NSObject>
 
-@property bool navigationVisible;
-@property (strong) NSArray *cameras;
+@property (nonatomic) bool navigationVisible;
+@property (nonatomic) NSArray *cameras;
 
 - (void)playCameras;
 - (void)pauseCameras;

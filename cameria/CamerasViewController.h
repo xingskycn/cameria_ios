@@ -36,9 +36,9 @@
     UITableView *_tableView;
 }
 
-@property (strong) NSMutableDictionary *cameraControllers;
-@property (strong) NSArray *cameras;
-@property (strong) IBOutlet UITableView *tableView;
+@property (nonatomic) NSMutableDictionary *cameraControllers;
+@property (nonatomic) NSArray *cameras;
+@property (nonatomic) IBOutlet UITableView *tableView;
 
 - (void)reset;
 

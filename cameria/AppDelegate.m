@@ -80,14 +80,6 @@
     }
 }
 
-- (void)dealloc {
-    // releases the window and the image view
-    // references no more need to hold them
-    [_window release];
-
-    [super dealloc];
-}
-
 - (void)reset {
     // runs the reet operation on both the sets and
     // the cameras controller (global reset)

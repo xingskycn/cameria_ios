@@ -40,7 +40,7 @@
     @private
     UITextField *_usernameField;
     UITextField *_passwordField;
-    id<CredentialAlertDelegate> _credentialDelegate;
+    __unsafe_unretained id<CredentialAlertDelegate> _credentialDelegate;
 }
 
 @property (nonatomic, readwrite, copy) NSString *username;
@@ -107,7 +107,6 @@
         _usernameField.returnKeyType = UIReturnKeyNext;
         _usernameField.clearButtonMode = UITextFieldViewModeUnlessEditing;
         [self addSubview:_usernameField];
-        [_usernameField release];
 
         _passwordField = [[UITextField alloc] initWithFrame:CGRectZero];
         _passwordField.secureTextEntry = YES;
@@ -120,17 +119,12 @@
         _passwordField.returnKeyType = UIReturnKeyDone;
         _passwordField.clearButtonMode = UITextFieldViewModeUnlessEditing;
         [self addSubview:_passwordField];
-        [_passwordField release];
     }
 
     return self;
 }
 
 #pragma mark - Overrides
-
-- (void)dealloc {
-    [super dealloc];
-}
 
 - (void)setFrame:(CGRect)frame {
     frame.size.height = ALERT_HEIGHT;
@@ -272,8 +266,6 @@ static NSData *_endMarkerData = nil;
 
 @interface MotionJpegImageView () <CredentialAlertDelegate>
 
-- (void)cleanupConnection;
-
 @end
 
 #pragma mark - Implementation
@@ -351,26 +343,6 @@ static NSData *_endMarkerData = nil;
     [self positionImages];
 }
 
-- (void)dealloc {
-    // in case the connection is defined it
-    // must be canceled and the cleanup operation
-    // must be performed
-    if(_connection) {
-        [_connection cancel];
-        [self cleanupConnection];
-    }
-
-    // releases the various components of the
-    // current structure in case they are defined
-    if(_loadingImage) { [_loadingImage release]; }
-    if(_errorImage) { [_errorImage release]; }
-    if(_url) { [_url release]; }
-    if(_username) { [_username release]; }
-    if(_password) { [_password release]; }
-
-    [super dealloc];
-}
-
 #pragma mark - Public Methods
 
 - (void)play {
@@ -395,10 +367,8 @@ static NSData *_endMarkerData = nil;
     // set returns immediately, nothing to be done
     if(!_connection) { return; }
 
-    // cancels the current connection and runs
-    // the cleanup operation in it
+    // cancels the current connection
     [_connection cancel];
-    [self cleanupConnection];
 }
 
 - (void)clear {
@@ -464,29 +434,10 @@ static NSData *_endMarkerData = nil;
     _errorImage.frame = CGRectMake(x, y, 160, 150);
 }
 
-- (void)cleanupConnection {
-    // in case the current connection is defined
-    // it must be releases and the reference unset
-    if(_connection) {
-        [_connection release];
-        _connection = nil;
-    }
-
-    // in case the're currently received data set it
-    // must be releasead and the reference unset
-    if(_receivedData) {
-        [_receivedData release];
-        _receivedData = nil;
-    }
-}
-
 #pragma mark - NSURLConnection Delegate Methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    // releases the currently allocated data (no more data
-    // pending for the current response) and creates a new
-    // mutable data for the new response
-    if(_receivedData) { [_receivedData release]; }
+    // creates a new mutable data for the new response
     _receivedData = [[NSMutableData alloc] init];
 }
 
@@ -520,7 +471,6 @@ static NSData *_endMarkerData = nil;
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    [self cleanupConnection];
 }
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
@@ -545,11 +495,9 @@ static NSData *_endMarkerData = nil;
         [[challenge sender] useCredential:credentials forAuthenticationChallenge:challenge];
     }
     else {
-        // cancels the current authentication chalenge and runs
-        // the cleanup operation in the current connection
+        // cancels the current authentication chalenge
         [[challenge sender] cancelAuthenticationChallenge:challenge];
-        [self cleanupConnection];
-
+        
         // creates a new credential alert window and populates it
         // with the currently set username then shows it
         CredentialAlertView *loginAlert = [[CredentialAlertView alloc] initWithDelegate:self
@@ -564,8 +512,6 @@ static NSData *_endMarkerData = nil;
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    [self cleanupConnection];
-
     // unsets the current image so that nothing is display
     // in the screen (black screen)
     self.image = nil;
@@ -581,17 +527,13 @@ static NSData *_endMarkerData = nil;
 #pragma mark - CredentialAlertView Delegate Methods
 
 - (void)credentialAlertCancelled:(CredentialAlertView *)alert {
-    // releases the alert window not going to
-    // be used for anything more (avoids leaks)
-    [alert release];
 }
 
 - (void)credentialAlertSaved:(CredentialAlertView *)alert {
     // stores both the usedname and password values retrived
-    // from the alert window and then releases the alert window
+    // from the alert window
     self.username = alert.username;
     self.password = alert.password;
-    [alert release];
 
     // tries to sttart playing the motion, now
     // using the newly set credentials

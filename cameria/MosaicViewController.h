@@ -39,8 +39,8 @@
     MosaicView *_mosaicView;
 }
 
-@property (strong) NSMutableArray *cameraViews;
-@property (strong) CameraViewController *cameraViewController;
-@property (strong) IBOutlet MosaicView *mosaicView;
+@property (nonatomic) NSMutableArray *cameraViews;
+@property (nonatomic) CameraViewController *cameraViewController;
+@property (nonatomic) IBOutlet MosaicView *mosaicView;
 
 @end

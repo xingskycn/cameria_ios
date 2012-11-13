@@ -40,8 +40,8 @@
     UIViewController<CameraViewHandler> *_cameraViewHandler;
 }
 
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UIViewController<CameraViewHandler> *cameraViewHandler;
+@property (nonatomic) UIWindow *window;
+@property (nonatomic) UIViewController<CameraViewHandler> *cameraViewHandler;
 
 - (void)reset;
 

@@ -45,8 +45,8 @@
     UIScrollView *_scrollView;
 }
 
-@property int pageIndex;
-@property (strong) NSMutableArray *cameraViews;
-@property (strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic) int pageIndex;
+@property (nonatomic) NSMutableArray *cameraViews;
+@property (nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
