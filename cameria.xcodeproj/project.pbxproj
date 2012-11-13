@@ -7,136 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C29A0B45164E95E200FE0A1A /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29A0B44164E95E200FE0A1A /* CreditsViewController.xib */; };
-		C2A3E9231651A602009E108C /* MosaicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E9211651A602009E108C /* MosaicViewController.m */; };
-		C2A3E9241651A602009E108C /* MosaicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A3E9221651A602009E108C /* MosaicViewController.xib */; };
-		C2A3E9411651AE56009E108C /* MosaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E9401651AE56009E108C /* MosaicView.m */; };
-		C2E7073D160290BA00EAC308 /* MotionJpegImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E7073A160290BA00EAC308 /* MotionJpegImageView.m */; };
-		C2E7073E160290BA00EAC308 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E7073C160290BA00EAC308 /* AppDelegate.m */; };
-		C2E7074B1602913A00EAC308 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2E707481602913A00EAC308 /* Localizable.strings */; };
-		C2E7074C1602913A00EAC308 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E707491602913A00EAC308 /* main.m */; };
-		C30432A6164C30170037CE05 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30432A5164C30170037CE05 /* MainWindow.xib */; };
-		C35054A5164C18C0006AEFB1 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C350549B164C18C0006AEFB1 /* Icon-72.png */; };
-		C35054A6164C18C0006AEFB1 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C350549C164C18C0006AEFB1 /* Icon-72@2x.png */; };
-		C35054A7164C18C0006AEFB1 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C350549D164C18C0006AEFB1 /* Icon-Small-50.png */; };
-		C35054A8164C18C0006AEFB1 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C350549E164C18C0006AEFB1 /* Icon-Small-50@2x.png */; };
-		C35054A9164C18C0006AEFB1 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = C350549F164C18C0006AEFB1 /* Icon-Small.png */; };
-		C35054AA164C18C0006AEFB1 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054A0164C18C0006AEFB1 /* Icon-Small@2x.png */; };
-		C35054AB164C18C0006AEFB1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054A1164C18C0006AEFB1 /* Icon.png */; };
-		C35054AC164C18C0006AEFB1 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054A2164C18C0006AEFB1 /* Icon@2x.png */; };
-		C35054AD164C18C0006AEFB1 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054A3164C18C0006AEFB1 /* iTunesArtwork.png */; };
-		C35054AE164C18C0006AEFB1 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054A4164C18C0006AEFB1 /* iTunesArtwork@2x.png */; };
-		C35054B1164C18E0006AEFB1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054B0164C18E0006AEFB1 /* Default-568h@2x.png */; };
-		C35054BC164C18F3006AEFB1 /* icon-about.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054B2164C18F3006AEFB1 /* icon-about.png */; };
-		C35054BD164C18F3006AEFB1 /* icon-about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054B3164C18F3006AEFB1 /* icon-about@2x.png */; };
-		C35054BE164C18F3006AEFB1 /* icon-cameras.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054B4164C18F3006AEFB1 /* icon-cameras.png */; };
-		C35054BF164C18F3006AEFB1 /* icon-cameras@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054B5164C18F3006AEFB1 /* icon-cameras@2x.png */; };
-		C35054C0164C18F3006AEFB1 /* icon-sets.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054B6164C18F3006AEFB1 /* icon-sets.png */; };
-		C35054C1164C18F3006AEFB1 /* icon-sets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054B7164C18F3006AEFB1 /* icon-sets@2x.png */; };
-		C35054C2164C18F3006AEFB1 /* logo-about.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054B8164C18F3006AEFB1 /* logo-about.png */; };
-		C35054C3164C18F3006AEFB1 /* logo-about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054B9164C18F3006AEFB1 /* logo-about@2x.png */; };
-		C35054C4164C18F3006AEFB1 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054BA164C18F3006AEFB1 /* logo.png */; };
-		C35054C5164C18F3006AEFB1 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054BB164C18F3006AEFB1 /* logo@2x.png */; };
-		C35054CA164C19B5006AEFB1 /* main-background-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054C6164C19B4006AEFB1 /* main-background-dark.png */; };
-		C35054CB164C19B5006AEFB1 /* main-background-dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054C7164C19B4006AEFB1 /* main-background-dark@2x.png */; };
-		C35054CC164C19B5006AEFB1 /* main-background.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054C8164C19B5006AEFB1 /* main-background.png */; };
-		C35054CD164C19B5006AEFB1 /* main-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C35054C9164C19B5006AEFB1 /* main-background@2x.png */; };
-		C35054D0164C19D6006AEFB1 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35054CF164C19D6006AEFB1 /* CreditsViewController.m */; };
-		C350553A164C27F2006AEFB1 /* SetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3505538164C27F2006AEFB1 /* SetsViewController.m */; };
-		C350553B164C27F2006AEFB1 /* SetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3505539164C27F2006AEFB1 /* SetsViewController.xib */; };
-		C350553F164C292B006AEFB1 /* CamerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C350553D164C292A006AEFB1 /* CamerasViewController.m */; };
-		C3505540164C292B006AEFB1 /* CamerasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C350553E164C292B006AEFB1 /* CamerasViewController.xib */; };
-		C37C7AC2164C378F00E956ED /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37C7AC0164C378F00E956ED /* CameraViewController.m */; };
-		C37C7AC3164C378F00E956ED /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37C7AC1164C378F00E956ED /* CameraViewController.xib */; };
-		C3FB287C164D8319008F4981 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB2877164D8318008F4981 /* LoginViewController.m */; };
-		C3FB287D164D8319008F4981 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3FB2878164D8318008F4981 /* LoginViewController.xib */; };
-		C3FB287E164D8319008F4981 /* ProxyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB287A164D8318008F4981 /* ProxyRequest.m */; };
-		C3FB2884164D83C1008F4981 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB2880164D83C1008F4981 /* button.png */; };
-		C3FB2885164D83C1008F4981 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB2881164D83C1008F4981 /* button@2x.png */; };
-		C3FB2886164D83C1008F4981 /* textfields_a.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB2882164D83C1008F4981 /* textfields_a.png */; };
-		C3FB2887164D83C1008F4981 /* textfields_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB2883164D83C1008F4981 /* textfields_a@2x.png */; };
-		C3FB288D164D84A2008F4981 /* HMJsonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB288B164D84A1008F4981 /* HMJsonRequest.m */; };
-		C3FB8904165166CB004253FC /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB8902165166CB004253FC /* error.png */; };
-		C3FB8905165166CB004253FC /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB8903165166CB004253FC /* error@2x.png */; };
-		C3FB890A165169C5004253FC /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB8908165169C5004253FC /* loading.png */; };
-		C3FB890B165169C5004253FC /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB8909165169C5004253FC /* loading@2x.png */; };
+		C351F5461652A9E40072BF7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F52C1652A9E40072BF7E /* AppDelegate.m */; };
+		C351F5471652A9E40072BF7E /* CamerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F52E1652A9E40072BF7E /* CamerasViewController.m */; };
+		C351F5481652A9E40072BF7E /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5301652A9E40072BF7E /* CameraViewController.m */; };
+		C351F5491652A9E40072BF7E /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5331652A9E40072BF7E /* CreditsViewController.m */; };
+		C351F54A1652A9E40072BF7E /* HMJsonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5351652A9E40072BF7E /* HMJsonRequest.m */; };
+		C351F54B1652A9E40072BF7E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5381652A9E40072BF7E /* LoginViewController.m */; };
+		C351F54C1652A9E40072BF7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5391652A9E40072BF7E /* main.m */; };
+		C351F54D1652A9E40072BF7E /* MosaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F53B1652A9E40072BF7E /* MosaicView.m */; };
+		C351F54E1652A9E40072BF7E /* MosaicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F53D1652A9E40072BF7E /* MosaicViewController.m */; };
+		C351F54F1652A9E40072BF7E /* MotionJpegImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F53F1652A9E40072BF7E /* MotionJpegImageView.m */; };
+		C351F5501652A9E40072BF7E /* ProxyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5421652A9E40072BF7E /* ProxyRequest.m */; };
+		C351F5511652A9E40072BF7E /* SetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5451652A9E40072BF7E /* SetsViewController.m */; };
+		C351F5531652AA800072BF7E /* static in Resources */ = {isa = PBXBuildFile; fileRef = C351F5521652AA800072BF7E /* static */; };
+		C351F5561652AAC10072BF7E /* support in Resources */ = {isa = PBXBuildFile; fileRef = C351F5551652AAC10072BF7E /* support */; };
+		C351F5581652AB0B0072BF7E /* views in Resources */ = {isa = PBXBuildFile; fileRef = C351F5571652AB0B0072BF7E /* views */; };
 		C636B828143B7538008CB95D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B827143B7538008CB95D /* UIKit.framework */; };
 		C636B82A143B7538008CB95D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B829143B7538008CB95D /* Foundation.framework */; };
 		C636B82C143B7538008CB95D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B82B143B7538008CB95D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C29A0B44164E95E200FE0A1A /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreditsViewController.xib; path = cameria/CreditsViewController.xib; sourceTree = SOURCE_ROOT; };
-		C2A3E9201651A602009E108C /* MosaicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MosaicViewController.h; path = cameria/MosaicViewController.h; sourceTree = SOURCE_ROOT; };
-		C2A3E9211651A602009E108C /* MosaicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MosaicViewController.m; path = cameria/MosaicViewController.m; sourceTree = SOURCE_ROOT; };
-		C2A3E9221651A602009E108C /* MosaicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MosaicViewController.xib; path = cameria/MosaicViewController.xib; sourceTree = SOURCE_ROOT; };
-		C2A3E93F1651AE56009E108C /* MosaicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MosaicView.h; path = cameria/MosaicView.h; sourceTree = SOURCE_ROOT; };
-		C2A3E9401651AE56009E108C /* MosaicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MosaicView.m; path = cameria/MosaicView.m; sourceTree = SOURCE_ROOT; };
-		C2E70739160290BA00EAC308 /* MotionJpegImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageView.h; path = cameria/MotionJpegImageView.h; sourceTree = SOURCE_ROOT; };
-		C2E7073A160290BA00EAC308 /* MotionJpegImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionJpegImageView.m; path = cameria/MotionJpegImageView.m; sourceTree = SOURCE_ROOT; };
-		C2E7073B160290BA00EAC308 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cameria/AppDelegate.h; sourceTree = SOURCE_ROOT; };
-		C2E7073C160290BA00EAC308 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = cameria/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		C2E707461602913A00EAC308 /* cameria.xcodeproj-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "cameria.xcodeproj-Info.plist"; path = "cameria/cameria.xcodeproj-Info.plist"; sourceTree = SOURCE_ROOT; };
-		C2E707471602913A00EAC308 /* cameria.xcodeproj-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "cameria.xcodeproj-Prefix.pch"; path = "cameria/cameria.xcodeproj-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		C2E707481602913A00EAC308 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = cameria/Localizable.strings; sourceTree = SOURCE_ROOT; };
-		C2E707491602913A00EAC308 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cameria/main.m; sourceTree = SOURCE_ROOT; };
-		C30432A5164C30170037CE05 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = cameria/MainWindow.xib; sourceTree = SOURCE_ROOT; };
-		C350549B164C18C0006AEFB1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "cameria/Resources/icons/Icon-72.png"; sourceTree = SOURCE_ROOT; };
-		C350549C164C18C0006AEFB1 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "cameria/Resources/icons/Icon-72@2x.png"; sourceTree = SOURCE_ROOT; };
-		C350549D164C18C0006AEFB1 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "cameria/Resources/icons/Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
-		C350549E164C18C0006AEFB1 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50@2x.png"; path = "cameria/Resources/icons/Icon-Small-50@2x.png"; sourceTree = SOURCE_ROOT; };
-		C350549F164C18C0006AEFB1 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "cameria/Resources/icons/Icon-Small.png"; sourceTree = SOURCE_ROOT; };
-		C35054A0164C18C0006AEFB1 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "cameria/Resources/icons/Icon-Small@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054A1164C18C0006AEFB1 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = cameria/Resources/icons/Icon.png; sourceTree = SOURCE_ROOT; };
-		C35054A2164C18C0006AEFB1 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "cameria/Resources/icons/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054A3164C18C0006AEFB1 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = cameria/Resources/icons/iTunesArtwork.png; sourceTree = SOURCE_ROOT; };
-		C35054A4164C18C0006AEFB1 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "cameria/Resources/icons/iTunesArtwork@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054B0164C18E0006AEFB1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "cameria/Resources/tiles/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054B2164C18F3006AEFB1 /* icon-about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-about.png"; path = "cameria/Resources/icon-about.png"; sourceTree = SOURCE_ROOT; };
-		C35054B3164C18F3006AEFB1 /* icon-about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-about@2x.png"; path = "cameria/Resources/icon-about@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054B4164C18F3006AEFB1 /* icon-cameras.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-cameras.png"; path = "cameria/Resources/icon-cameras.png"; sourceTree = SOURCE_ROOT; };
-		C35054B5164C18F3006AEFB1 /* icon-cameras@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-cameras@2x.png"; path = "cameria/Resources/icon-cameras@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054B6164C18F3006AEFB1 /* icon-sets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-sets.png"; path = "cameria/Resources/icon-sets.png"; sourceTree = SOURCE_ROOT; };
-		C35054B7164C18F3006AEFB1 /* icon-sets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-sets@2x.png"; path = "cameria/Resources/icon-sets@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054B8164C18F3006AEFB1 /* logo-about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-about.png"; path = "cameria/Resources/logo-about.png"; sourceTree = SOURCE_ROOT; };
-		C35054B9164C18F3006AEFB1 /* logo-about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-about@2x.png"; path = "cameria/Resources/logo-about@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054BA164C18F3006AEFB1 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = cameria/Resources/logo.png; sourceTree = SOURCE_ROOT; };
-		C35054BB164C18F3006AEFB1 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo@2x.png"; path = "cameria/Resources/logo@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054C6164C19B4006AEFB1 /* main-background-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-background-dark.png"; path = "cameria/Resources/main-background-dark.png"; sourceTree = SOURCE_ROOT; };
-		C35054C7164C19B4006AEFB1 /* main-background-dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-background-dark@2x.png"; path = "cameria/Resources/main-background-dark@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054C8164C19B5006AEFB1 /* main-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-background.png"; path = "cameria/Resources/main-background.png"; sourceTree = SOURCE_ROOT; };
-		C35054C9164C19B5006AEFB1 /* main-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-background@2x.png"; path = "cameria/Resources/main-background@2x.png"; sourceTree = SOURCE_ROOT; };
-		C35054CE164C19D6006AEFB1 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsViewController.h; path = cameria/CreditsViewController.h; sourceTree = SOURCE_ROOT; };
-		C35054CF164C19D6006AEFB1 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsViewController.m; path = cameria/CreditsViewController.m; sourceTree = SOURCE_ROOT; };
-		C3505537164C27F1006AEFB1 /* SetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetsViewController.h; path = cameria/SetsViewController.h; sourceTree = SOURCE_ROOT; };
-		C3505538164C27F2006AEFB1 /* SetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetsViewController.m; path = cameria/SetsViewController.m; sourceTree = SOURCE_ROOT; };
-		C3505539164C27F2006AEFB1 /* SetsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SetsViewController.xib; path = cameria/SetsViewController.xib; sourceTree = SOURCE_ROOT; };
-		C350553C164C292A006AEFB1 /* CamerasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CamerasViewController.h; path = cameria/CamerasViewController.h; sourceTree = SOURCE_ROOT; };
-		C350553D164C292A006AEFB1 /* CamerasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CamerasViewController.m; path = cameria/CamerasViewController.m; sourceTree = SOURCE_ROOT; };
-		C350553E164C292B006AEFB1 /* CamerasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CamerasViewController.xib; path = cameria/CamerasViewController.xib; sourceTree = SOURCE_ROOT; };
-		C37C7ABF164C378F00E956ED /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = cameria/CameraViewController.h; sourceTree = SOURCE_ROOT; };
-		C37C7AC0164C378F00E956ED /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = cameria/CameraViewController.m; sourceTree = SOURCE_ROOT; };
-		C37C7AC1164C378F00E956ED /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraViewController.xib; path = cameria/CameraViewController.xib; sourceTree = SOURCE_ROOT; };
-		C3FB2876164D8318008F4981 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = cameria/LoginViewController.h; sourceTree = SOURCE_ROOT; };
-		C3FB2877164D8318008F4981 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = cameria/LoginViewController.m; sourceTree = SOURCE_ROOT; };
-		C3FB2878164D8318008F4981 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = cameria/LoginViewController.xib; sourceTree = SOURCE_ROOT; };
-		C3FB2879164D8318008F4981 /* ProxyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProxyRequest.h; path = cameria/ProxyRequest.h; sourceTree = SOURCE_ROOT; };
-		C3FB287A164D8318008F4981 /* ProxyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProxyRequest.m; path = cameria/ProxyRequest.m; sourceTree = SOURCE_ROOT; };
-		C3FB287B164D8319008F4981 /* ProxyRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProxyRequestDelegate.h; path = cameria/ProxyRequestDelegate.h; sourceTree = SOURCE_ROOT; };
-		C3FB2880164D83C1008F4981 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = cameria/Resources/button.png; sourceTree = SOURCE_ROOT; };
-		C3FB2881164D83C1008F4981 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button@2x.png"; path = "cameria/Resources/button@2x.png"; sourceTree = SOURCE_ROOT; };
-		C3FB2882164D83C1008F4981 /* textfields_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textfields_a.png; path = cameria/Resources/textfields_a.png; sourceTree = SOURCE_ROOT; };
-		C3FB2883164D83C1008F4981 /* textfields_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textfields_a@2x.png"; path = "cameria/Resources/textfields_a@2x.png"; sourceTree = SOURCE_ROOT; };
+		C351F52B1652A9E40072BF7E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cameria/classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		C351F52C1652A9E40072BF7E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = cameria/classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		C351F52D1652A9E40072BF7E /* CamerasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CamerasViewController.h; path = cameria/classes/CamerasViewController.h; sourceTree = SOURCE_ROOT; };
+		C351F52E1652A9E40072BF7E /* CamerasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CamerasViewController.m; path = cameria/classes/CamerasViewController.m; sourceTree = SOURCE_ROOT; };
+		C351F52F1652A9E40072BF7E /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = cameria/classes/CameraViewController.h; sourceTree = SOURCE_ROOT; };
+		C351F5301652A9E40072BF7E /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = cameria/classes/CameraViewController.m; sourceTree = SOURCE_ROOT; };
+		C351F5311652A9E40072BF7E /* CameraViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewHandler.h; path = cameria/classes/CameraViewHandler.h; sourceTree = SOURCE_ROOT; };
+		C351F5321652A9E40072BF7E /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsViewController.h; path = cameria/classes/CreditsViewController.h; sourceTree = SOURCE_ROOT; };
+		C351F5331652A9E40072BF7E /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsViewController.m; path = cameria/classes/CreditsViewController.m; sourceTree = SOURCE_ROOT; };
+		C351F5341652A9E40072BF7E /* HMJsonRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMJsonRequest.h; path = cameria/classes/HMJsonRequest.h; sourceTree = SOURCE_ROOT; };
+		C351F5351652A9E40072BF7E /* HMJsonRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMJsonRequest.m; path = cameria/classes/HMJsonRequest.m; sourceTree = SOURCE_ROOT; };
+		C351F5361652A9E40072BF7E /* HMJsonRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMJsonRequestDelegate.h; path = cameria/classes/HMJsonRequestDelegate.h; sourceTree = SOURCE_ROOT; };
+		C351F5371652A9E40072BF7E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = cameria/classes/LoginViewController.h; sourceTree = SOURCE_ROOT; };
+		C351F5381652A9E40072BF7E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = cameria/classes/LoginViewController.m; sourceTree = SOURCE_ROOT; };
+		C351F5391652A9E40072BF7E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cameria/classes/main.m; sourceTree = SOURCE_ROOT; };
+		C351F53A1652A9E40072BF7E /* MosaicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MosaicView.h; path = cameria/classes/MosaicView.h; sourceTree = SOURCE_ROOT; };
+		C351F53B1652A9E40072BF7E /* MosaicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MosaicView.m; path = cameria/classes/MosaicView.m; sourceTree = SOURCE_ROOT; };
+		C351F53C1652A9E40072BF7E /* MosaicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MosaicViewController.h; path = cameria/classes/MosaicViewController.h; sourceTree = SOURCE_ROOT; };
+		C351F53D1652A9E40072BF7E /* MosaicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MosaicViewController.m; path = cameria/classes/MosaicViewController.m; sourceTree = SOURCE_ROOT; };
+		C351F53E1652A9E40072BF7E /* MotionJpegImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageView.h; path = cameria/classes/MotionJpegImageView.h; sourceTree = SOURCE_ROOT; };
+		C351F53F1652A9E40072BF7E /* MotionJpegImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionJpegImageView.m; path = cameria/classes/MotionJpegImageView.m; sourceTree = SOURCE_ROOT; };
+		C351F5401652A9E40072BF7E /* MotionJpegImageViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageViewDelegate.h; path = cameria/classes/MotionJpegImageViewDelegate.h; sourceTree = SOURCE_ROOT; };
+		C351F5411652A9E40072BF7E /* ProxyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProxyRequest.h; path = cameria/classes/ProxyRequest.h; sourceTree = SOURCE_ROOT; };
+		C351F5421652A9E40072BF7E /* ProxyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProxyRequest.m; path = cameria/classes/ProxyRequest.m; sourceTree = SOURCE_ROOT; };
+		C351F5431652A9E40072BF7E /* ProxyRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProxyRequestDelegate.h; path = cameria/classes/ProxyRequestDelegate.h; sourceTree = SOURCE_ROOT; };
+		C351F5441652A9E40072BF7E /* SetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetsViewController.h; path = cameria/classes/SetsViewController.h; sourceTree = SOURCE_ROOT; };
+		C351F5451652A9E40072BF7E /* SetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetsViewController.m; path = cameria/classes/SetsViewController.m; sourceTree = SOURCE_ROOT; };
+		C351F5521652AA800072BF7E /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; name = static; path = cameria/static; sourceTree = SOURCE_ROOT; };
+		C351F5551652AAC10072BF7E /* support */ = {isa = PBXFileReference; lastKnownFileType = folder; name = support; path = cameria/support; sourceTree = SOURCE_ROOT; };
+		C351F5571652AB0B0072BF7E /* views */ = {isa = PBXFileReference; lastKnownFileType = folder; name = views; path = cameria/views; sourceTree = SOURCE_ROOT; };
 		C3FB2889164D843F008F4981 /* Dependencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dependencies.h; path = cameria/classes/Dependencies.h; sourceTree = SOURCE_ROOT; };
-		C3FB288A164D84A1008F4981 /* HMJsonRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMJsonRequest.h; path = cameria/HMJsonRequest.h; sourceTree = SOURCE_ROOT; };
-		C3FB288B164D84A1008F4981 /* HMJsonRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMJsonRequest.m; path = cameria/HMJsonRequest.m; sourceTree = SOURCE_ROOT; };
-		C3FB288C164D84A2008F4981 /* HMJsonRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMJsonRequestDelegate.h; path = cameria/HMJsonRequestDelegate.h; sourceTree = SOURCE_ROOT; };
-		C3FB8902165166CB004253FC /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = error.png; path = cameria/Resources/error.png; sourceTree = SOURCE_ROOT; };
-		C3FB8903165166CB004253FC /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "error@2x.png"; path = "cameria/Resources/error@2x.png"; sourceTree = SOURCE_ROOT; };
-		C3FB8907165167D8004253FC /* MotionJpegImageViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageViewDelegate.h; path = cameria/MotionJpegImageViewDelegate.h; sourceTree = SOURCE_ROOT; };
-		C3FB8908165169C5004253FC /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loading.png; path = cameria/Resources/loading.png; sourceTree = SOURCE_ROOT; };
-		C3FB8909165169C5004253FC /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading@2x.png"; path = "cameria/Resources/loading@2x.png"; sourceTree = SOURCE_ROOT; };
-		C3FDDA8F16526B1F00E26C14 /* CameraViewHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CameraViewHandler.h; path = cameria/CameraViewHandler.h; sourceTree = SOURCE_ROOT; };
 		C636B823143B7538008CB95D /* cameria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C636B827143B7538008CB95D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C636B829143B7538008CB95D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,68 +79,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C2EFA1D01646D14900200EC0 /* Resources */ = {
+		C3FB2888164D8437008F4981 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				C350549A164C18B7006AEFB1 /* Icons */,
-				C3FB2880164D83C1008F4981 /* button.png */,
-				C3FB2881164D83C1008F4981 /* button@2x.png */,
-				C3FB8902165166CB004253FC /* error.png */,
-				C3FB8903165166CB004253FC /* error@2x.png */,
-				C35054B2164C18F3006AEFB1 /* icon-about.png */,
-				C35054B3164C18F3006AEFB1 /* icon-about@2x.png */,
-				C35054B4164C18F3006AEFB1 /* icon-cameras.png */,
-				C35054B5164C18F3006AEFB1 /* icon-cameras@2x.png */,
-				C35054B6164C18F3006AEFB1 /* icon-sets.png */,
-				C35054B7164C18F3006AEFB1 /* icon-sets@2x.png */,
-				C3FB8908165169C5004253FC /* loading.png */,
-				C3FB8909165169C5004253FC /* loading@2x.png */,
-				C35054B8164C18F3006AEFB1 /* logo-about.png */,
-				C35054B9164C18F3006AEFB1 /* logo-about@2x.png */,
-				C35054BA164C18F3006AEFB1 /* logo.png */,
-				C35054BB164C18F3006AEFB1 /* logo@2x.png */,
-				C35054C6164C19B4006AEFB1 /* main-background-dark.png */,
-				C35054C7164C19B4006AEFB1 /* main-background-dark@2x.png */,
-				C35054C8164C19B5006AEFB1 /* main-background.png */,
-				C35054C9164C19B5006AEFB1 /* main-background@2x.png */,
-				C3FB2882164D83C1008F4981 /* textfields_a.png */,
-				C3FB2883164D83C1008F4981 /* textfields_a@2x.png */,
-				C35054AF164C18D9006AEFB1 /* Tiles */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		C350549A164C18B7006AEFB1 /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				C350549B164C18C0006AEFB1 /* Icon-72.png */,
-				C350549C164C18C0006AEFB1 /* Icon-72@2x.png */,
-				C350549D164C18C0006AEFB1 /* Icon-Small-50.png */,
-				C350549E164C18C0006AEFB1 /* Icon-Small-50@2x.png */,
-				C350549F164C18C0006AEFB1 /* Icon-Small.png */,
-				C35054A0164C18C0006AEFB1 /* Icon-Small@2x.png */,
-				C35054A1164C18C0006AEFB1 /* Icon.png */,
-				C35054A2164C18C0006AEFB1 /* Icon@2x.png */,
-				C35054A3164C18C0006AEFB1 /* iTunesArtwork.png */,
-				C35054A4164C18C0006AEFB1 /* iTunesArtwork@2x.png */,
-			);
-			name = Icons;
-			sourceTree = "<group>";
-		};
-		C35054AF164C18D9006AEFB1 /* Tiles */ = {
-			isa = PBXGroup;
-			children = (
-				C35054B0164C18E0006AEFB1 /* Default-568h@2x.png */,
-			);
-			name = Tiles;
-			sourceTree = "<group>";
-		};
-		C3FB2888164D8437008F4981 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
+				C351F52B1652A9E40072BF7E /* AppDelegate.h */,
+				C351F52C1652A9E40072BF7E /* AppDelegate.m */,
+				C351F52D1652A9E40072BF7E /* CamerasViewController.h */,
+				C351F52E1652A9E40072BF7E /* CamerasViewController.m */,
+				C351F52F1652A9E40072BF7E /* CameraViewController.h */,
+				C351F5301652A9E40072BF7E /* CameraViewController.m */,
+				C351F5311652A9E40072BF7E /* CameraViewHandler.h */,
+				C351F5321652A9E40072BF7E /* CreditsViewController.h */,
+				C351F5331652A9E40072BF7E /* CreditsViewController.m */,
 				C3FB2889164D843F008F4981 /* Dependencies.h */,
+				C351F5341652A9E40072BF7E /* HMJsonRequest.h */,
+				C351F5351652A9E40072BF7E /* HMJsonRequest.m */,
+				C351F5361652A9E40072BF7E /* HMJsonRequestDelegate.h */,
+				C351F5371652A9E40072BF7E /* LoginViewController.h */,
+				C351F5381652A9E40072BF7E /* LoginViewController.m */,
+				C351F5391652A9E40072BF7E /* main.m */,
+				C351F53A1652A9E40072BF7E /* MosaicView.h */,
+				C351F53B1652A9E40072BF7E /* MosaicView.m */,
+				C351F53C1652A9E40072BF7E /* MosaicViewController.h */,
+				C351F53D1652A9E40072BF7E /* MosaicViewController.m */,
+				C351F53E1652A9E40072BF7E /* MotionJpegImageView.h */,
+				C351F53F1652A9E40072BF7E /* MotionJpegImageView.m */,
+				C351F5401652A9E40072BF7E /* MotionJpegImageViewDelegate.h */,
+				C351F5411652A9E40072BF7E /* ProxyRequest.h */,
+				C351F5421652A9E40072BF7E /* ProxyRequest.m */,
+				C351F5431652A9E40072BF7E /* ProxyRequestDelegate.h */,
+				C351F5441652A9E40072BF7E /* SetsViewController.h */,
+				C351F5451652A9E40072BF7E /* SetsViewController.m */,
 			);
-			name = Classes;
+			name = classes;
 			sourceTree = "<group>";
 		};
 		C636B818143B7538008CB95D = {
@@ -251,56 +144,13 @@
 		C636B82D143B7538008CB95D /* Cameria */ = {
 			isa = PBXGroup;
 			children = (
-				C3FB2888164D8437008F4981 /* Classes */,
-				C2EFA1D01646D14900200EC0 /* Resources */,
-				C636B82E143B7538008CB95D /* Supporting Files */,
-				C2E7073B160290BA00EAC308 /* AppDelegate.h */,
-				C2E7073C160290BA00EAC308 /* AppDelegate.m */,
-				C350553C164C292A006AEFB1 /* CamerasViewController.h */,
-				C350553D164C292A006AEFB1 /* CamerasViewController.m */,
-				C350553E164C292B006AEFB1 /* CamerasViewController.xib */,
-				C37C7ABF164C378F00E956ED /* CameraViewController.h */,
-				C37C7AC0164C378F00E956ED /* CameraViewController.m */,
-				C37C7AC1164C378F00E956ED /* CameraViewController.xib */,
-				C35054CE164C19D6006AEFB1 /* CreditsViewController.h */,
-				C35054CF164C19D6006AEFB1 /* CreditsViewController.m */,
-				C29A0B44164E95E200FE0A1A /* CreditsViewController.xib */,
-				C3FB288A164D84A1008F4981 /* HMJsonRequest.h */,
-				C3FB288B164D84A1008F4981 /* HMJsonRequest.m */,
-				C3FB288C164D84A2008F4981 /* HMJsonRequestDelegate.h */,
-				C3FB2876164D8318008F4981 /* LoginViewController.h */,
-				C3FB2877164D8318008F4981 /* LoginViewController.m */,
-				C3FB2878164D8318008F4981 /* LoginViewController.xib */,
-				C30432A5164C30170037CE05 /* MainWindow.xib */,
-				C2E70739160290BA00EAC308 /* MotionJpegImageView.h */,
-				C2E7073A160290BA00EAC308 /* MotionJpegImageView.m */,
-				C3FB8907165167D8004253FC /* MotionJpegImageViewDelegate.h */,
-				C3FB2879164D8318008F4981 /* ProxyRequest.h */,
-				C3FB287A164D8318008F4981 /* ProxyRequest.m */,
-				C3FB287B164D8319008F4981 /* ProxyRequestDelegate.h */,
-				C3505537164C27F1006AEFB1 /* SetsViewController.h */,
-				C3505538164C27F2006AEFB1 /* SetsViewController.m */,
-				C3505539164C27F2006AEFB1 /* SetsViewController.xib */,
-				C2A3E9201651A602009E108C /* MosaicViewController.h */,
-				C2A3E9211651A602009E108C /* MosaicViewController.m */,
-				C2A3E9221651A602009E108C /* MosaicViewController.xib */,
-				C2A3E93F1651AE56009E108C /* MosaicView.h */,
-				C2A3E9401651AE56009E108C /* MosaicView.m */,
-				C3FDDA8F16526B1F00E26C14 /* CameraViewHandler.h */,
+				C3FB2888164D8437008F4981 /* classes */,
+				C351F5521652AA800072BF7E /* static */,
+				C351F5551652AAC10072BF7E /* support */,
+				C351F5571652AB0B0072BF7E /* views */,
 			);
 			name = Cameria;
 			path = MotionJpegImageView;
-			sourceTree = "<group>";
-		};
-		C636B82E143B7538008CB95D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C2E707461602913A00EAC308 /* cameria.xcodeproj-Info.plist */,
-				C2E707471602913A00EAC308 /* cameria.xcodeproj-Prefix.pch */,
-				C2E707481602913A00EAC308 /* Localizable.strings */,
-				C2E707491602913A00EAC308 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,47 +204,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2E7074B1602913A00EAC308 /* Localizable.strings in Resources */,
-				C35054A5164C18C0006AEFB1 /* Icon-72.png in Resources */,
-				C35054A6164C18C0006AEFB1 /* Icon-72@2x.png in Resources */,
-				C35054A7164C18C0006AEFB1 /* Icon-Small-50.png in Resources */,
-				C35054A8164C18C0006AEFB1 /* Icon-Small-50@2x.png in Resources */,
-				C35054A9164C18C0006AEFB1 /* Icon-Small.png in Resources */,
-				C35054AA164C18C0006AEFB1 /* Icon-Small@2x.png in Resources */,
-				C35054AB164C18C0006AEFB1 /* Icon.png in Resources */,
-				C35054AC164C18C0006AEFB1 /* Icon@2x.png in Resources */,
-				C35054AD164C18C0006AEFB1 /* iTunesArtwork.png in Resources */,
-				C35054AE164C18C0006AEFB1 /* iTunesArtwork@2x.png in Resources */,
-				C35054B1164C18E0006AEFB1 /* Default-568h@2x.png in Resources */,
-				C35054BC164C18F3006AEFB1 /* icon-about.png in Resources */,
-				C35054BD164C18F3006AEFB1 /* icon-about@2x.png in Resources */,
-				C35054BE164C18F3006AEFB1 /* icon-cameras.png in Resources */,
-				C35054BF164C18F3006AEFB1 /* icon-cameras@2x.png in Resources */,
-				C35054C0164C18F3006AEFB1 /* icon-sets.png in Resources */,
-				C35054C1164C18F3006AEFB1 /* icon-sets@2x.png in Resources */,
-				C35054C2164C18F3006AEFB1 /* logo-about.png in Resources */,
-				C35054C3164C18F3006AEFB1 /* logo-about@2x.png in Resources */,
-				C35054C4164C18F3006AEFB1 /* logo.png in Resources */,
-				C35054C5164C18F3006AEFB1 /* logo@2x.png in Resources */,
-				C35054CA164C19B5006AEFB1 /* main-background-dark.png in Resources */,
-				C35054CB164C19B5006AEFB1 /* main-background-dark@2x.png in Resources */,
-				C35054CC164C19B5006AEFB1 /* main-background.png in Resources */,
-				C35054CD164C19B5006AEFB1 /* main-background@2x.png in Resources */,
-				C350553B164C27F2006AEFB1 /* SetsViewController.xib in Resources */,
-				C3505540164C292B006AEFB1 /* CamerasViewController.xib in Resources */,
-				C30432A6164C30170037CE05 /* MainWindow.xib in Resources */,
-				C37C7AC3164C378F00E956ED /* CameraViewController.xib in Resources */,
-				C3FB287D164D8319008F4981 /* LoginViewController.xib in Resources */,
-				C3FB2884164D83C1008F4981 /* button.png in Resources */,
-				C3FB2885164D83C1008F4981 /* button@2x.png in Resources */,
-				C3FB2886164D83C1008F4981 /* textfields_a.png in Resources */,
-				C3FB2887164D83C1008F4981 /* textfields_a@2x.png in Resources */,
-				C29A0B45164E95E200FE0A1A /* CreditsViewController.xib in Resources */,
-				C3FB8904165166CB004253FC /* error.png in Resources */,
-				C3FB8905165166CB004253FC /* error@2x.png in Resources */,
-				C3FB890A165169C5004253FC /* loading.png in Resources */,
-				C3FB890B165169C5004253FC /* loading@2x.png in Resources */,
-				C2A3E9241651A602009E108C /* MosaicViewController.xib in Resources */,
+				C351F5531652AA800072BF7E /* static in Resources */,
+				C351F5561652AAC10072BF7E /* support in Resources */,
+				C351F5581652AB0B0072BF7E /* views in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,18 +217,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2E7073D160290BA00EAC308 /* MotionJpegImageView.m in Sources */,
-				C2E7073E160290BA00EAC308 /* AppDelegate.m in Sources */,
-				C2E7074C1602913A00EAC308 /* main.m in Sources */,
-				C35054D0164C19D6006AEFB1 /* CreditsViewController.m in Sources */,
-				C350553A164C27F2006AEFB1 /* SetsViewController.m in Sources */,
-				C350553F164C292B006AEFB1 /* CamerasViewController.m in Sources */,
-				C37C7AC2164C378F00E956ED /* CameraViewController.m in Sources */,
-				C3FB287C164D8319008F4981 /* LoginViewController.m in Sources */,
-				C3FB287E164D8319008F4981 /* ProxyRequest.m in Sources */,
-				C3FB288D164D84A2008F4981 /* HMJsonRequest.m in Sources */,
-				C2A3E9231651A602009E108C /* MosaicViewController.m in Sources */,
-				C2A3E9411651AE56009E108C /* MosaicView.m in Sources */,
+				C351F5461652A9E40072BF7E /* AppDelegate.m in Sources */,
+				C351F5471652A9E40072BF7E /* CamerasViewController.m in Sources */,
+				C351F5481652A9E40072BF7E /* CameraViewController.m in Sources */,
+				C351F5491652A9E40072BF7E /* CreditsViewController.m in Sources */,
+				C351F54A1652A9E40072BF7E /* HMJsonRequest.m in Sources */,
+				C351F54B1652A9E40072BF7E /* LoginViewController.m in Sources */,
+				C351F54C1652A9E40072BF7E /* main.m in Sources */,
+				C351F54D1652A9E40072BF7E /* MosaicView.m in Sources */,
+				C351F54E1652A9E40072BF7E /* MosaicViewController.m in Sources */,
+				C351F54F1652A9E40072BF7E /* MotionJpegImageView.m in Sources */,
+				C351F5501652A9E40072BF7E /* ProxyRequest.m in Sources */,
+				C351F5511652A9E40072BF7E /* SetsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,9 +285,9 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "cameria/cameria.xcodeproj-Prefix.pch";
+				GCC_PREFIX_HEADER = "cameria/support/cameria.xcodeproj-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "cameria/cameria.xcodeproj-Info.plist";
+				INFOPLIST_FILE = "cameria/support/cameria.xcodeproj-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = cameria;
 				WRAPPER_EXTENSION = app;
@@ -487,9 +299,9 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "cameria/cameria.xcodeproj-Prefix.pch";
+				GCC_PREFIX_HEADER = "cameria/support/cameria.xcodeproj-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "cameria/cameria.xcodeproj-Info.plist";
+				INFOPLIST_FILE = "cameria/support/cameria.xcodeproj-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = cameria;
 				WRAPPER_EXTENSION = app;
