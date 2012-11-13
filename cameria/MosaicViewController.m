@@ -29,13 +29,16 @@
 
 @implementation MosaicViewController
 
+@synthesize navigationVisible = _navigationVisible;
 @synthesize cameras = _cameras;
 @synthesize cameraViews = _cameraViews;
+@synthesize cameraViewController = _cameraViewController;
 @synthesize mosaicView = _mosaicView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.navigationVisible = YES;
         self.cameraViews = [[NSMutableArray alloc] init];
     }
     return self;
@@ -45,6 +48,14 @@
     [super viewDidLoad];
 
     [self createCameras];
+    
+    // creates the structure for the refresh button and then adds
+    // itto the right of the navigation panel
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(refreshClick:)];
+    self.navigationItem.rightBarButtonItem = refreshButton;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,6 +67,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    // retrieves the reference to the current application delegate
+    // and sets the camera view controller in it so that it's able
+    // to stop the current cameras in case the application resigns
+    // as active (provides bandwidth saving)
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate.cameraViewController = self;
+
     [self playCameras];
 }
 
@@ -68,11 +86,23 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
+    // retrieves the reference to the current application delegate
+    // and unsets the camera view controller reference in it, no need
+    // to stop cameras that are already stopped
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate.cameraViewController = nil;
+    
     [self pauseCameras];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (IBAction)refreshClick:(id)sender {
+    // runs the play cameras operation so that a new
+    // tryout is done to the loading of the stream
+    [self playCameras];
 }
 
 - (void)createCameras {
@@ -101,6 +131,21 @@
         [imageView.layer setMasksToBounds:YES];
         [imageView.layer setCornerRadius:2.0];
 
+        // enables the user interaction so that the touch events
+        // are gathered and correctly handled
+        imageView.userInteractionEnabled = YES;
+        
+        // creates the tap recognizer object to be to toggle the
+        // visibility of the header panels and then sets it in the
+        // current scroll view panel reference
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+        tapRecognizer.delegate = self;
+        [imageView addGestureRecognizer:tapRecognizer];
+       
+        // sets the tag for the image view as the current index in iteration
+        // so that it may be used latter for the selection operations
+        imageView.tag = index;
+        
         // adds the "motion" image view to the mosaic view to be disaplyed
         // in a sequence list
         [self.mosaicView addImageView:imageView];
@@ -113,6 +158,23 @@
     // plays the complete set of cameras, starting the stream
     // of data from the server side
     [self playCameras];
+}
+
+- (IBAction)handleTap:(id)sender {
+    UITapGestureRecognizer *recognizer = (UITapGestureRecognizer *) sender;
+    UIView *view = recognizer.view;
+    int pageIndex = view.tag;
+    
+    if(!self.cameraViewController) {
+        self.cameraViewController = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
+        self.cameraViewController.cameras = self.cameras;
+    }
+    
+    // sets the "initial" page index value for the camer view controller
+    // so that it's correctly displayed with such value
+    self.cameraViewController.pageIndex = pageIndex;
+    
+    [self.navigationController pushViewController:self.cameraViewController animated:YES];
 }
 
 - (void)playCameras {

@@ -25,17 +25,22 @@
 
 #import "Dependencies.h"
 
+#import "AppDelegate.h"
 #import "MosaicView.h"
+#import "CameraViewHandler.h"
+#import "CameraViewController.h"
 
-@interface MosaicViewController : UIViewController {
+@interface MosaicViewController : UIViewController<CameraViewHandler, UIGestureRecognizerDelegate> {
     @private
+    bool _navigationVisible;
     NSArray *_cameras;
     NSMutableArray *_cameraViews;
+    CameraViewController *_cameraViewController;
     MosaicView *_mosaicView;
 }
 
-@property (strong) NSArray *cameras;
 @property (strong) NSMutableArray *cameraViews;
+@property (strong) CameraViewController *cameraViewController;
 @property (strong) IBOutlet MosaicView *mosaicView;
 
 @end
