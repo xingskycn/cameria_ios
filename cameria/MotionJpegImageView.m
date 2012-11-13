@@ -189,13 +189,10 @@
         }
     }
 
-    CGFloat buttonViewTop = 0.0;
     for(UIView *buttonView in buttonViews) {
         CGRect buttonViewFrame = buttonView.frame;
-        buttonViewFrame.origin.y =
-        self.bounds.size.height - buttonViewFrame.size.height - BUTTON_MARGIN;
+        buttonViewFrame.origin.y = self.bounds.size.height - buttonViewFrame.size.height - BUTTON_MARGIN;
         buttonView.frame = buttonViewFrame;
-        buttonViewTop = CGRectGetMinY(buttonViewFrame);
     }
 
     CGRect labelFrame = messageLabel.frame;
