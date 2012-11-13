@@ -94,6 +94,7 @@
 		C351F5441652A9E40072BF7E /* SetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetsViewController.h; path = cameria/classes/SetsViewController.h; sourceTree = SOURCE_ROOT; };
 		C351F5451652A9E40072BF7E /* SetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetsViewController.m; path = cameria/classes/SetsViewController.m; sourceTree = SOURCE_ROOT; };
 		C3CC018F1652B9AB000EE95F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C3CC01911652BA1D000EE95F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3CE1AAE1652AD8F00F57EA3 /* CamerasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CamerasViewController.xib; path = cameria/views/CamerasViewController.xib; sourceTree = SOURCE_ROOT; };
 		C3CE1AAF1652AD8F00F57EA3 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraViewController.xib; path = cameria/views/CameraViewController.xib; sourceTree = SOURCE_ROOT; };
 		C3CE1AB01652AD8F00F57EA3 /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreditsViewController.xib; path = cameria/views/CreditsViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -356,6 +357,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				pt,
 			);
 			mainGroup = C636B818143B7538008CB95D;
 			productRefGroup = C636B824143B7538008CB95D /* Products */;
@@ -445,6 +447,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C3CC018F1652B9AB000EE95F /* en */,
+				C3CC01911652BA1D000EE95F /* pt */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
