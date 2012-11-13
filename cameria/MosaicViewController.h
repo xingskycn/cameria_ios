@@ -29,9 +29,13 @@
 
 @interface MosaicViewController : UIViewController {
     @private
+    NSArray *_cameras;
+    NSMutableArray *_cameraViews;
     MosaicView *_mosaicView;
 }
 
+@property (strong) NSArray *cameras;
+@property (strong) NSMutableArray *cameraViews;
 @property (strong) IBOutlet MosaicView *mosaicView;
 
 @end
