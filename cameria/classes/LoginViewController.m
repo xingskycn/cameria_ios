@@ -119,10 +119,6 @@
     // retrieves the message contained in the exception structure
     // to be able to display it in a window
     NSString *message = [exception objectForKey:@"message"];
-    
-    NSLog(NSLocalizedString(message, message));
-    NSLog(NSLocalizedString(@"Both username and password must be provided", @"Both username and password must be provided"));
-    NSLog(NSLocalizedString(@"tobias", @"tobias"));
 
     // creates the alert window that will be used to display the error
     // associated with the current authentication failure and then shows

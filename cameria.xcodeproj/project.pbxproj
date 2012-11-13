@@ -20,7 +20,6 @@
 		C351F5501652A9E40072BF7E /* ProxyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5421652A9E40072BF7E /* ProxyRequest.m */; };
 		C351F5511652A9E40072BF7E /* SetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5451652A9E40072BF7E /* SetsViewController.m */; };
 		C3CC018E1652B9AB000EE95F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3CC01901652B9AB000EE95F /* Localizable.strings */; };
-		C3CC01951652C361000EE95F /* Errors.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3CC01971652C361000EE95F /* Errors.strings */; };
 		C3CE1AB51652AD8F00F57EA3 /* CamerasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AAE1652AD8F00F57EA3 /* CamerasViewController.xib */; };
 		C3CE1AB61652AD8F00F57EA3 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AAF1652AD8F00F57EA3 /* CameraViewController.xib */; };
 		C3CE1AB71652AD8F00F57EA3 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AB01652AD8F00F57EA3 /* CreditsViewController.xib */; };
@@ -96,8 +95,6 @@
 		C351F5451652A9E40072BF7E /* SetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetsViewController.m; path = cameria/classes/SetsViewController.m; sourceTree = SOURCE_ROOT; };
 		C3CC018F1652B9AB000EE95F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3CC01911652BA1D000EE95F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C3CC01961652C361000EE95F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Errors.strings; sourceTree = "<group>"; };
-		C3CC01981652C365000EE95F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Errors.strings; sourceTree = "<group>"; };
 		C3CE1AAE1652AD8F00F57EA3 /* CamerasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CamerasViewController.xib; path = cameria/views/CamerasViewController.xib; sourceTree = SOURCE_ROOT; };
 		C3CE1AAF1652AD8F00F57EA3 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraViewController.xib; path = cameria/views/CameraViewController.xib; sourceTree = SOURCE_ROOT; };
 		C3CE1AB01652AD8F00F57EA3 /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreditsViewController.xib; path = cameria/views/CreditsViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -246,7 +243,6 @@
 				C3CE1B051652AE9000F57EA3 /* cameria.xcodeproj-Info.plist */,
 				C3CE1B061652AE9000F57EA3 /* cameria.xcodeproj-Prefix.pch */,
 				C3CC01901652B9AB000EE95F /* Localizable.strings */,
-				C3CC01971652C361000EE95F /* Errors.strings */,
 			);
 			name = support;
 			path = cameria/support;
@@ -353,7 +349,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
-				ORGANIZATIONNAME = "Hive Solutions Lda.";
+				ORGANIZATIONNAME = "Hive Solutions";
 			};
 			buildConfigurationList = C636B81D143B7538008CB95D /* Build configuration list for PBXProject "cameria" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -420,7 +416,6 @@
 				C3CE1B021652AE6B00F57EA3 /* textfields_a@2x.png in Resources */,
 				C3CE1B031652AE6B00F57EA3 /* Default-568h@2x.png in Resources */,
 				C3CC018E1652B9AB000EE95F /* Localizable.strings in Resources */,
-				C3CC01951652C361000EE95F /* Errors.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,15 +451,6 @@
 				C3CC01911652BA1D000EE95F /* pt */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		C3CC01971652C361000EE95F /* Errors.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3CC01961652C361000EE95F /* en */,
-				C3CC01981652C365000EE95F /* pt */,
-			);
-			name = Errors.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

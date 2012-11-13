@@ -39,3 +39,6 @@
 "RefreshButtonTitle" = "Refrescar";
 "UsernamePlaceholderText" = "Utilizador";
 "PasswordPlaceholderText" = "Palavra-passe";
+
+"Both username and password must be provided" = "Tanto utilizador como palavra-passe têm de ser fornecidos";
+"Invalid username and/or password" = "Utilizador e/ou palavra-passe errados";

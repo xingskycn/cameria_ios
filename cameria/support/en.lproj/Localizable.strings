@@ -39,3 +39,6 @@
 "RefreshButtonTitle" = "Refresh";
 "UsernamePlaceholderText" = "Username";
 "PasswordPlaceholderText" = "Password";
+
+"Both username and password must be provided" = "Both username and password must be provided";
+"Invalid username and/or password" = "Invalid user name and/or password";
