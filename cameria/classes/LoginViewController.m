@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     // retrieves the references for both the username and the password
     // text field element to be used for behavior change
     UITextField *usernameField = (UITextField *) [self.view viewWithTag:1];
@@ -46,17 +46,17 @@
     usernameField.placeholder = NSLocalizedString(@"UsernamePlaceholderText", @"Username");
     passwordField.placeholder = NSLocalizedString(@"PasswordPlaceholderText", @"Password");
     
-    
+    // retrieves the reference to both the signin button and the forgor label and
+    // updates their text values to the appropriate localizable labels
     UIButton *signinButton = (UIButton *) [self.view viewWithTag:4];
-    [signinButton setTitle:NSLocalizedString(@"Sign In", @"Sign In") forState:UIControlStateNormal];
-    
     UILabel *forgotLabel = (UILabel *) [self.view viewWithTag:5];
+    [signinButton setTitle:NSLocalizedString(@"Sign In", @"Sign In") forState:UIControlStateNormal];
     forgotLabel.text = NSLocalizedString(@"Forgot your password ?", @"Forgot your password ?");
-
+    
     // forces the username field to become the first
     // responder (focus on the text field element)
     [usernameField becomeFirstResponder];
-
+    
     // sets the current view controller as the delagate for both text
     // fields and then sets the return key as the done key and the text
     // field finished as the handler of such behavior
@@ -65,18 +65,18 @@
     [usernameField setReturnKeyType:UIReturnKeyDone];
     [passwordField setReturnKeyType:UIReturnKeyDone];
     [usernameField addTarget:self
-                       action:@selector(textFieldFinished:)
-             forControlEvents:UIControlEventEditingDidEndOnExit];
+                      action:@selector(textFieldFinished:)
+            forControlEvents:UIControlEventEditingDidEndOnExit];
     [passwordField addTarget:self
                       action:@selector(textFieldFinished:)
             forControlEvents:UIControlEventEditingDidEndOnExit];
-
+    
     // retrieves the image view associated with the user settings
     // and sets the text field image to so that the corners are not
     // changed by the resizing operation
     UIImageView *imageView = (UIImageView *) [self.view viewWithTag:3];
     imageView.image = [[UIImage imageNamed:@"textfields_a.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20, 0, 20)];
-
+    
     // retrieves the pattern image to be used and sets it in
     // the current view (should be able to change the background)
     UIImage *patternImage = [UIImage imageNamed:@"main-background-dark.png"];
@@ -94,19 +94,19 @@
     UITextField *passwordField = (UITextField *) [self.view viewWithTag:2];
     NSString *username = usernameField.text;
     NSString *password = passwordField.text;
-
+    
     // creates the base path template containing both the username and
     // the password values than formats the value using these values
     NSString *basePath = @"login.json?username=%@&password=%@";
     NSString *path = [NSString stringWithFormat:basePath, username, password];
-
+    
     // creates a new proxy request to be used in the authentication procedure
     // note that this is an asynchronous call and may take some time
     _proxyRequest = [[ProxyRequest alloc] initWithPath:self path:path];
     _proxyRequest.delegate = self;
     _proxyRequest.useSession = NO;
     [_proxyRequest load];
-
+    
     // sends the resign as first responder to the "broadcast" application
     // this should hide the currently present keyboard
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder)
@@ -119,7 +119,7 @@
     // retrieves the message contained in the exception structure
     // to be able to display it in a window
     NSString *message = [exception objectForKey:@"message"];
-
+    
     // creates the alert window that will be used to display the error
     // associated with the current authentication failure and then shows
     // it in a modal fashion, then returns immediately to the caller method
@@ -139,14 +139,14 @@
     // in such case handles it and returns immediately
     NSDictionary *exception = [data valueForKey:@"exception"];
     if(exception) { [self handleException:exception]; return; }
-
+    
     // retrieves the username, the object id and the session id
     // values from the authentication structure to be used in the
     // current persistent storage
     NSString *username = [data valueForKey:@"username"];
     NSString *objectId = [data valueForKey:@"object_id"];
     NSString *sessionId = [data valueForKey:@"session_id"];
-
+    
     // retrieves the preferences object and uses it to set the "new"
     // session identifier value in it
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
@@ -154,7 +154,7 @@
     [preferences setValue:objectId forKey:@"objectId"];
     [preferences setValue:sessionId forKey:@"sessionId"];
     [preferences synchronize];
-
+    
     // closes the current modal window triggering the pop of the
     // previous panel (will show it again)
     [self dismissModalViewControllerAnimated:YES];
