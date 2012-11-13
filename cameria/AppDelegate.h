@@ -25,10 +25,11 @@
 
 #import "Dependencies.h"
 
+#import "CameraViewHandler.h"
+
 @class SetsViewController;
 @class CamerasViewController;
 @class CreditsViewController;
-@class CameraViewController;
 
 @interface AppDelegate : UIResponder<UIApplicationDelegate> {
     @private
@@ -36,11 +37,11 @@
     SetsViewController *_setsViewController;
     CamerasViewController *_camerasViewController;
     CreditsViewController *_creditsViewController;
-    CameraViewController *_cameraViewController;
+    UIViewController<CameraViewHandler> *_cameraViewHandler;
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) CameraViewController *cameraViewController;
+@property (strong, nonatomic) UIViewController<CameraViewHandler> *cameraViewController;
 
 - (void)reset;
 
