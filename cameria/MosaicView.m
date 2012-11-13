@@ -80,7 +80,7 @@
     int extraPadding = (int) round((float) extraWidth / 2.0f);
     int numberRows = (int) ceil((float) items / (float) itemsLine);
 
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, numberRows * itemTHeight);
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, numberRows * itemTHeight + itemVMargin);
     
     // starts the line counter in minus one so that the
     // initial modulus opertion puts it in zero
@@ -94,12 +94,14 @@
         // line value in a modulus operation
         int offset = index % itemsLine;
         
+        // in case the current offset is zero (start of a line)
+        // the line counter must be incremented
         if(offset == 0) { line++; }
         
         UIImageView *imageView = self.imageViews[index];
         imageView.frame = CGRectMake(
             extraPadding + itemTWidth * offset,
-            itemTHeight * line,
+            itemVMargin + itemTHeight * line,
             itemWidth,
             itemHeight
         );
