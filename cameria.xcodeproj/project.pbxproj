@@ -136,6 +136,7 @@
 		C3FB8907165167D8004253FC /* MotionJpegImageViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MotionJpegImageViewDelegate.h; path = cameria/MotionJpegImageViewDelegate.h; sourceTree = SOURCE_ROOT; };
 		C3FB8908165169C5004253FC /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loading.png; path = cameria/Resources/loading.png; sourceTree = SOURCE_ROOT; };
 		C3FB8909165169C5004253FC /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "loading@2x.png"; path = "cameria/Resources/loading@2x.png"; sourceTree = SOURCE_ROOT; };
+		C3FDDA8F16526B1F00E26C14 /* CameraViewHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CameraViewHandler.h; path = cameria/CameraViewHandler.h; sourceTree = SOURCE_ROOT; };
 		C636B823143B7538008CB95D /* cameria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cameria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C636B827143B7538008CB95D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C636B829143B7538008CB95D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -285,6 +286,7 @@
 				C2A3E9221651A602009E108C /* MosaicViewController.xib */,
 				C2A3E93F1651AE56009E108C /* MosaicView.h */,
 				C2A3E9401651AE56009E108C /* MosaicView.m */,
+				C3FDDA8F16526B1F00E26C14 /* CameraViewHandler.h */,
 			);
 			name = Cameria;
 			path = MotionJpegImageView;
