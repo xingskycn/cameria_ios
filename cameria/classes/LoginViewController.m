@@ -40,6 +40,11 @@
     // text field element to be used for behavior change
     UITextField *usernameField = (UITextField *) [self.view viewWithTag:1];
     UITextField *passwordField = (UITextField *) [self.view viewWithTag:2];
+    
+    // updates the localization string on both the username field and
+    // the password field
+    usernameField.placeholder = NSLocalizedString(@"UsernamePlaceholderText", @"UsernamePlaceholderText");
+    passwordField.placeholder = NSLocalizedString(@"PasswordPlaceholderText", @"PasswordPlaceholderText");
 
     // forces the username field to become the first
     // responder (focus on the text field element)

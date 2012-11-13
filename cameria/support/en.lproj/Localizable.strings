@@ -26,5 +26,5 @@
 "CredentialAlertTitle" = "Authorization Required";
 "CancelButtonTitle" = "Cancel";
 "LoginButtonTitle" = "Log In";
-"UsernamePlaceholderText" = "username";
-"PasswordPlaceholderText" = "password";
+"UsernamePlaceholderText" = "Username";
+"PasswordPlaceholderText" = "Password";
