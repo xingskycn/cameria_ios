@@ -28,6 +28,7 @@
 #import "AppDelegate.h"
 #import "MotionJpegImageView.h"
 #import "MotionJpegImageViewDelegate.h"
+#import "CameraViewHandler.h"
 
 /**
  * The margin to be used in between the various
@@ -35,7 +36,7 @@
  */
 #define BLACK_MARGIN_SIZE 36
 
-@interface CameraViewController : UIViewController<UIGestureRecognizerDelegate, UIScrollViewDelegate, MotionJpegImageViewDelegate> {
+@interface CameraViewController : UIViewController<CameraViewHandler, UIGestureRecognizerDelegate, UIScrollViewDelegate, MotionJpegImageViewDelegate> {
     @private
     bool _navigationVisible;
     int _pageIndex;
@@ -44,14 +45,8 @@
     UIScrollView *_scrollView;
 }
 
-@property bool navigationVisible;
 @property int pageIndex;
-@property (strong) NSArray *cameras;
 @property (strong) NSMutableArray *cameraViews;
 @property (strong) IBOutlet UIScrollView *scrollView;
-
-- (void)playCameras;
-- (void)pauseCameras;
-- (void)stopCameras;
 
 @end
