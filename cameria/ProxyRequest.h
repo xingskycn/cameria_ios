@@ -36,7 +36,7 @@
  */
 @interface ProxyRequest : NSObject<HMJsonRequestDelegate> {
     @private
-    NSObject<ProxyRequestDelegate> *_delegate;
+    __unsafe_unretained NSObject<ProxyRequestDelegate> *_delegate;
     UIViewController *_controller;
     NSString *_path;
     NSArray *_parameters;
@@ -47,7 +47,7 @@
     bool _useSession;
 }
 
-@property (nonatomic) NSObject<ProxyRequestDelegate> *delegate;
+@property (nonatomic, unsafe_unretained) NSObject<ProxyRequestDelegate> *delegate;
 @property (nonatomic) UIViewController *controller;
 @property (nonatomic) NSString *path;
 @property (nonatomic) NSArray *parameters;

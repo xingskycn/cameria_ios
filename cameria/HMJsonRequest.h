@@ -33,7 +33,7 @@
     NSArray *_parameters;
     NSURLConnection *_connection;
     NSMutableData *_receivedData;
-    NSObject<HMJsonRequestDelegate> *_delegate;
+    __unsafe_unretained NSObject<HMJsonRequestDelegate> *_delegate;
 }
 
 /**
@@ -72,7 +72,7 @@
  * In case this value is set notifications will be sent
  * for both errors and data receivals.
  */
-@property (nonatomic) NSObject<HMJsonRequestDelegate> *delegate;
+@property (nonatomic, unsafe_unretained) NSObject<HMJsonRequestDelegate> *delegate;
 
 - initWithUrl:(NSURL *)url;
 - initWithUrlString:(NSString *)urlString;
