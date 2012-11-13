@@ -29,19 +29,6 @@
 #import "CamerasViewController.h"
 #import "CreditsViewController.h"
 
-
-
-
-
-
-
-
-
-#import "MosaicViewController.h"
-
-
-
-
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -64,15 +51,12 @@
     _setsViewController = [[SetsViewController alloc] initWithNibName:@"SetsViewController" bundle:nil];
     _camerasViewController = [[CamerasViewController alloc] initWithNibName:@"CamerasViewController" bundle:nil];
     _creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
-
-    MosaicViewController *_mvc = [[MosaicViewController alloc] initWithNibName:@"MosaicViewController" bundle:nil];
-
     
     setsNavigationViewController = [[UINavigationController alloc] initWithRootViewController:_setsViewController];
     camerasNavigationViewController = [[UINavigationController alloc] initWithRootViewController:_camerasViewController];
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[setsNavigationViewController, camerasNavigationViewController, _mvc, _creditsViewController];
+    tabBarController.viewControllers = @[setsNavigationViewController, camerasNavigationViewController, _creditsViewController];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
 
