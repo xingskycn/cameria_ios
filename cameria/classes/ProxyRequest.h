@@ -37,7 +37,7 @@
 @interface ProxyRequest : NSObject<HMJsonRequestDelegate> {
 }
 
-@property (nonatomic, unsafe_unretained) NSObject<ProxyRequestDelegate> *delegate;
+@property (nonatomic, weak) NSObject<ProxyRequestDelegate> *delegate;
 @property (nonatomic) UIViewController *controller;
 @property (nonatomic) NSString *path;
 @property (nonatomic) NSArray *parameters;

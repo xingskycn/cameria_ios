@@ -38,7 +38,7 @@
 
 @property (nonatomic, readonly) UIImageView *loadingImage;
 @property (nonatomic, readonly) UIImageView *errorImage;
-@property (nonatomic, unsafe_unretained) NSObject<MotionJpegImageViewDelegate> *delegate;
+@property (nonatomic, weak) NSObject<MotionJpegImageViewDelegate> *delegate;
 @property (nonatomic, copy) NSURL *url;
 @property (nonatomic, readonly) bool isPlaying;
 @property (nonatomic, copy) NSString *username;

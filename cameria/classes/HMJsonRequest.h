@@ -66,7 +66,7 @@
  * In case this value is set notifications will be sent
  * for both errors and data receivals.
  */
-@property (nonatomic, unsafe_unretained) NSObject<HMJsonRequestDelegate> *delegate;
+@property (nonatomic, weak) NSObject<HMJsonRequestDelegate> *delegate;
 
 - initWithUrl:(NSURL *)url;
 - initWithUrlString:(NSString *)urlString;
