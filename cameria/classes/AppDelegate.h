@@ -38,6 +38,7 @@
     CreditsViewController *_creditsViewController;
     UINavigationController *_setsNavigationViewController;
     UINavigationController *_camerasNavigationViewController;
+    UITabBarController *_tabBarController;
 }
 
 @property (nonatomic) UIWindow *window;

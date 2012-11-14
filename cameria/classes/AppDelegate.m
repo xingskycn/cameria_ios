@@ -53,9 +53,9 @@
 
     // creates the "main" tab bar controler then sets the various tabs in it and sets
     // it as the root view controller for the window
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[_setsNavigationViewController, _camerasNavigationViewController, _creditsViewController];
-    self.window.rootViewController = tabBarController;
+    _tabBarController = [[UITabBarController alloc] init];
+    _tabBarController.viewControllers = @[_setsNavigationViewController, _camerasNavigationViewController, _creditsViewController];
+    self.window.rootViewController = _tabBarController;
     [self.window makeKeyAndVisible];
 
     // returns success, application started with success
@@ -75,11 +75,15 @@
     if(self.cameraViewHandler) {
         [self.cameraViewHandler playCameras];
         [[UIApplication sharedApplication] setStatusBarHidden:NO];
-        [self performSelector:@selector(updateNavigation) withObject:self afterDelay:0];
+        [self performSelector:@selector(updateNavigation) withObject:nil afterDelay:0];
     }
 }
 
 - (void)reset {
+    // "resets" the currently selected tab to the first (this is
+    // considered to be the initial value)
+    _tabBarController.selectedIndex = 0;
+    
     // pops the complete set if view controller in both navigation
     // controllers until the root view controller is reached
     [_setsNavigationViewController popToRootViewControllerAnimated:NO];
@@ -102,7 +106,7 @@
     // case it's not defined sets the default value, then flushes
     // the preferences to the secondary storage
     if(baseUrl == nil) { [preferences setValue:@"https://cameria-staging.herokuapp.com/"
-                                        forKey:@"baseUrl"];}
+                                        forKey:@"baseUrl"]; }
     [preferences synchronize];
 }
 
