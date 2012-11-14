@@ -40,23 +40,25 @@
     // (this should be the main window of the application)
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    // creates the naviagtion controllers for both the sets and the cameras
-    // these controllers will contain the respective entrance points
-    UINavigationController *setsNavigationViewController;
-    UINavigationController *camerasNavigationViewController;
-
+    // creates the various view controller to be used as entrance for the complete
+    // sets of tabs (this are the main view controllers)
     _setsViewController = [[SetsViewController alloc] initWithNibName:@"SetsViewController" bundle:nil];
     _camerasViewController = [[CamerasViewController alloc] initWithNibName:@"CamerasViewController" bundle:nil];
     _creditsViewController = [[CreditsViewController alloc] initWithNibName:@"CreditsViewController" bundle:nil];
-    
-    setsNavigationViewController = [[UINavigationController alloc] initWithRootViewController:_setsViewController];
-    camerasNavigationViewController = [[UINavigationController alloc] initWithRootViewController:_camerasViewController];
 
+    // creates the navigation view controllers for both the sets and the cameras and
+    // starts them with the correct sets of view controllers
+    _setsNavigationViewController = [[UINavigationController alloc] initWithRootViewController:_setsViewController];
+    _camerasNavigationViewController = [[UINavigationController alloc] initWithRootViewController:_camerasViewController];
+
+    // creates the "main" tab bar controler then sets the various tabs in it and sets
+    // it as the root view controller for the window
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[setsNavigationViewController, camerasNavigationViewController, _creditsViewController];
+    tabBarController.viewControllers = @[_setsNavigationViewController, _camerasNavigationViewController, _creditsViewController];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
 
+    // returns success, application started with success
     return YES;
 }
 
@@ -78,6 +80,11 @@
 }
 
 - (void)reset {
+    // pops the complete set if view controller in both navigation
+    // controllers until the root view controller is reached
+    [_setsNavigationViewController popToRootViewControllerAnimated:NO];
+    [_camerasNavigationViewController popToRootViewControllerAnimated:NO];
+    
     // runs the reet operation on both the sets and
     // the cameras controller (global reset)
     [_setsViewController reset];

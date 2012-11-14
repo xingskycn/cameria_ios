@@ -36,6 +36,8 @@
     SetsViewController *_setsViewController;
     CamerasViewController *_camerasViewController;
     CreditsViewController *_creditsViewController;
+    UINavigationController *_setsNavigationViewController;
+    UINavigationController *_camerasNavigationViewController;
 }
 
 @property (nonatomic) UIWindow *window;
