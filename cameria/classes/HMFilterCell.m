@@ -61,7 +61,7 @@
     self.accessoryView = arrowButton;
     
     UIView *selectedBackgroundView = [[UIView alloc] init];
-    [selectedBackgroundView setBackgroundColor:[UIColor colorWithRed:0.94 green:0.94 blue:0.94 alpha:0.6]];
+    [selectedBackgroundView setBackgroundColor:[UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:0.3]];
     self.selectedBackgroundView = selectedBackgroundView;
     
     UIImage *patternImage = [UIImage imageNamed:@"main-background.png"];
