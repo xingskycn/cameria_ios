@@ -44,6 +44,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // creates the complete set of cameras to be used for the display
+    // of their motion images
     [self createCameras];
     
     // creates the structure for the refresh button and then adds
@@ -71,6 +73,8 @@
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.cameraViewHandler = self;
 
+    // starts play the cameras ensuring that the stream start again
+    // at the same position as before
     [self playCameras];
 }
 
@@ -89,6 +93,8 @@
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     appDelegate.cameraViewHandler = nil;
     
+    // pauses the cameras ensuring that no more stream exists, this
+    // should avoid useless bandwidth usage
     [self pauseCameras];
 }
 
@@ -170,15 +176,19 @@
     UIView *view = recognizer.view;
     int pageIndex = view.tag;
     
+    // in case no camera view controller is currently created must
+    // create a new one to be used
     if(!self.cameraViewController) {
         self.cameraViewController = [[CameraViewController alloc] initWithNibName:@"CameraViewController" bundle:nil];
         self.cameraViewController.cameras = self.cameras;
     }
     
-    // sets the "initial" page index value for the camer view controller
+    // sets the "initial" page index value for the camera view controller
     // so that it's correctly displayed with such value
     self.cameraViewController.pageIndex = pageIndex;
     
+    // push the camera view controller into the navigation controller
+    // so that it's positioned on top of the screen
     [self.navigationController pushViewController:self.cameraViewController animated:YES];
 }
 
