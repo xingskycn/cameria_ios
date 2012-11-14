@@ -75,7 +75,7 @@
     // and sets the text field image to so that the corners are not
     // changed by the resizing operation
     UIImageView *imageView = (UIImageView *) [self.view viewWithTag:3];
-    imageView.image = [[UIImage imageNamed:@"textfields_a.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20, 0, 20)];
+    imageView.image = [[UIImage imageNamed:@"textfields.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20, 0, 20)];
     
     // retrieves the pattern image to be used and sets it in
     // the current view (should be able to change the background)
