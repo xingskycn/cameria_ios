@@ -11,6 +11,8 @@
 		C300E1C51654116300D74674 /* list-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C300E1C31654116300D74674 /* list-arrow.png */; };
 		C300E1C61654116300D74674 /* list-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C300E1C41654116300D74674 /* list-arrow@2x.png */; };
 		C300E1C916541CF400D74674 /* UIViewController+HMControllerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C300E1C816541CF300D74674 /* UIViewController+HMControllerUtil.m */; };
+		C300E1CC16541F2000D74674 /* textfields.png in Resources */ = {isa = PBXBuildFile; fileRef = C300E1CA16541F2000D74674 /* textfields.png */; };
+		C300E1CD16541F2000D74674 /* textfields@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C300E1CB16541F2000D74674 /* textfields@2x.png */; };
 		C324EEFB1653CA080060DC05 /* HMFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C324EEFA1653CA080060DC05 /* HMFilterCell.m */; };
 		C351F5461652A9E40072BF7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F52C1652A9E40072BF7E /* AppDelegate.m */; };
 		C351F5471652A9E40072BF7E /* CamerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F52E1652A9E40072BF7E /* CamerasViewController.m */; };
@@ -62,8 +64,6 @@
 		C3CE1AFE1652AE6B00F57EA3 /* main-background-dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ADC1652AE6B00F57EA3 /* main-background-dark@2x.png */; };
 		C3CE1AFF1652AE6B00F57EA3 /* main-background.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ADD1652AE6B00F57EA3 /* main-background.png */; };
 		C3CE1B001652AE6B00F57EA3 /* main-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ADE1652AE6B00F57EA3 /* main-background@2x.png */; };
-		C3CE1B011652AE6B00F57EA3 /* textfields_a.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1ADF1652AE6B00F57EA3 /* textfields_a.png */; };
-		C3CE1B021652AE6B00F57EA3 /* textfields_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AE01652AE6B00F57EA3 /* textfields_a@2x.png */; };
 		C3CE1B031652AE6B00F57EA3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CE1AE21652AE6B00F57EA3 /* Default-568h@2x.png */; };
 		C636B828143B7538008CB95D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B827143B7538008CB95D /* UIKit.framework */; };
 		C636B82A143B7538008CB95D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C636B829143B7538008CB95D /* Foundation.framework */; };
@@ -77,6 +77,8 @@
 		C300E1C41654116300D74674 /* list-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-arrow@2x.png"; sourceTree = "<group>"; };
 		C300E1C716541CC400D74674 /* UIViewController+HMControllerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIViewController+HMControllerUtil.h"; path = "cameria/classes/UIViewController+HMControllerUtil.h"; sourceTree = SOURCE_ROOT; };
 		C300E1C816541CF300D74674 /* UIViewController+HMControllerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+HMControllerUtil.m"; path = "cameria/classes/UIViewController+HMControllerUtil.m"; sourceTree = SOURCE_ROOT; };
+		C300E1CA16541F2000D74674 /* textfields.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textfields.png; sourceTree = "<group>"; };
+		C300E1CB16541F2000D74674 /* textfields@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfields@2x.png"; sourceTree = "<group>"; };
 		C324EEF91653CA080060DC05 /* HMFilterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMFilterCell.h; path = cameria/classes/HMFilterCell.h; sourceTree = SOURCE_ROOT; };
 		C324EEFA1653CA080060DC05 /* HMFilterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMFilterCell.m; path = cameria/classes/HMFilterCell.m; sourceTree = SOURCE_ROOT; };
 		C351F52B1652A9E40072BF7E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cameria/classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -145,8 +147,6 @@
 		C3CE1ADC1652AE6B00F57EA3 /* main-background-dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background-dark@2x.png"; sourceTree = "<group>"; };
 		C3CE1ADD1652AE6B00F57EA3 /* main-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background.png"; sourceTree = "<group>"; };
 		C3CE1ADE1652AE6B00F57EA3 /* main-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background@2x.png"; sourceTree = "<group>"; };
-		C3CE1ADF1652AE6B00F57EA3 /* textfields_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textfields_a.png; sourceTree = "<group>"; };
-		C3CE1AE01652AE6B00F57EA3 /* textfields_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfields_a@2x.png"; sourceTree = "<group>"; };
 		C3CE1AE21652AE6B00F57EA3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C3CE1B051652AE9000F57EA3 /* cameria.xcodeproj-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cameria.xcodeproj-Info.plist"; sourceTree = "<group>"; };
 		C3CE1B061652AE9000F57EA3 /* cameria.xcodeproj-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cameria.xcodeproj-Prefix.pch"; sourceTree = "<group>"; };
@@ -238,8 +238,8 @@
 				C3CE1ADC1652AE6B00F57EA3 /* main-background-dark@2x.png */,
 				C3CE1ADD1652AE6B00F57EA3 /* main-background.png */,
 				C3CE1ADE1652AE6B00F57EA3 /* main-background@2x.png */,
-				C3CE1ADF1652AE6B00F57EA3 /* textfields_a.png */,
-				C3CE1AE01652AE6B00F57EA3 /* textfields_a@2x.png */,
+				C300E1CA16541F2000D74674 /* textfields.png */,
+				C300E1CB16541F2000D74674 /* textfields@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -433,12 +433,12 @@
 				C3CE1AFE1652AE6B00F57EA3 /* main-background-dark@2x.png in Resources */,
 				C3CE1AFF1652AE6B00F57EA3 /* main-background.png in Resources */,
 				C3CE1B001652AE6B00F57EA3 /* main-background@2x.png in Resources */,
-				C3CE1B011652AE6B00F57EA3 /* textfields_a.png in Resources */,
-				C3CE1B021652AE6B00F57EA3 /* textfields_a@2x.png in Resources */,
 				C3CE1B031652AE6B00F57EA3 /* Default-568h@2x.png in Resources */,
 				C3CC018E1652B9AB000EE95F /* Localizable.strings in Resources */,
 				C300E1C51654116300D74674 /* list-arrow.png in Resources */,
 				C300E1C61654116300D74674 /* list-arrow@2x.png in Resources */,
+				C300E1CC16541F2000D74674 /* textfields.png in Resources */,
+				C300E1CD16541F2000D74674 /* textfields@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
