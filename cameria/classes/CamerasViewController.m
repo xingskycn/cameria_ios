@@ -94,8 +94,8 @@
     }
     
     // updates the cell text label with the camera's associated
-    // with the current row name
-    cell.textLabel.text = [self.cameras[indexPath.row] valueForKey:@"name"];
+    // with the current row identifier
+    cell.textLabel.text = [self.cameras[indexPath.row] valueForKey:@"id"];
     return cell;
 }
 
