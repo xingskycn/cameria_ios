@@ -122,11 +122,15 @@
         imageView.loadingImage.image = [UIImage imageNamed:@"loading.png"];
         imageView.errorImage.image = [UIImage imageNamed:@"error.png"];
         imageView.url = url;
-        
+
+#ifdef VISUALS_HIGH
         // sets the rounded corners in the image view to provide a better
-        // visual effect
-        [imageView.layer setMasksToBounds:YES];
-        [imageView.layer setCornerRadius:2.0];
+        // visual effect, no that this enables mask to bound creating a
+        // great performance decrease
+        imageView.layer.masksToBounds = YES;
+        imageView.layer.cornerRadius = 2.0f;
+        imageView.layer.speed = 30.0f;
+#endif
 
         // enables the user interaction so that the touch events
         // are gathered and correctly handled
