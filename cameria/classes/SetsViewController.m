@@ -108,7 +108,7 @@
     // retrieves the sequence of cameras from the set and
     // uses it to contruct the final cameras string
     NSArray *cameras = [set valueForKey:@"cameras"];
-    NSString *camerasString = [NSString stringWithFormat:@"%2d %@", [cameras count], NSLocalizedString(@"cameras", @"cameras")];
+    NSString *camerasString = [NSString stringWithFormat:@"%d %@", [cameras count], NSLocalizedString(@"cameras", @"cameras")];
 
     // updates the cell text label with the set's associated
     // with the current row name
