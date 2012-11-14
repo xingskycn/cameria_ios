@@ -100,8 +100,11 @@
     self.scrollView.contentSize = CGSizeMake(pageWidth * [self.cameras count], pageHeight);
     
     // updates the current page so that the value remains
-    // exactly the same as the one in the previous position
+    // exactly the same as the one in the previous position then
+    // schedules an update on the title to the next tick operation
+    // (this is required to ensure correct navigation bar update)
     [self setPage:self.pageIndex animated:NO];
+    [self performSelector:@selector(updateTitle) withObject:nil afterDelay:0];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -134,12 +137,6 @@
     [self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
     [self.navigationController.navigationBar setAlpha:1.0];
     [self showTabBar:self.tabBarController];
-    
-    // calculates the current page index using the currently set page
-    // width and then stores it for latter usage
-    CGFloat pageWidth = self.scrollView.frame.size.width;
-    float pageNumberFloat = self.scrollView.contentOffset.x / pageWidth;
-    self.pageIndex = lround(pageNumberFloat);
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -178,8 +175,8 @@
     // calculates the current page index using the currently set page
     // width and then stores it for latter usage
     CGFloat pageWidth = self.scrollView.frame.size.width;
-    float pageNumberFloat = self.scrollView.contentOffset.x / pageWidth;
-    self.pageIndex = lround(pageNumberFloat);
+    float pageIndexFloat = self.scrollView.contentOffset.x / pageWidth;
+    self.pageIndex = lround(pageIndexFloat);
 
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
@@ -302,18 +299,26 @@
 }
 
 - (void)setPage:(int)index animated:(BOOL)animated {
-    // retrieves the camera associated with the current page and
-    // then retrieves its name and sets the current title with it
-    NSArray *camera = self.cameras[index];
-    NSString *cameraName = camera[0];
-    [self setNavigationTitle:cameraName];
-
+    // sets the current page index variable to the
+    // target page index and runs the update operation
+    // on the title bar
+    self.pageIndex = index;
+    [self updateTitle];
+    
     // retrieves the width of a page as the scroll view frame size
     // and then used it to update the offset for the scroll content
     // in the scroll view to "reflect" the correct page position
     CGFloat pageWidth = self.scrollView.frame.size.width;
     [self.scrollView setContentOffset:CGPointMake(index * pageWidth, 0)
                              animated:animated];
+}
+
+- (void)updateTitle {
+    // retrieves the camera associated with the current page and
+    // then retrieves its name and sets the current title with it
+    NSArray *camera = self.cameras[self.pageIndex];
+    NSString *cameraName = camera[0];
+    [self setNavigationTitle:cameraName];
 }
 
 - (void)showHeader {
@@ -386,17 +391,13 @@
     // retrieves the width of a page as the scroll view frame size
     // and calculates the current page number using the current position
     CGFloat pageWidth = self.scrollView.frame.size.width;
-    float pageNumberFloat = self.scrollView.contentOffset.x / pageWidth;
-    NSInteger pageNumber = lround(pageNumberFloat);
-
-    // retrieves the camera associated with the current page and
-    // then retrieves its name and sets the current title with it
-    NSArray *camera = self.cameras[pageNumber];
-    NSString *cameraName = camera[0];
-    [self setNavigationTitle:cameraName];
-
-    // runs the play operation on the cameras to update their
-    // states according to the new page position
+    float pageIndexFloat = self.scrollView.contentOffset.x / pageWidth;
+    self.pageIndex = lround(pageIndexFloat);
+    
+    // updates the current title to be displayed by the cameras
+    // and then runs the play operation on the cameras to update
+    // their states according to the new page position
+    [self updateTitle];
     [self playCameras];
 }
 
