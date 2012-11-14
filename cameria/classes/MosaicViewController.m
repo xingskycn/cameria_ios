@@ -50,7 +50,7 @@
     
     // creates the structure for the refresh button and then adds
     // itto the right of the navigation panel
-    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh"
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"RefreshButtonTitle", @"Refresh")
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(refreshClick:)];
