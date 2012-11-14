@@ -128,8 +128,12 @@
         // visual effect, no that this enables mask to bound creating a
         // great performance decrease
         imageView.layer.masksToBounds = YES;
-        imageView.layer.cornerRadius = 2.0f;
+        imageView.layer.cornerRadius = 3.0f;
         imageView.layer.speed = 30.0f;
+#else
+        // sets the border raidus of the image view using the pre-rendered
+        // approach which "puts" rounded black corners in the image iself
+        imageView.borderRadius = 4;
 #endif
 
         // enables the user interaction so that the touch events

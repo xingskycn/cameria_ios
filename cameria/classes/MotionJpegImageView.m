@@ -43,9 +43,9 @@
     __unsafe_unretained id<CredentialAlertDelegate> _credentialDelegate;
 }
 
-@property (nonatomic, readwrite, copy) NSString *username;
-@property (nonatomic, readwrite, copy) NSString *password;
-@property (nonatomic, readwrite, assign) id<CredentialAlertDelegate> credentialDelegate;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic, assign) id<CredentialAlertDelegate> credentialDelegate;
 
 - (id)initWithDelegate:(id<CredentialAlertDelegate>)delegate forHost:(NSString *)hostName;
 
@@ -275,7 +275,7 @@ static NSData *_endMarkerData = nil;
 
 @dynamic isPlaying;
 
-- (BOOL)isPlaying {
+- (bool)isPlaying {
     return !(_connection == nil);
 }
 
@@ -290,6 +290,7 @@ static NSData *_endMarkerData = nil;
         _username = nil;
         _password = nil;
         _allowSelfSignedCertificates = NO;
+        _borderRadius = 0;
 
         if(_endMarkerData == nil) {
             uint8_t endMarker[2] = END_MARKER_BYTES;
@@ -315,6 +316,7 @@ static NSData *_endMarkerData = nil;
         _username = nil;
         _password = nil;
         _allowSelfSignedCertificates = NO;
+        _borderRadius = 0;
 
         if(_endMarkerData == nil) {
             uint8_t endMarker[2] = END_MARKER_BYTES;
@@ -468,7 +470,7 @@ static NSData *_endMarkerData = nil;
     if(_receivedData.length >= endLocation) {
         NSData *imageData = [_receivedData subdataWithRange:NSMakeRange(0, endLocation)];
         UIImage *receivedImage = [UIImage imageWithData:imageData];
-        if(receivedImage) { self.image = receivedImage; }
+        if(receivedImage) { self.image = [receivedImage roundWithRadius:_borderRadius]; }
         if(_thumbMode) { [self pause]; }
         _hasThumb = YES;
         _loadingImage.hidden = YES;

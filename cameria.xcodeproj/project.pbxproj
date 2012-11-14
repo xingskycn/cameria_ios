@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2B1DB2B1653A86900DE3C5C /* UIImage+HMImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B1DB2A1653A86900DE3C5C /* UIImage+HMImageUtil.m */; };
 		C351F5461652A9E40072BF7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F52C1652A9E40072BF7E /* AppDelegate.m */; };
 		C351F5471652A9E40072BF7E /* CamerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F52E1652A9E40072BF7E /* CamerasViewController.m */; };
 		C351F5481652A9E40072BF7E /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5301652A9E40072BF7E /* CameraViewController.m */; };
@@ -66,6 +67,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C2B1DB281653A83700DE3C5C /* UIImage+HMImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+HMImageUtil.h"; path = "cameria/classes/UIImage+HMImageUtil.h"; sourceTree = SOURCE_ROOT; };
+		C2B1DB2A1653A86900DE3C5C /* UIImage+HMImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+HMImageUtil.m"; path = "cameria/classes/UIImage+HMImageUtil.m"; sourceTree = SOURCE_ROOT; };
 		C351F52B1652A9E40072BF7E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cameria/classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		C351F52C1652A9E40072BF7E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = cameria/classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		C351F52D1652A9E40072BF7E /* CamerasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CamerasViewController.h; path = cameria/classes/CamerasViewController.h; sourceTree = SOURCE_ROOT; };
@@ -279,6 +282,8 @@
 				C351F5431652A9E40072BF7E /* ProxyRequestDelegate.h */,
 				C351F5441652A9E40072BF7E /* SetsViewController.h */,
 				C351F5451652A9E40072BF7E /* SetsViewController.m */,
+				C2B1DB281653A83700DE3C5C /* UIImage+HMImageUtil.h */,
+				C2B1DB2A1653A86900DE3C5C /* UIImage+HMImageUtil.m */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				C351F54F1652A9E40072BF7E /* MotionJpegImageView.m in Sources */,
 				C351F5501652A9E40072BF7E /* ProxyRequest.m in Sources */,
 				C351F5511652A9E40072BF7E /* SetsViewController.m in Sources */,
+				C2B1DB2B1653A86900DE3C5C /* UIImage+HMImageUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

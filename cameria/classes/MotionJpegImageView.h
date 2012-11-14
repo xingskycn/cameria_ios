@@ -26,24 +26,26 @@
 #import "Dependencies.h"
 
 #import "MotionJpegImageViewDelegate.h"
+#import "UIImage+HMImageUtil.h"
 
 @interface MotionJpegImageView : UIImageView {
     @private
     NSURLConnection *_connection;
     NSMutableData *_receivedData;
-    BOOL _thumbMode;
-    BOOL _hasThumb;
+    bool _thumbMode;
+    bool _hasThumb;
 }
 
 @property (nonatomic, readonly) UIImageView *loadingImage;
 @property (nonatomic, readonly) UIImageView *errorImage;
-@property (nonatomic, readwrite, unsafe_unretained) NSObject<MotionJpegImageViewDelegate> *delegate;
-@property (nonatomic, readwrite, copy) NSURL *url;
-@property (nonatomic, readonly) BOOL isPlaying;
-@property (nonatomic, readwrite, copy) NSString *username;
-@property (nonatomic, readwrite, copy) NSString *password;
-@property (nonatomic, readwrite) BOOL allowSelfSignedCertificates;
-@property (nonatomic, readwrite) BOOL allowClearTextCredentials;
+@property (nonatomic, unsafe_unretained) NSObject<MotionJpegImageViewDelegate> *delegate;
+@property (nonatomic, copy) NSURL *url;
+@property (nonatomic, readonly) bool isPlaying;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic) bool allowSelfSignedCertificates;
+@property (nonatomic) bool allowClearTextCredentials;
+@property (nonatomic) int borderRadius;
 
 /**
  * Plays the image motion from the start in case
