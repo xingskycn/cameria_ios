@@ -29,6 +29,7 @@
 #import "MotionJpegImageView.h"
 #import "MotionJpegImageViewDelegate.h"
 #import "CameraViewHandler.h"
+#import "UIViewController+HMControllerUtil.h"
 
 /**
  * The margin to be used in between the various
