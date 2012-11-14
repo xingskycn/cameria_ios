@@ -102,10 +102,20 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
+    // retrieves the "logical" camera structure associated
+    // with the current row
+    NSDictionary *camera = self.cameras[indexPath.row];
+
+    // retrieves the type and model for the current camera
+    // and uses these values to contruct the model string
+    NSString *type = [camera valueForKey:@"type"];
+    NSString *model = [camera valueForKey:@"model"];
+    NSString *modelString = [NSString stringWithFormat:@"%@ %@", type, model];
+    
     // updates the cell text label with the camera's associated
     // with the current row identifier
-    cell.title = [self.cameras[indexPath.row] valueForKey:@"id"];
-    cell.subTitle = @"axis m324";
+    cell.title = [camera valueForKey:@"id"];
+    cell.subTitle = modelString;
     return cell;
 }
 

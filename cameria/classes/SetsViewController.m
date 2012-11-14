@@ -100,11 +100,20 @@
         cell = [[HMFilterCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+    
+    // retrieves the "logical" set structure associated
+    // with the current row
+    NSDictionary *set = self.sets[indexPath.row];
+    
+    // retrieves the sequence of cameras from the set and
+    // uses it to contruct the final cameras string
+    NSArray *cameras = [set valueForKey:@"cameras"];
+    NSString *camerasString = [NSString stringWithFormat:@"%2d %@", [cameras count], NSLocalizedString(@"cameras", @"cameras")];
 
     // updates the cell text label with the set's associated
     // with the current row name
-    cell.title = [self.sets[indexPath.row] valueForKey:@"name"];
-    cell.subTitle = @"12 cameras";
+    cell.title = [set valueForKey:@"name"];
+    cell.subTitle = camerasString;
     cell.sideImage = [[UIImage imageNamed:@"image.png"] roundWithRadius:4];
     return cell;
 }
