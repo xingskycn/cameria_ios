@@ -302,6 +302,13 @@
 }
 
 - (void)setPage:(int)index animated:(BOOL)animated {
+    // retrieves the camera associated with the current page and
+    // then retrieves its name and sets the current title with it
+    NSArray *camera = self.cameras[index];
+    NSString *cameraName = camera[0];
+    self.title = cameraName;
+    self.navigationController.navigationBar.topItem.title = cameraName;
+    
     // retrieves the width of a page as the scroll view frame size
     // and then used it to update the offset for the scroll content
     // in the scroll view to "reflect" the correct page position
@@ -387,6 +394,7 @@
     // then retrieves its name and sets the current title with it
     NSArray *camera = self.cameras[pageNumber];
     NSString *cameraName = camera[0];
+    self.title = cameraName;
     self.navigationController.navigationBar.topItem.title = cameraName;
 
     // runs the play operation on the cameras to update their
