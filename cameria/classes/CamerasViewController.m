@@ -40,8 +40,10 @@
     [super viewDidLoad];
 
     // sets the table view initialy hidden so that no invalid
-    // items are displayed (correct visuals)
+    // items are displayed (correct visuals) ant then set the
+    // no separator style in the table view to avoid collisions
     self.tableView.hidden = YES;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     // creates the patter image to be used for both the view background
     // and the table view background color

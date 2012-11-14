@@ -31,7 +31,7 @@
  * The standard size (height) to be used in the
  * contruction of a filter cell.
  */
-#define HM_FILTER_CELL_SIZE 70
+#define HM_FILTER_CELL_SIZE 72
 
 @interface HMFilterCell : UITableViewCell {
 }
@@ -42,6 +42,7 @@
 @property (nonatomic) UILabel *titleLabel;
 @property (nonatomic) UILabel *subTitleLabel;
 @property (nonatomic) UIImageView *sideImageView;
+@property (nonatomic) UIImageView *separatorViewC;
 
 + (int)cellSize;
 

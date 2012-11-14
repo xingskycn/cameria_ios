@@ -14,6 +14,8 @@
 		C300E1CC16541F2000D74674 /* textfields.png in Resources */ = {isa = PBXBuildFile; fileRef = C300E1CA16541F2000D74674 /* textfields.png */; };
 		C300E1CD16541F2000D74674 /* textfields@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C300E1CB16541F2000D74674 /* textfields@2x.png */; };
 		C324EEFB1653CA080060DC05 /* HMFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C324EEFA1653CA080060DC05 /* HMFilterCell.m */; };
+		C333845416542E4B00F64AC8 /* list-separator.png in Resources */ = {isa = PBXBuildFile; fileRef = C333845216542E4B00F64AC8 /* list-separator.png */; };
+		C333845516542E4B00F64AC8 /* list-separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C333845316542E4B00F64AC8 /* list-separator@2x.png */; };
 		C351F5461652A9E40072BF7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F52C1652A9E40072BF7E /* AppDelegate.m */; };
 		C351F5471652A9E40072BF7E /* CamerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F52E1652A9E40072BF7E /* CamerasViewController.m */; };
 		C351F5481652A9E40072BF7E /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C351F5301652A9E40072BF7E /* CameraViewController.m */; };
@@ -81,6 +83,8 @@
 		C300E1CB16541F2000D74674 /* textfields@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfields@2x.png"; sourceTree = "<group>"; };
 		C324EEF91653CA080060DC05 /* HMFilterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMFilterCell.h; path = cameria/classes/HMFilterCell.h; sourceTree = SOURCE_ROOT; };
 		C324EEFA1653CA080060DC05 /* HMFilterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMFilterCell.m; path = cameria/classes/HMFilterCell.m; sourceTree = SOURCE_ROOT; };
+		C333845216542E4B00F64AC8 /* list-separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-separator.png"; sourceTree = "<group>"; };
+		C333845316542E4B00F64AC8 /* list-separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-separator@2x.png"; sourceTree = "<group>"; };
 		C351F52B1652A9E40072BF7E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cameria/classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		C351F52C1652A9E40072BF7E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = cameria/classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		C351F52D1652A9E40072BF7E /* CamerasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CamerasViewController.h; path = cameria/classes/CamerasViewController.h; sourceTree = SOURCE_ROOT; };
@@ -216,6 +220,8 @@
 		C3CE1ACA1652AE6B00F57EA3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C333845216542E4B00F64AC8 /* list-separator.png */,
+				C333845316542E4B00F64AC8 /* list-separator@2x.png */,
 				C3CE1ACB1652AE6B00F57EA3 /* button.png */,
 				C3CE1ACC1652AE6B00F57EA3 /* button@2x.png */,
 				C3CE1ACD1652AE6B00F57EA3 /* error.png */,
@@ -439,6 +445,8 @@
 				C300E1C61654116300D74674 /* list-arrow@2x.png in Resources */,
 				C300E1CC16541F2000D74674 /* textfields.png in Resources */,
 				C300E1CD16541F2000D74674 /* textfields@2x.png in Resources */,
+				C333845416542E4B00F64AC8 /* list-separator.png in Resources */,
+				C333845516542E4B00F64AC8 /* list-separator@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

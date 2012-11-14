@@ -43,10 +43,10 @@
     self.titleLabel = [[UILabel alloc] init];
     self.subTitleLabel = [[UILabel alloc] init];
     self.sideImageView = [[UIImageView alloc] init];
+    self.separatorViewC = [[UIImageView alloc] init];
     
     self.frame = CGRectMake(0, 0, 320, HM_FILTER_CELL_SIZE);
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     self.selectionStyle = UITableViewCellSelectionStyleBlue;
 
@@ -68,25 +68,26 @@
     self.backgroundColor = [UIColor colorWithPatternImage:patternImage];
     
     self.titleLabel.text = self.title;
-    self.subTitleLabel.text = self.subTitle;
-    
     self.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
-    self.subTitleLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
-    
     self.titleLabel.backgroundColor = [UIColor clearColor];
-    self.subTitleLabel.backgroundColor = [UIColor clearColor];
-    
     self.titleLabel.textColor = [UIColor colorWithRed:0.19 green:0.19 blue:0.19 alpha:1.0];
+    self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+
+    self.subTitleLabel.text = self.subTitle;
+    self.subTitleLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+    self.subTitleLabel.backgroundColor = [UIColor clearColor];
     self.subTitleLabel.textColor = [UIColor colorWithRed:0.48 green:0.48 blue:0.48 alpha:1.0];
+    self.subTitleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
     self.sideImageView.image = self.sideImage;
     
-    self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    self.subTitleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.separatorViewC.image = [UIImage imageNamed:@"list-separator"];
+    self.separatorViewC.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
     [self addSubview:self.titleLabel];
     [self addSubview:self.subTitleLabel];
     [self addSubview:self.sideImageView];
+    [self addSubview:self.separatorViewC];
     
     [self doLayout];
 }
@@ -98,9 +99,11 @@
         self.titleLabel.frame = CGRectMake(70, 13, width - 90, 21);
         self.subTitleLabel.frame = CGRectMake(70, 36, width - 90, 21);
         self.sideImageView.frame = CGRectMake(10, 10, 50, 50);
+        self.separatorViewC.frame = CGRectMake(0, HM_FILTER_CELL_SIZE - 2, width, 2);
     } else {
         self.titleLabel.frame = CGRectMake(10, 13, width - 90, 21);
         self.subTitleLabel.frame = CGRectMake(10, 36, width - 90, 21);
+        self.separatorViewC.frame = CGRectMake(0, HM_FILTER_CELL_SIZE - 2, width, 2);
     }
 }
 
