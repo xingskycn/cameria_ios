@@ -213,8 +213,6 @@
 		C3CE1ACA1652AE6B00F57EA3 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				C300E1C31654116300D74674 /* list-arrow.png */,
-				C300E1C41654116300D74674 /* list-arrow@2x.png */,
 				C3CE1ACB1652AE6B00F57EA3 /* button.png */,
 				C3CE1ACC1652AE6B00F57EA3 /* button@2x.png */,
 				C3CE1ACD1652AE6B00F57EA3 /* error.png */,
@@ -225,6 +223,8 @@
 				C3CE1AD21652AE6B00F57EA3 /* icon-cameras@2x.png */,
 				C3CE1AD31652AE6B00F57EA3 /* icon-sets.png */,
 				C3CE1AD41652AE6B00F57EA3 /* icon-sets@2x.png */,
+				C300E1C31654116300D74674 /* list-arrow.png */,
+				C300E1C41654116300D74674 /* list-arrow@2x.png */,
 				C3CE1AD51652AE6B00F57EA3 /* loading.png */,
 				C3CE1AD61652AE6B00F57EA3 /* loading@2x.png */,
 				C3CE1AD71652AE6B00F57EA3 /* logo-about.png */,
