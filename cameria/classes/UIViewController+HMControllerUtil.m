@@ -28,6 +28,10 @@
 @implementation UIViewController(HMControllerUtil)
 
 - (void)setNavigationTitle:(NSString *)title {
+    // checks if the view associated with the current view
+    // controller is already visible in such case changes the
+    // navigation bar item directly, otherwise uses the "traditional"
+    // title access method for the change
     if(self.isViewLoaded && self.view.window) {
         self.navigationController.navigationBar.topItem.title = title;
     } else {
