@@ -1,13 +1,48 @@
+// Hive Cameria Service
+// Copyright (C) 2008-2012 Hive Solutions Lda.
 //
-//  HMFilterCell.h
-//  cameria
+// This file is part of Hive Cameria Service.
 //
-//  Created by Administrator on 11/14/12.
-//  Copyright (c) 2012 Hive Solutions. All rights reserved.
+// Hive Cameria Service is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 //
+// Hive Cameria Service is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Hive Cameria Service. If not, see <http://www.gnu.org/licenses/>.
 
-#import <UIKit/UIKit.h>
+// __author__    = João Magalhães <joamag@hive.pt>
+// __version__   = 1.0.0
+// __revision__  = $LastChangedRevision$
+// __date__      = $LastChangedDate$
+// __copyright__ = Copyright (c) 2008-2012 Hive Solutions Lda.
+// __license__   = GNU General Public License (GPL), Version 3
 
-@interface HMFilterCell : UITableViewCell
+#import "Dependencies.h"
+
+#import "UIImage+HMImageUtil.h"
+
+/**
+ * The standard size (height) to be used in the
+ * contruction of a filter cell.
+ */
+#define HM_FILTER_CELL_SIZE 70
+
+@interface HMFilterCell : UITableViewCell {
+}
+
+@property (nonatomic) NSString *title;
+@property (nonatomic) NSString *subTitle;
+@property (nonatomic) UIImage *sideImage;
+@property (nonatomic) UILabel *titleLabel;
+@property (nonatomic) UILabel *subTitleLabel;
+@property (nonatomic) UIImageView *sideImageView;
+
++ (int)cellSize;
 
 @end
