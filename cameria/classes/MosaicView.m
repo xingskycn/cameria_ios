@@ -80,7 +80,12 @@
     int extraPadding = (int) round((float) extraWidth / 2.0f);
     int numberRows = (int) ceil((float) items / (float) itemsLine);
 
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, numberRows * itemTHeight + itemVMargin);
+    // updates the content size of the scroll view with the current width
+    // (not changing it) and the heigth with enough room for the complete
+    // set of element in the mosaic
+    _scrollView.contentSize = CGSizeMake(
+        _scrollView.frame.size.width, numberRows * itemTHeight + itemVMargin
+    );
     
     // starts the line counter in minus one so that the
     // initial modulus opertion puts it in zero
