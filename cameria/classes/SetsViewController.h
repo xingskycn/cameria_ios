@@ -30,6 +30,7 @@
 #import "CameraViewController.h"
 #import "MosaicViewController.h"
 #import "ProxyRequest.h"
+#import "HMFilterCell.h"
 
 @interface SetsViewController : UIViewController<UITableViewDataSource, ProxyRequestDelegate> {
     @private

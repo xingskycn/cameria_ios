@@ -39,10 +39,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // retrieves the pattern image to be used and sets it in
-    // the current view (should be able to change the background)
+    // sets the table view initialy hidden so that no invalid
+    // items are displayed (correct visuals)
+    self.tableView.hidden = YES;
+    
+    // creates the patter image to be used for both the view background
+    // and the table view background color
     UIImage *patternImage = [UIImage imageNamed:@"main-background.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:patternImage];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:patternImage];
 
     // creates the structure for both the logout and the refresh
     // buttons and then adds them to the left anr right of the
@@ -82,20 +87,25 @@
     else { return 0; }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [HMFilterCell cellSize];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // creates the cell identifier string and uses it to retrieve
     // the cell reusing it in case it exists or creating a new one
     // otherwise (performance oriented)
     static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    HMFilterCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[HMFilterCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     // updates the cell text label with the camera's associated
     // with the current row identifier
-    cell.textLabel.text = [self.cameras[indexPath.row] valueForKey:@"id"];
+    cell.title = [self.cameras[indexPath.row] valueForKey:@"id"];
+    cell.subTitle = @"axis m324";
     return cell;
 }
 
@@ -167,6 +177,7 @@
 
 - (void)reset {
     self.cameras = nil;
+    self.tableView.hidden = YES;
     [self.tableView reloadData];
 }
 
@@ -190,10 +201,13 @@
 - (void)didReceiveData:(NSDictionary *)data {
     self.cameras = [data valueForKey:@"cameras"];
     self.cameraControllers = [[NSMutableDictionary alloc] init];
+    
+    self.tableView.hidden = NO;
     [self.tableView reloadData];
 }
 
 - (void)didReceiveError:(NSError *)error {
+    self.tableView.hidden = YES;
 }
 
 @end
