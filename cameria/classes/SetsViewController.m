@@ -114,7 +114,7 @@
     // with the current row name
     cell.title = [set valueForKey:@"name"];
     cell.subTitle = camerasString;
-    cell.sideImage = [[UIImage imageNamed:@"icon-cameras.png"] roundWithRadius:4];
+    cell.sideImage = [[UIImage imageNamed:@"icon-sets.png"] roundWithRadius:4];
     return cell;
 }
 

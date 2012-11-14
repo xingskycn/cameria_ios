@@ -276,6 +276,8 @@
 				C351F5321652A9E40072BF7E /* CreditsViewController.h */,
 				C351F5331652A9E40072BF7E /* CreditsViewController.m */,
 				C3FB2889164D843F008F4981 /* Dependencies.h */,
+				C324EEF91653CA080060DC05 /* HMFilterCell.h */,
+				C324EEFA1653CA080060DC05 /* HMFilterCell.m */,
 				C351F5341652A9E40072BF7E /* HMJsonRequest.h */,
 				C351F5351652A9E40072BF7E /* HMJsonRequest.m */,
 				C351F5361652A9E40072BF7E /* HMJsonRequestDelegate.h */,
@@ -296,8 +298,6 @@
 				C351F5451652A9E40072BF7E /* SetsViewController.m */,
 				C2B1DB281653A83700DE3C5C /* UIImage+HMImageUtil.h */,
 				C2B1DB2A1653A86900DE3C5C /* UIImage+HMImageUtil.m */,
-				C324EEF91653CA080060DC05 /* HMFilterCell.h */,
-				C324EEFA1653CA080060DC05 /* HMFilterCell.m */,
 				C300E1C716541CC400D74674 /* UIViewController+HMControllerUtil.h */,
 				C300E1C816541CF300D74674 /* UIViewController+HMControllerUtil.m */,
 			);
